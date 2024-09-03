@@ -8,6 +8,7 @@ class Renderer;
 class Sprite;
 class SoundSystem;
 class Shield;
+class b2World;
 
 class BlockBloke : public Entity
 {
@@ -16,6 +17,7 @@ public:
 	~BlockBloke();
 
 	virtual bool Initialise(Renderer& renderer) override;
+	bool Initialise(Renderer& renderer, b2World* world);
 	virtual void Process(float deltaTime, InputSystem& inputSystem) override;
 	virtual void Draw(Renderer& renderer) override;
 	void ShootBullet(SoundSystem& soundSystem);
@@ -32,7 +34,6 @@ private:
 public:
 
 protected:
-	Sprite* m_pSprite;
 	Shield* m_pShield;
 
 	int m_iHealth;

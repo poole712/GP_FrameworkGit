@@ -19,10 +19,13 @@ public:
 	virtual void Draw(Renderer& renderer);
 
 	void Rotate(float direction);
+	void SetPosition(float posX, float posY);
 
 	bool IsAlive() const;
 	void SetAliveState(bool state);
 	float GetRadius();
+	float GetRotation();
+
 	Vector2 GetFacingDirection();
 
 	Vector2& GetPosition();
@@ -44,6 +47,8 @@ protected:
 	Vector2 m_velocity;
 	Vector2 m_rotation;
 	bool m_bAlive;
+	float m_fCurrentRotation;
+
 
 private:
 

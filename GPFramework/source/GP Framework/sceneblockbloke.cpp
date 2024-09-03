@@ -3,61 +3,62 @@
 #include "renderer.h"
 #include "sprite.h"
 #include "imgui/imgui.h"
+#include "b2debugdraw.h"
+#include "blockbloke.h"
+#include "box2d/box2d.h"
+#include "crate.h"
+
 
 #include <cassert>
 
+//DebugDraw debugDraw;
+
+
 SceneBlockBloke::SceneBlockBloke()
-	: m_pCorners{ 0 }, m_pCentre(0), m_angle(0.0f), m_rotationSpeed(0.0f)
+	:  m_angle(0.0f), m_rotationSpeed(0.0f)
 {
 
 }
 
 SceneBlockBloke::~SceneBlockBloke()
 {
-	for (int k = 0; k < 4; ++k)
-	{
-		delete m_pCorners[k];
-		m_pCorners[k] = 0;
-	}
+	delete m_pPlayer;
+	m_pPlayer = 0;
 
-	delete m_pCentre;
-	m_pCentre = 0;
+	delete m_pWorld;
+	m_pWorld = 0;
+
+	m_pWorld->~b2World();
 }
 
 bool
 SceneBlockBloke::Initialise(Renderer& renderer)
 {
-	m_pCentre = renderer.CreateSprite("sprites\\board8x8.png");
-	m_pCorners[0] = renderer.CreateSprite("sprites\\board8x8.png");
-	m_pCorners[1] = renderer.CreateSprite("sprites\\board8x8.png");
-	m_pCorners[2] = renderer.CreateSprite("sprites\\board8x8.png");
-	m_pCorners[3] = renderer.CreateSprite("sprites\\board8x8.png");
+	
 
-	const int BOARD_HALF_WIDTH = m_pCentre->GetWidth() / 2;
-	const int BOARD_HALF_HEIGHT = m_pCentre->GetHeight() / 2;
-	const int SCREEN_WIDTH = renderer.GetWidth();
-	const int SCREEN_HEIGHT = renderer.GetHeight();
+	//Physics:
+	b2Vec2 gravity;
+	gravity.Set(0.0f, 100.0f);
+	m_pWorld = new b2World(gravity);
 
-	m_pCentre->SetX(SCREEN_WIDTH / 2);
-	m_pCentre->SetY(SCREEN_HEIGHT / 2);
+	b2BodyDef ground;
+	ground.position.Set(640.0f, 580.0f);
+	b2Body* body = m_pWorld->CreateBody(&ground);
 
-	m_pCorners[0]->SetX(BOARD_HALF_WIDTH);
-	m_pCorners[0]->SetY(BOARD_HALF_HEIGHT);
+	m_pGround = new b2PolygonShape();
+	m_pGround->SetAsBox(5.0f, 1.0f);
+	body->CreateFixture(m_pGround, 0.0f);
 
-	m_pCorners[1]->SetX(BOARD_HALF_WIDTH);
-	m_pCorners[1]->SetY(SCREEN_HEIGHT - BOARD_HALF_HEIGHT);
-	m_pCorners[1]->SetGreenTint(0.0f);
-	m_pCorners[1]->SetBlueTint(0.0f);
+	m_pCrate = new Crate();
+	m_pCrate->Initialise(m_pWorld, renderer);
 
-	m_pCorners[2]->SetX(SCREEN_WIDTH - BOARD_HALF_WIDTH);
-	m_pCorners[2]->SetY(SCREEN_HEIGHT - BOARD_HALF_HEIGHT);
-	m_pCorners[2]->SetRedTint(0.0f);
-	m_pCorners[2]->SetBlueTint(0.0f);
+	m_pGroundSprite = renderer.CreateSprite("sprites\\board8x1.png");
+	m_pGroundSprite->SetX(640.0f);
+	m_pGroundSprite->SetY(600.0f);
+	m_pGroundSprite->SetScale(0.1f);
 
-	m_pCorners[3]->SetX(SCREEN_WIDTH - BOARD_HALF_WIDTH);
-	m_pCorners[3]->SetY(BOARD_HALF_HEIGHT);
-	m_pCorners[3]->SetGreenTint(0.0f);
-	m_pCorners[3]->SetRedTint(0.0f);
+	m_pPlayer = new BlockBloke();
+	m_pPlayer->Initialise(renderer, m_pWorld);
 
 	return true;
 }
@@ -65,26 +66,17 @@ SceneBlockBloke::Initialise(Renderer& renderer)
 void
 SceneBlockBloke::Process(float deltaTime, InputSystem& inputSystem)
 {
-	for (int k = 0; k < 4; ++k)
-	{
-		m_pCorners[k]->Process(deltaTime);
-	}
-
-	m_angle += m_rotationSpeed * deltaTime;
-
-	m_pCentre->SetAngle(m_angle);
-	m_pCentre->Process(deltaTime);
+	m_pPlayer->Process(deltaTime, inputSystem);
+	m_pWorld->Step(deltaTime, 6, 2);
+	m_pGroundSprite->Process(deltaTime);
 }
 
 void
 SceneBlockBloke::Draw(Renderer& renderer)
 {
-	for (int k = 0; k < 4; ++k)
-	{
-		m_pCorners[k]->Draw(renderer);
-	}
-
-	m_pCentre->Draw(renderer);
+	m_pPlayer->Draw(renderer);
+	m_pGroundSprite->Draw(renderer);
+	m_pCrate->Draw(renderer);
 }
 
 void
@@ -94,5 +86,6 @@ SceneBlockBloke::DebugDraw()
 
 	ImGui::InputFloat("Rotation speed", &m_rotationSpeed);
 
-	
+	//m_pPlayer->DebugDraw();
+	m_pWorld->DebugDraw();
 }

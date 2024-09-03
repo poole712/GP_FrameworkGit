@@ -58,6 +58,8 @@ Entity::GetVelocity()
 void 
 Entity::Rotate(float direction)
 {
+	m_fCurrentRotation = direction;
+
 	m_pSprite->SetAngle(direction);
 }
 
@@ -112,5 +114,20 @@ Entity::IsCollidingWith(Entity& toCheck)
 		return distanceSquared <= radiiSumSquared;
 	}
 	return false;
+}
+
+void
+Entity::SetPosition(float posX, float posY)
+{
+	m_position.x = posX;
+	m_position.y = posY;
+	m_pSprite->SetX(static_cast<int>(posX));
+	m_pSprite->SetY(static_cast<int>(posY));
+}
+
+float
+Entity::GetRotation()
+{
+	return m_fCurrentRotation;
 }
 

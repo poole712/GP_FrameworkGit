@@ -6,6 +6,13 @@
 class Renderer;
 class Sprite;
 class InputSystem;
+class BlockBloke;
+class b2World;
+class Crate;
+class Sprite;
+class b2PolygonShape;
+class b2Color;
+
 
 class SceneBlockBloke : public Scene
 {
@@ -27,10 +34,17 @@ private:
 public:
 
 protected:
-	Sprite* m_pPlayer;
+	BlockBloke* m_pPlayer;
 
 
 	float m_angle;
 	float m_rotationSpeed;
+
+
+	//Physics:
+	Sprite* m_pGroundSprite;
+	b2World* m_pWorld;
+	Crate* m_pCrate;
+	b2PolygonShape* m_pGround;
 };
 #endif // ! _SCENECHECKERBOARDS_H

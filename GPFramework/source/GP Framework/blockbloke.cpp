@@ -4,6 +4,12 @@
 #include "renderer.h"
 #include "sprite.h"
 #include "soundsystem.h"
+#include "shield.h"
+#include "inputsystem.h"
+#include "box2d/box2d.h"
+
+#include <SDL_scancode.h>
+
 
 #include <thread>
 #include <chrono>
@@ -13,19 +19,25 @@ float BlockBloke::sm_fBoundaryWidth = 0.0f;
 float BlockBloke::sm_fBoundaryHeight = 0.0f;
 
 BlockBloke::BlockBloke()
-	: m_pShield(0), m_iAmmo(0), m_bCanFire(false), m_fFireCooldown(0), m_fTimeSinceLastFire(0), m_iHealth(5), m_pSprite(0)
+	: m_pShield(0), m_iAmmo(0), m_bCanFire(false), m_fFireCooldown(0), m_fTimeSinceLastFire(0), m_iHealth(5)
 {
-	LogManager::GetInstance().Log("Laser Cannon constructed");
 }
 
 BlockBloke::~BlockBloke()
 {
 	delete m_pShield;
 	m_pShield = 0;
+
 }
 
 bool
 BlockBloke::Initialise(Renderer& renderer)
+{
+	return true;
+}
+
+bool
+BlockBloke::Initialise(Renderer& renderer, b2World* world)
 {
 	m_pSprite = renderer.CreateSprite("sprites\\triangle.png");
 	m_pSprite->SetScale(0.1f);
@@ -43,6 +55,10 @@ BlockBloke::Initialise(Renderer& renderer)
 	m_position.x = SCREEN_WIDTH / 2.0f;
 	m_position.y = (SCREEN_HEIGHT / 1.25f);
 
+	m_pShield = new Shield();
+	m_pShield->Initialise(renderer, world);
+	m_pShield->SetPosition(m_position.x, m_position.y - 25.0f);
+
 	return true;
 }
 
@@ -55,8 +71,22 @@ BlockBloke::Process(float deltaTime, InputSystem& inputSystem)
 	
 	//shield->Process(deltaTime);
 	m_pSprite->Process(deltaTime);
+	m_pShield->Process(deltaTime, inputSystem);
 
 	m_fTimeSinceLastFire += deltaTime;
+
+	ButtonState spaceState = (inputSystem.GetKeyState(SDL_SCANCODE_SPACE));
+	ButtonState leftArrowState = (inputSystem.GetKeyState(SDL_SCANCODE_LEFT));
+	ButtonState rightArrowState = (inputSystem.GetKeyState(SDL_SCANCODE_RIGHT));
+
+	if (leftArrowState == BS_HELD && rightArrowState == BS_NEAUTRAL)
+	{
+		m_pShield->ShieldRotate(15);
+	}
+	if (rightArrowState == BS_HELD && leftArrowState == BS_NEAUTRAL)
+	{
+		m_pShield->ShieldRotate(-15);
+	}
 
 	if (m_fTimeSinceLastFire >= m_fFireCooldown)
 	{
@@ -68,8 +98,10 @@ void
 BlockBloke::Draw(Renderer& renderer)
 {
 	m_pSprite->Draw(renderer);
-	//shield->Draw(renderer);
+	m_pShield->Draw(renderer);
 }
+
+
 
 void
 BlockBloke::ShootBullet(SoundSystem& soundSystem)
