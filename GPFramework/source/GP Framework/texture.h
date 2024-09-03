@@ -1,6 +1,8 @@
 #ifndef _TEXTURE_H_
 #define _TEXTURE_H_
 
+#include <SDL_surface.h>
+
 class Texture
 {
 	//Member methods:
@@ -14,6 +16,8 @@ public:
 
 	int GetWidth() const;
 	int GetHeight() const;
+	void LoadTextTexture(const char* text, const char* fontname, int pointsize);
+	void LoadSurfaceIntoTexture(SDL_Surface* pSurface);
 
 protected:
 

@@ -156,7 +156,8 @@ Sprite::GetGreenTint() const
 	return m_tintGreen;
 }
 
-void Sprite::SetBlueTint(float value)
+void 
+Sprite::SetBlueTint(float value)
 {
 	m_tintBlue = Clamp(0.0f, value, 1.0f);
 }

@@ -14,6 +14,7 @@ VertexArray::VertexArray(const float* pVertexData, unsigned int numVertices, con
 	glBindVertexArray(m_glVertexArray);
 
 	glGenBuffers(1, &m_glVertexBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, m_glVertexBuffer);
 	glBufferData(GL_ARRAY_BUFFER, m_numVertices * stride, pVertexData, GL_STATIC_DRAW);
 
 	if (pIndexData)

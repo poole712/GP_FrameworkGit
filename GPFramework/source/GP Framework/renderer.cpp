@@ -8,7 +8,11 @@
 #include "shader.h"
 #include "vertexarray.h"
 #include "sprite.h"
+#include "animatedsprite.h"
 #include "matrix4.h"
+#include "texture.h"
+#include "imgui/imgui_impl_sdl2.h"
+#include "imgui/imgui_impl_opengl3.h"
 
 // Library includes:
 #include <SDL.h>
@@ -29,8 +33,13 @@ Renderer::Renderer()
 	, m_fClearBlue(0.0f)
 {
 }
+
+
 Renderer::~Renderer()
 {
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplSDL2_Shutdown();
+	ImGui::DestroyContext();
 	delete m_pSpriteShader;
 	m_pSpriteShader = 0;
 	delete m_pSpriteVertexData;
@@ -94,6 +103,10 @@ Renderer::Initialise(bool windowed, int width, int height)
 
 	}
 
+	ImGui::CreateContext();
+	ImGui_ImplSDL2_InitForOpenGL(m_pWindow, m_glContext);
+	ImGui_ImplOpenGL3_Init();
+
 	return initialised;
 }
 
@@ -140,11 +153,17 @@ Renderer::Clear()
 {
 	glClearColor(m_fClearRed, m_fClearGreen, m_fClearBlue, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
+
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplSDL2_NewFrame();
+	ImGui::NewFrame();
 }
 
 void 
 Renderer::Present()
 {
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	SDL_GL_SwapWindow(m_pWindow);
 }
 
@@ -225,9 +244,9 @@ Renderer::SetupSpriteShader()
 
 	float vertices[] =
 	{
-		-0.5f, 0.5f, 0.0f, 0.0f, 0.0f, // Top Left
-		0.5f, 0.5f, 0.0f, 1.0f, 0.0f, // Top right
-		0.5f, 0.5f, 0.0f, 1.0f, 1.0f, // Bottom right
+		-0.5f,  0.5f, 0.0f, 0.0f, 0.0f, // Top Left
+		 0.5f,  0.5f, 0.0f, 1.0f, 0.0f, // Top right
+		 0.5f, -0.5f, 0.0f, 1.0f, 1.0f, // Bottom right
 		-0.5f, -0.5f, 0.0f, 0.0f, 1.0f // Bottom left
 	};
 
@@ -276,4 +295,64 @@ Renderer::DrawSprite(Sprite& sprite)
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 	//Carry on from 115
+}
+
+AnimatedSprite*
+Renderer::CreateAnimatedSprite(const char* pcFileName)
+{
+	assert(m_pTextureManager);
+
+	Texture* pTexture = m_pTextureManager->GetTexture(pcFileName);
+
+	AnimatedSprite* pSprite = new AnimatedSprite();
+	if (!pSprite->Initialise(*pTexture))
+	{
+		LogManager::GetInstance().Log("AnimatedSprite failed to create");
+	}
+
+	return pSprite;
+}
+
+void
+Renderer::DrawAnimatedSprite(AnimatedSprite& sprite, int frame)
+{
+	m_pSpriteShader->SetActive();
+
+	float angleInDegrees = sprite.GetAngle();
+	float sizeX = static_cast<float>(sprite.GetWidth());
+	float sizeY = static_cast<float>(sprite.GetHeight());
+
+	const float PI = 3.14159f;
+	float angleInRadians = (angleInDegrees * PI) / 180.0f;
+
+	Matrix4 world;
+	SetIdentity(world);
+	world.m[0][0] = cosf(angleInRadians) * (sizeX);
+	world.m[0][1] = -sinf(angleInRadians) * (sizeX);
+	world.m[1][0] = sinf(angleInRadians) * (sizeY);
+	world.m[1][1] = cosf(angleInRadians) * (sizeY);
+	world.m[3][0] = static_cast<float>(sprite.GetX());
+	world.m[3][1] = static_cast<float>(sprite.GetY());
+
+	m_pSpriteShader->SetMatrixUniform("uWorldTransform", world);
+
+	Matrix4 orhtoViewProj;
+	CreateOrthoProjection(orhtoViewProj, static_cast<float>(m_iWidth), static_cast<float>(m_iHeight));
+
+	m_pSpriteShader->SetVector4Uniform("colour", sprite.GetRedTint(), sprite.GetGreenTint(), sprite.GetBlueTint(), sprite.GetAlpha());
+	m_pSpriteShader->SetMatrixUniform("uViewProj", orhtoViewProj);
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)((frame * 6) * sizeof(GLuint)));
+
+}
+
+void
+Renderer::CreateStaticText(const char* pText, int pointsize)
+{
+	Texture* pTexture = new Texture();
+	pTexture->LoadTextTexture(pText, "PROXON", pointsize);
+	m_pTextureManager->AddTexture(pText, pTexture);
 }

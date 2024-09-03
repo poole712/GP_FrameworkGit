@@ -5,6 +5,14 @@
 #include "renderer.h"
 #include "logmanager.h"
 #include "sprite.h"
+#include "stdlib.h"
+#include "time.h"
+#include "sceneblockbloke.h"
+#include "imgui/imgui_impl_sdl2.h"
+#include "iniparser.h"
+#include "inputsystem.h"
+#include "xboxcontroller.h"
+
 
 //Static members:
 Game* 
@@ -31,6 +39,8 @@ Game::DestroyInstance()
 Game::Game()
 	: m_pRenderer(0)
 	, m_bLooping(true)
+	, m_bShowDebugWindow(true)
+	
 {
 
 }
@@ -50,8 +60,10 @@ Game::Quit()
 bool
 Game::Initialise()
 {
-	int bbWidth = 1024;
-	int bbHeight = 768;
+	int bbWidth = 1280;
+	int bbHeight = 720;
+
+
 
 	m_pRenderer = new Renderer();
 	if (!m_pRenderer->Initialise(true, bbWidth, bbHeight))
@@ -62,16 +74,27 @@ Game::Initialise()
 
 	bbWidth = m_pRenderer->GetWidth();
 	bbHeight = m_pRenderer->GetHeight();
-
 	m_iLastTime = SDL_GetPerformanceCounter();
 
-	m_pCheckerboard = m_pRenderer->CreateSprite("board8x8.png");
-	m_pCheckerboard->SetX(0);
-	m_pCheckerboard->SetY(0);
-
-	m_pRenderer->SetClearColour(0, 0, 255);
 
 
+	m_pInputSystem = new InputSystem();
+	m_pInputSystem->Initialise();
+
+	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
+
+	
+	Scene* pScene = 0;
+	pScene = new SceneBlockBloke();
+	pScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pScene);
+	m_iCurrentScene = 0;
+	
+
+	m_pRenderer->SetClearColour(100, 100, 100);
+
+	m_pIniParser = new IniParser();
+	m_pIniParser->LoadIniFile("ini\\test.ini");
 
 	return true;
 }
@@ -81,11 +104,7 @@ Game::DoGameLoop()
 {
 	const float stepSize = 1.0f / 60.0f;
 
-	SDL_Event event;
-	while (SDL_PollEvent(&event) != 0)
-	{
-		continue;
-	}
+	m_pInputSystem->ProcessInput();
 
 	if (m_bLooping)
 	{
@@ -124,9 +143,11 @@ void
 Game::Process(float deltaTime)
 {
 	ProcessFrameCounting(deltaTime);
-
-	m_pCheckerboard->Process(deltaTime);
 	// TODO: Add game objects to process here!
+	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem);
+
+	
+
 }
 
 void 
@@ -135,10 +156,9 @@ Game::Draw(Renderer& renderer)
 	++m_iFrameCount;
 
 	renderer.Clear();
-
+	DebugDraw();
 	//TODO: Add game objects to draw here!
-	m_pCheckerboard->Draw(renderer);
-
+	m_scenes[m_iCurrentScene]->Draw(renderer);
 	renderer.Present();
 }
 
@@ -156,4 +176,36 @@ Game::ProcessFrameCounting(float deltaTime)
 		m_iFrameCount = 0;
 	}
 
+}
+
+void 
+Game::ToggleDebugWindow()
+{
+	m_bShowDebugWindow = !m_bShowDebugWindow;
+
+	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
+}
+
+void
+Game::DebugDraw()
+{
+	m_scenes[m_iCurrentScene]->DebugDraw();
+
+	if (m_bShowDebugWindow)
+	{
+		bool open = true;
+
+		ImGui::Begin("Debug Window", &open, ImGuiWindowFlags_MenuBar);
+
+		ImGui::Text("COMP710 GP Framework (%s)", "2024, S2");
+
+		if (ImGui::Button("Quit"))
+		{
+			Quit();
+		}
+
+		ImGui::SliderInt("Active scene", &m_iCurrentScene, 0, m_scenes.size() - 1, "%d");
+		ImGui::End();
+		
+	}
 }

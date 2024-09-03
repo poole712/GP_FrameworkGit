@@ -6,6 +6,7 @@ class TextureManager;
 class Shader;
 class VertexArray;
 class Sprite;
+class AnimatedSprite;
 struct SDL_Window;
 
 // Library includes
@@ -30,7 +31,10 @@ public:
 	int GetHeight() const;
 
 	Sprite* CreateSprite(const char* pcFilename);
+	AnimatedSprite* CreateAnimatedSprite(const char* pcFilename);
 	void DrawSprite(Sprite& sprite);
+	void DrawAnimatedSprite(AnimatedSprite& sprite, int frame);
+	void CreateStaticText(const char* pText, int pointsize);
 
 protected:
 	bool InitialiseOpenGL(int screenWidth, int screenHeight);
