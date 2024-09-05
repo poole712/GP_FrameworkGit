@@ -91,7 +91,7 @@ Game::Initialise()
 	m_iCurrentScene = 0;
 	
 
-	m_pRenderer->SetClearColour(100, 100, 100);
+	m_pRenderer->SetClearColour(255, 100, 100);
 
 	m_pIniParser = new IniParser();
 	m_pIniParser->LoadIniFile("ini\\test.ini");
@@ -157,8 +157,10 @@ Game::Draw(Renderer& renderer)
 
 	renderer.Clear();
 	DebugDraw();
+
 	//TODO: Add game objects to draw here!
 	m_scenes[m_iCurrentScene]->Draw(renderer);
+
 	renderer.Present();
 }
 
@@ -208,4 +210,6 @@ Game::DebugDraw()
 		ImGui::End();
 		
 	}
+
+
 }

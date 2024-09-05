@@ -17,7 +17,8 @@ Shield::Shield()
 Shield::~Shield()
 {
 	
-
+	delete debugColor;
+	debugColor = 0;
 
 }
 
@@ -53,7 +54,7 @@ Shield::Initialise(Renderer& renderer, b2World* world)
 	
 
 	b2PolygonShape polyShape;
-	polyShape.SetAsBox(1.0f, 5.0f);
+	polyShape.SetAsBox(10.0f, 5.0f);
 
 	b2FixtureDef fixDef;
 	fixDef.shape = &polyShape;
@@ -61,7 +62,7 @@ Shield::Initialise(Renderer& renderer, b2World* world)
 	fixDef.friction = 0.3f;
 
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
-	m_pBody->SetAngularDamping(5.0f);
+	m_pBody->SetAngularDamping(1.0f);
 
 	m_pBody->SetTransform(m_pBody->GetPosition(), 180);
 
@@ -83,7 +84,13 @@ void
 Shield::Draw(Renderer& renderer)
 {
 	m_pSprite->Draw(renderer);
-	//shield->Draw(renderer);
+	
+	debugColor = new b2Color;
+	debugColor->Set(0, 1, 0);
+
+
+	
+
 }
 
 void

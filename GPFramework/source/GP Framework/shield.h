@@ -11,6 +11,8 @@ class Shield;
 class b2Body;
 class b2Fixture;
 class b2World;
+class b2Color;
+class b2PolygonShape;
 
 class Shield : public Entity
 {
@@ -38,6 +40,9 @@ public:
 protected:
 	b2Body* m_pBody;
 	b2Fixture* m_pFixture;
+
+	b2Color* debugColor;
+	b2PolygonShape* m_pShape;
 };
 
 #endif // !_SHIELD_H

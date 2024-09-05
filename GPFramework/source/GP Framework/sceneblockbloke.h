@@ -13,6 +13,7 @@ class Sprite;
 class b2PolygonShape;
 class b2Color;
 
+class MyDebugDraw;
 
 class SceneBlockBloke : public Scene
 {
@@ -24,6 +25,8 @@ public:
 	virtual void Process(float deltaTime, InputSystem& inputSystem);
 	virtual void Draw(Renderer& renderer);
 	virtual void DebugDraw();
+
+	static MyDebugDraw* debugDraw;
 
 protected:
 
@@ -43,8 +46,11 @@ protected:
 
 	//Physics:
 	Sprite* m_pGroundSprite;
+	Sprite* m_pBackgroundSprite;
 	b2World* m_pWorld;
 	Crate* m_pCrate;
 	b2PolygonShape* m_pGround;
+	b2Color* debugColor;
+
 };
 #endif // ! _SCENECHECKERBOARDS_H

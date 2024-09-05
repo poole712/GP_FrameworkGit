@@ -99,6 +99,7 @@ BlockBloke::Draw(Renderer& renderer)
 {
 	m_pSprite->Draw(renderer);
 	m_pShield->Draw(renderer);
+
 }
 
 

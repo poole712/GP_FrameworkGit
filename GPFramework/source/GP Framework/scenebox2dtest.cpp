@@ -7,7 +7,7 @@
 #include "sprite.h"
 #include "renderer.h"
 
-DebugDraw debugDraw;
+//DebugDraw debugDraw;
 
 SceneBox2DTest::SceneBox2DTest()
 {
@@ -52,8 +52,8 @@ SceneBox2DTest::Initialise(Renderer& renderer)
 
 
 
-	debugDraw.SetFlags(b2Draw::e_shapeBit); // Set what to draw (shapes, joints, etc.)
-	m_pWorld->SetDebugDraw(&debugDraw);
+	//debugDraw.SetFlags(b2Draw::e_shapeBit); // Set what to draw (shapes, joints, etc.)
+	//m_pWorld->SetDebugDraw(&debugDraw);
 
 
 	

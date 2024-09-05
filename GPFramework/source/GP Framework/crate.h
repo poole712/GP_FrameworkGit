@@ -25,7 +25,9 @@ public:
 protected:
 	b2Body* m_pBody;
 	b2Fixture* m_pFixture;
+	b2PolygonShape* m_pShape;
 	Sprite* m_pSprite;
+	b2Color* debugColor;
 
 };
 
