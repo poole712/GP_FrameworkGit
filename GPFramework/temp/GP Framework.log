@@ -1,12 +1,19 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (..\..\temp\) contains files shared from another project (GP Framework.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   sceneblockbloke.cpp
-C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.2.4.1.5\build\native\include\box2d\b2_draw.h(31,1): warning C4099: 'b2Color': type name first seen using 'class' now seen using 'struct'
-C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.2.4.1.5\build\native\include\box2d\b2_draw.h(30,15): message : see declaration of 'b2Color'
-C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\sceneblockbloke.cpp(96,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\sceneblockbloke.cpp(97,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\sceneblockbloke.cpp(112,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\sceneblockbloke.cpp(113,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  GP Framework.vcxproj -> C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\game\GP Framework_debug.exe
-  C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.redist.2.4.1.5\build\native\bin\Win32\Debug\box2d.dll
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\sceneblockbloke.cpp(106,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\sceneblockbloke.cpp(107,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+..\..\temp\animatedentity.obj : warning LNK4042: object specified more than once; extras ignored
+..\..\temp\coalwalker.obj : warning LNK4042: object specified more than once; extras ignored
+..\..\temp\coalwalkerattacking.obj : warning LNK4042: object specified more than once; extras ignored
+..\..\temp\explosion.obj : warning LNK4042: object specified more than once; extras ignored
+..\..\temp\scenebouncingballs.obj : warning LNK4042: object specified more than once; extras ignored
+  Generating code
+  1 of 3207 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    35 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  GP Framework.vcxproj -> C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\game\BlockBloke.exe
+  C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.redist.2.4.1.5\build\native\bin\Win32\Release\box2d.dll
   1 File(s) copied

@@ -3,10 +3,13 @@
 #include "renderer.h"
 #include "sprite.h"
 #include "imgui/imgui.h"
-#include <box2d/b2_draw.h>
 #include "blockbloke.h"
 #include "box2d/box2d.h"
 #include "crate.h"
+#include "enemygenerator.h"
+#include "uihandler.h"
+#include "explosion.h"
+#include "soundsystem.h"
 
 #include <cassert>
 
@@ -75,13 +78,20 @@ SceneBlockBloke::~SceneBlockBloke()
     delete m_pGround;
     m_pGround = 0;
 
-    delete m_pGroundSprite;
-    m_pGroundSprite = 0;
-
-    m_pWorld->~b2World();
+    delete m_pWorld;
+    m_pWorld = 0;
 
     delete debugDraw;
     debugDraw = 0;
+
+    delete m_pUiHandler;
+    m_pUiHandler = 0;
+
+    delete m_pBackgroundSprite;
+    m_pBackgroundSprite = 0;
+
+    delete m_pSoundSystem;
+    m_pSoundSystem = 0;
 }
 
 bool
@@ -92,26 +102,49 @@ SceneBlockBloke::Initialise(Renderer& renderer)
     gravity.Set(0.0f, 100.0f);
     m_pWorld = new b2World(gravity);
 
-    m_pBackgroundSprite = renderer.CreateSprite("sprites\\dirt.png");
+    m_pBackgroundSprite = renderer.CreateSprite("sprites\\CastleBackground.png");
     m_pBackgroundSprite->SetX(640.0f);
-    m_pBackgroundSprite->SetY(600.0f);
-    m_pBackgroundSprite->SetScale(2.0f);
+    m_pBackgroundSprite->SetY(360.0f);
+    m_pBackgroundSprite->SetAngle(180.0f);
+
+    m_pUiHandler = new UiHandler();
+    m_pUiHandler->Initialise(renderer);
 
     b2BodyDef ground;
-    ground.position.Set(640.0f, 580.0f);
+    ground.position.Set(640.0f, 605.0f);
     b2Body* body = m_pWorld->CreateBody(&ground);
 
     m_pGround = new b2PolygonShape();
-    m_pGround->SetAsBox(100.0f, 5.0f);
+    m_pGround->SetAsBox(1000.0f, 5.0f);
     body->CreateFixture(m_pGround, 0.0f);
 
-    m_pCrate = new Crate();
-    m_pCrate->Initialise(m_pWorld, renderer);
+    //m_pCrate = new Crate();
+    //m_pCrate->Initialise(m_pWorld, renderer);
 
-    m_pGroundSprite = renderer.CreateSprite("sprites\\board8x2.png");
-    m_pGroundSprite->SetX(640.0f);
-    m_pGroundSprite->SetY(600.0f);
-    m_pGroundSprite->SetScale(0.1f);
+    m_pSoundSystem = new SoundSystem();
+    m_pSoundSystem->Initialise();
+    m_pSoundSystem->CreateSound("sounds\\GameMusic.mp3", "Game Music");
+    m_pSoundSystem->PlaySound("Game Music");
+    m_pSoundSystem->SetVolume("Game Music", 0.25f);
+
+    m_pSoundSystem->CreateSound("sounds\\Rotate.wav", "Rotate");
+
+    m_pSoundSystem->CreateSound("sounds\\Land.wav", "Jump");
+
+    m_pSoundSystem->CreateSound("sounds\\Explosion.wav", "Explosion");
+    
+    m_pSoundSystem->CreateSound("sounds\\Deflect.wav", "Deflect");
+
+    m_pSoundSystem->CreateSound("sounds\\Fireball1.wav", "Fireball1");
+    m_pSoundSystem->CreateSound("sounds\\Fireball2.wav", "Fireball2");
+
+    m_pSoundSystem->CreateSound("sounds\\FireballShoot.wav", "FireballShoot");
+    m_pSoundSystem->CreateSound("sounds\\Hurt.wav", "Hurt");
+
+
+    //Everything else:
+    m_pEnemyGenerator = new EnemyGenerator();
+    m_pEnemyGenerator->Initialise(renderer);
 
     m_pPlayer = new BlockBloke();
     m_pPlayer->Initialise(renderer, m_pWorld);
@@ -125,9 +158,15 @@ SceneBlockBloke::Initialise(Renderer& renderer)
 void
 SceneBlockBloke::Process(float deltaTime, InputSystem& inputSystem)
 {
-    m_pPlayer->Process(deltaTime, inputSystem);
+    m_pSoundSystem->Process(deltaTime);
+
+    m_pPlayer->Process(deltaTime, inputSystem, *m_pSoundSystem);
     m_pWorld->Step(deltaTime, 6, 2);
-    m_pGroundSprite->Process(deltaTime);
+
+    m_pUiHandler->Process(deltaTime);
+
+    //Need to be checking if alive in enemy generator
+    m_pEnemyGenerator->Process(deltaTime, *m_pPlayer, *m_pSoundSystem);
 
 }
 
@@ -135,10 +174,12 @@ void
 SceneBlockBloke::Draw(Renderer& renderer)
 {
     m_pBackgroundSprite->Draw(renderer);
-    m_pCrate->Draw(renderer);
+    //m_pCrate->Draw(renderer);
 
+    m_pEnemyGenerator->Draw(renderer);
     m_pPlayer->Draw(renderer);
-    m_pGroundSprite->Draw(renderer);
+
+    m_pUiHandler->Draw(renderer);
 
     if (!debugDraw)
     {
@@ -149,20 +190,13 @@ SceneBlockBloke::Draw(Renderer& renderer)
     }
     
     m_pWorld->DebugDraw();
-
-
-
-
 }
 
 void
 SceneBlockBloke::DebugDraw()
 {
     ImGui::Text("Scene: Block Bloke");
-    
 
-    ImGui::InputFloat("Rotation speed", &m_rotationSpeed);
-
-    //m_pWorld->DebugDraw();
-    //m_pPlayer->DebugDraw();
+    ImGui::InputFloat("Rotation speed", &m_pPlayer->m_fRotationSpeed);
+    ImGui::InputFloat("Jump strength", &m_pPlayer->m_fJumpStrength);
 }

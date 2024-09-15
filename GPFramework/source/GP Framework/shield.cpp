@@ -20,6 +20,11 @@ Shield::~Shield()
 	delete debugColor;
 	debugColor = 0;
 
+	delete m_pFixture;
+	m_pFixture = 0;
+
+	delete m_pShape;
+	m_pShape = 0;
 }
 
 bool
@@ -54,7 +59,7 @@ Shield::Initialise(Renderer& renderer, b2World* world)
 	
 
 	b2PolygonShape polyShape;
-	polyShape.SetAsBox(10.0f, 5.0f);
+	polyShape.SetAsBox(2.5f, 1.0f);
 
 	b2FixtureDef fixDef;
 	fixDef.shape = &polyShape;
@@ -62,7 +67,9 @@ Shield::Initialise(Renderer& renderer, b2World* world)
 	fixDef.friction = 0.3f;
 
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
-	m_pBody->SetAngularDamping(1.0f);
+	m_pBody->SetAngularDamping(7.5f);
+	m_pBody->GetFixtureList()->SetSensor(true);
+
 
 	m_pBody->SetTransform(m_pBody->GetPosition(), 180);
 
@@ -72,8 +79,8 @@ Shield::Initialise(Renderer& renderer, b2World* world)
 void
 Shield::Process(float deltaTime, InputSystem& inputSystem)
 {
-	m_pSprite->SetY(m_pBody->GetPosition().y + 50.0f);
-	m_pSprite->SetX(m_pBody->GetPosition().x);
+	//m_pSprite->SetY(m_pBody->GetPosition().y + 50.0f);
+	//m_pSprite->SetX(m_pBody->GetPosition().x);
 	m_pBody->SetLinearVelocity(b2Vec2(0.0f, 0.0f));
 	m_pSprite->SetAngle(m_pBody->GetAngle());
 
@@ -91,6 +98,12 @@ Shield::Draw(Renderer& renderer)
 
 	
 
+}
+
+float
+Shield::GetShieldRot()
+{
+	return m_pBody->GetAngle();
 }
 
 void

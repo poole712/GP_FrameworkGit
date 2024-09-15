@@ -1,9 +1,7 @@
 #include "soundsystem.h"
-
 #include <string>
 #include <fmod.hpp>
 #include <fmod.h>
-
 #include "logmanager.h"
 
 SoundSystem::SoundSystem()
@@ -32,7 +30,6 @@ SoundSystem::Initialise()
 		LogManager::GetInstance().Log("Error setting up sound system (initialise)");
 	}
 	return true;
-
 }
 
 void
@@ -46,6 +43,9 @@ SoundSystem::PlaySound(const char* soundname)
 		FMOD::Channel* channel = nullptr;
 
 		m_pSoundSystem->playSound(sound, nullptr, false, &channel);
+
+		// Store the channel for volume control
+		m_Channels[soundname] = channel;
 	}
 	else
 	{
@@ -65,4 +65,21 @@ void
 SoundSystem::Process(float deltaTime)
 {
 	m_pSoundSystem->update();
+}
+
+// New function to change the volume of a sound
+void
+SoundSystem::SetVolume(const char* soundName, float volume)
+{
+	auto it = m_Channels.find(soundName);
+
+	if (it != m_Channels.end())
+	{
+		FMOD::Channel* channel = it->second;
+		channel->setVolume(volume);  // Set the volume
+	}
+	else
+	{
+		LogManager::GetInstance().Log("Failed to find channel for the given sound.");
+	}
 }

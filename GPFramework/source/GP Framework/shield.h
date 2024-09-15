@@ -25,6 +25,9 @@ public:
 	virtual void Process(float deltaTime, InputSystem& inputSystem) override;
 	virtual void Draw(Renderer& renderer) override;
 	void ShieldRotate(float dir);
+	void SetBodyPosition(float x, float y);
+
+	float GetShieldRot();
 
 protected:
 	void FireDelay(int milliseconds);

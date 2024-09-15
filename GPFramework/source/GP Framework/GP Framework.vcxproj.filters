@@ -153,6 +153,51 @@
     <ClCompile Include="b2GLDraw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="animatedentity.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="animatedentity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="coalwalker.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="coalwalker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="coalwalkermoving.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="coalwalkerattacking.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="coalwalkerattacking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wolfrunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fireball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bomb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enemygenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uihandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="explosion.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="explosion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -285,6 +330,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="glext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="coalwalkermoving.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wolfrunner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fireball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bomb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enemygenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uihandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

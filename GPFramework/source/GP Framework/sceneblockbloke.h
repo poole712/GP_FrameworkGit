@@ -11,7 +11,10 @@ class b2World;
 class Crate;
 class Sprite;
 class b2PolygonShape;
-class b2Color;
+class EnemyGenerator;
+class UiHandler;
+class Explosion;
+class SoundSystem;
 
 class MyDebugDraw;
 
@@ -38,19 +41,19 @@ public:
 
 protected:
 	BlockBloke* m_pPlayer;
+	EnemyGenerator* m_pEnemyGenerator;
+	UiHandler* m_pUiHandler;
 
+	SoundSystem* m_pSoundSystem;
 
 	float m_angle;
 	float m_rotationSpeed;
 
-
 	//Physics:
-	Sprite* m_pGroundSprite;
 	Sprite* m_pBackgroundSprite;
 	b2World* m_pWorld;
 	Crate* m_pCrate;
 	b2PolygonShape* m_pGround;
-	b2Color* debugColor;
 
 };
 #endif // ! _SCENECHECKERBOARDS_H

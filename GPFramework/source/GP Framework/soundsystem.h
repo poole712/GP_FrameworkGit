@@ -16,6 +16,7 @@ public:
 
 	void CreateSound(const char* filename, const char* soundName);
 	void PlaySound(const char* soundname);
+	void SetVolume(const char* soundName, float volume);
 
 protected:
 
@@ -29,6 +30,8 @@ public:
 protected:
 	FMOD::System* m_pSoundSystem;
 	std::map<const char*, FMOD::Sound*> m_Sounds;
+	std::map<const char*, FMOD::Channel*> m_Channels;
+
 
 private:
 

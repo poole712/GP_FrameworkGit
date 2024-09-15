@@ -358,7 +358,7 @@ void
 Renderer::CreateStaticText(const char* pText, int pointsize)
 {
 	Texture* pTexture = new Texture();
-	pTexture->LoadTextTexture(pText, "PROXON", pointsize);
+	pTexture->LoadTextTexture(pText, "friendlyscribbles.ttf", pointsize);
 	m_pTextureManager->AddTexture(pText, pTexture);
 }
 
