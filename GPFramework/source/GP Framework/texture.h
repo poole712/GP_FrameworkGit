@@ -18,7 +18,8 @@ public:
 	int GetHeight() const;
 	void LoadTextTexture(const char* text, const char* fontname, int pointsize);
 	void LoadSurfaceIntoTexture(SDL_Surface* pSurface);
-
+	void DebugDraw();
+	void FlipSurface(SDL_Surface* surface);
 protected:
 
 private:

@@ -238,21 +238,31 @@ Renderer::LogSdlError()
 	LogManager::GetInstance().Log(SDL_GetError());
 }
 
-bool 
-Renderer::SetupSpriteShader()
+bool Renderer::SetupSpriteShader()
 {
 	m_pSpriteShader = new Shader();
-
 	bool loaded = m_pSpriteShader->Load("shaders\\sprite.vert", "shaders\\sprite.frag");
 
 	m_pSpriteShader->SetActive();
 
-	float vertices[] =
+	/*float vertices[] =
 	{
-		-0.5f,  0.5f, 0.0f, 0.0f, 0.0f, // Top Left
-		 0.5f,  0.5f, 0.0f, 1.0f, 0.0f, // Top right
-		 0.5f, -0.5f, 0.0f, 1.0f, 1.0f, // Bottom right
-		-0.5f, -0.5f, 0.0f, 0.0f, 1.0f // Bottom left
+		-0.5f, 0.5f, 0.0f, 0.0f, 0.0f, // Top left
+		0.5f, 0.5f, 0.0f, 1.0f, 0.0f, // Top right
+		0.5f, -0.5f, 0.0f, 1.0f, 1.0f, // Bottom right
+		-0.5f, -0.5f, 0.0f, 0.0f, 1.0f    // Bottom left
+	};*/
+	// Vertices and texture coordinates
+	float vertices[] = {
+		// positions      // texture coords
+		// Top-left corner
+		-0.5f,  0.5f, 0.0f,  0.0f, 1.0f,   // Flipped texture coord
+		// Bottom-left corner
+		-0.5f, -0.5f, 0.0f,  0.0f, 0.0f,
+		// Bottom-right corner
+		 0.5f, -0.5f, 0.0f,  1.0f, 0.0f,
+		 // Top-right corner
+		  0.5f,  0.5f, 0.0f,  1.0f, 1.0f    // Flipped texture coord
 	};
 
 	unsigned int indices[] = { 0, 1, 2, 2, 3, 0 };
@@ -358,7 +368,7 @@ void
 Renderer::CreateStaticText(const char* pText, int pointsize)
 {
 	Texture* pTexture = new Texture();
-	pTexture->LoadTextTexture(pText, "friendlyscribbles.ttf", pointsize);
+	pTexture->LoadTextTexture(pText, "PROXON.ttf", pointsize);
 	m_pTextureManager->AddTexture(pText, pTexture);
 }
 

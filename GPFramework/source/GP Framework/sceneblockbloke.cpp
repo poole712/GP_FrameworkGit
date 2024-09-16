@@ -105,7 +105,6 @@ SceneBlockBloke::Initialise(Renderer& renderer)
     m_pBackgroundSprite = renderer.CreateSprite("sprites\\CastleBackground.png");
     m_pBackgroundSprite->SetX(640.0f);
     m_pBackgroundSprite->SetY(360.0f);
-    m_pBackgroundSprite->SetAngle(180.0f);
 
     m_pUiHandler = new UiHandler();
     m_pUiHandler->Initialise(renderer);
@@ -141,7 +140,6 @@ SceneBlockBloke::Initialise(Renderer& renderer)
     m_pSoundSystem->CreateSound("sounds\\FireballShoot.wav", "FireballShoot");
     m_pSoundSystem->CreateSound("sounds\\Hurt.wav", "Hurt");
 
-
     //Everything else:
     m_pEnemyGenerator = new EnemyGenerator();
     m_pEnemyGenerator->Initialise(renderer);
@@ -156,7 +154,7 @@ SceneBlockBloke::Initialise(Renderer& renderer)
 }
 
 void
-SceneBlockBloke::Process(float deltaTime, InputSystem& inputSystem)
+SceneBlockBloke::Process(float deltaTime, InputSystem& inputSystem, int& scene)
 {
     m_pSoundSystem->Process(deltaTime);
 

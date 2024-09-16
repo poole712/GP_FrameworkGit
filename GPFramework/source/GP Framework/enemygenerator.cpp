@@ -134,7 +134,7 @@ EnemyGenerator::Process(float deltaTime, BlockBloke& player, SoundSystem& soundS
 			bomb->Process(deltaTime);
 			if (bomb->IsCollidingWith(player))
 			{
-				if (player.GetShieldAngle() >= 130 && player.GetShieldAngle() <= 210)
+				if (player.GetShieldAngle() <= 40 && player.GetShieldAngle() >= -40)
 				{
 					bomb->Deflect();
 					soundSystem.PlaySound("Deflect");

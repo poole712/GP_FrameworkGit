@@ -25,7 +25,7 @@ public:
 	virtual ~SceneBlockBloke();
 
 	virtual bool Initialise(Renderer& renderer);
-	virtual void Process(float deltaTime, InputSystem& inputSystem);
+	virtual void Process(float deltaTime, InputSystem& inputSystem, int& scene);
 	virtual void Draw(Renderer& renderer);
 	virtual void DebugDraw();
 

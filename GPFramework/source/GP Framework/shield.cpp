@@ -38,8 +38,6 @@ Shield::Initialise(Renderer& renderer, b2World* world)
 {
 	m_pSprite = renderer.CreateSprite("sprites\\shield.png");
 	m_pSprite->SetScale(0.5f);
-	m_fCurrentRotation = 180.0f;
-	Rotate(180.0f);
 
 	const int EDGE_LIMIT = m_pSprite->GetWidth();
 	const int SCREEN_WIDTH = renderer.GetWidth();
@@ -71,7 +69,7 @@ Shield::Initialise(Renderer& renderer, b2World* world)
 	m_pBody->GetFixtureList()->SetSensor(true);
 
 
-	m_pBody->SetTransform(m_pBody->GetPosition(), 180);
+	m_pBody->SetTransform(m_pBody->GetPosition(), 0);
 
 	return true;
 }

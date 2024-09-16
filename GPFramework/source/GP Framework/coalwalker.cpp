@@ -111,14 +111,14 @@ CoalWalker::Process(float deltaTime, BlockBloke& player, SoundSystem& soundSyste
 				}
 				if (fireball->IsCollidingWith(player))
 				{
-					if ((player.GetShieldAngle() > 200 && player.GetShieldAngle() < 360) && (m_bGoingLeft))
+					if ((player.GetShieldAngle() < 140 && player.GetShieldAngle() > 30) && (m_bGoingLeft))
 					{
 						fireball->Deflect();
 						soundSystem.PlaySound("Deflect");
 						fireball->SetPosition(fireball->GetPosition().x - 15, fireball->GetPosition().y);
 						return;
 					}
-					if ((player.GetShieldAngle() > 0 && player.GetShieldAngle() < 140) && (!m_bGoingLeft))
+					if ((player.GetShieldAngle() < -30 && player.GetShieldAngle() > -140) && (!m_bGoingLeft))
 					{
 						fireball->Deflect();
 						soundSystem.PlaySound("Deflect");

@@ -19,7 +19,7 @@ public:
 	bool DoGameLoop();
 	void ToggleDebugWindow();
 	void Quit();
-
+	void SwitchScene(int scene);
 protected:
 	void Process(float deltaTime);
 	void Draw(Renderer& renderer);

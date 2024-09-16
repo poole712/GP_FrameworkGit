@@ -68,21 +68,15 @@ BlockBloke::Initialise(Renderer& renderer, b2World* world)
 
 	m_pLeftR1 = renderer.CreateSprite("sprites\\RotateLeftBB1.png");
 	m_pLeftR1->SetScale(1.25f);
-	m_pLeftR1->SetAngle(180.0f);
 
 	m_pLeftR2 = renderer.CreateSprite("sprites\\RotateLeftBB2.png");
 	m_pLeftR2->SetScale(1.25f);
-	m_pLeftR2->SetAngle(180.0f);
 
 	m_pRightR1 = renderer.CreateSprite("sprites\\RotateRightBB1.png");
 	m_pRightR1->SetScale(1.25f);
-	m_pRightR1->SetAngle(180.0f);
 
 	m_pRightR2 = renderer.CreateSprite("sprites\\RotateRightBB2.png");
 	m_pRightR2->SetScale(1.25f);
-	m_pRightR2->SetAngle(180.0f);
-
-	Rotate(180.0f);
 
 	//Physics
 	b2BodyDef bodyDef;
@@ -159,7 +153,7 @@ BlockBloke::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soun
 	ButtonState rightArrowState = (inputSystem.GetKeyState(SDL_SCANCODE_RIGHT));
 
 
-	if (leftArrowState == BS_HELD && rightArrowState == BS_NEAUTRAL && m_pShield->GetShieldRot() < 240)
+	if (leftArrowState == BS_HELD && rightArrowState == BS_NEAUTRAL && m_pShield->GetShieldRot() < 90)
 	{
 		m_pShield->ShieldRotate(m_fRotationSpeed);
 		if (m_bCanPlayRotSfx)
@@ -169,7 +163,7 @@ BlockBloke::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soun
 			m_fTimeSinceRotSfxPlayed = 0;
 		}
 	}
-	if (rightArrowState == BS_HELD && leftArrowState == BS_NEAUTRAL && m_pShield->GetShieldRot() > 120)
+	if (rightArrowState == BS_HELD && leftArrowState == BS_NEAUTRAL && m_pShield->GetShieldRot() > -90)
 	{
 		m_pShield->ShieldRotate(-m_fRotationSpeed);
 		if (m_bCanPlayRotSfx)
@@ -291,24 +285,28 @@ BlockBloke::Draw(Renderer& renderer)
 {
 	float rot = m_pShield->GetShieldRot();
 
+	//std::string logMessage = "Shield rotation: " + std::to_string(rot);
+	//LogManager::GetInstance().Log(logMessage.c_str());
+
+
 	m_pLeftExplosion->Draw(renderer);
 	m_pRightExplosion->Draw(renderer);
 	m_pTopExplosion->Draw(renderer);
 
 
-	if (rot > 200 && rot < 240)
+	if (rot > -40 && rot < -10)
 	{
 		m_pRightR1->Draw(renderer);
 	}
-	else if (rot > 240 && rot < 360)
+	else if (rot > -180 && rot < -40)
 	{
 		m_pRightR2->Draw(renderer);
 	}
-	else if (rot < 140 && rot > 100)
+	else if (rot > 10 && rot < 40)
 	{
 		m_pLeftR1->Draw(renderer);
 	}
-	else if (rot < 100 && rot > 0)
+	else if (rot < 180 && rot > 40)
 	{
 		m_pLeftR2->Draw(renderer);
 	}

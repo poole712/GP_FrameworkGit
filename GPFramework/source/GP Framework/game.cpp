@@ -106,6 +106,14 @@ Game::Initialise()
 	return true;
 }
 
+void 
+Game::SwitchScene(int scene)
+{
+	m_iCurrentScene = scene;
+}
+
+
+
 bool 
 Game::DoGameLoop()
 {
@@ -151,7 +159,7 @@ Game::Process(float deltaTime)
 {
 	ProcessFrameCounting(deltaTime);
 	// TODO: Add game objects to process here!
-	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem);
+	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem, m_iCurrentScene);
 
 	
 
