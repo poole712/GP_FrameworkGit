@@ -1,42 +1,78 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\",
+  "WorkspaceRootPath": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\sceneblockbloke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\scenebbmainmenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\uihandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\uihandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneblockbloke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\sceneblockbloke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\sceneblockbloke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\sprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneblockbloke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\sceneblockbloke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\blockbloke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\blockbloke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\blockbloke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\blockbloke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\blockbloke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\laserbullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\laserbullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\scenebbmainmenu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\soundsystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\soundsystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\soundsystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\soundsystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\blockbloke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\blockbloke.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenecheckerboards.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\scenecheckerboards.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebox2dtest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\scenebox2dtest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\fireball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\fireball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\shield.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\shield.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\laserbullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\laserbullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\soundsystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\soundsystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\soundsystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\soundsystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,124 +82,231 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "sceneblockbloke.cpp",
-              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\sceneblockbloke.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\sceneblockbloke.cpp",
-              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\sceneblockbloke.cpp",
-              "RelativeToolTip": "GP Framework\\sceneblockbloke.cpp",
-              "ViewState": "AQIAAEQAAAAAAAAAAADwv1wAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-28T07:39:58.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "soundsystem.cpp",
-              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\soundsystem.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\soundsystem.cpp",
-              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\soundsystem.cpp",
-              "RelativeToolTip": "GP Framework\\soundsystem.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-28T07:29:38.32Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "soundsystem.h",
-              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\soundsystem.h",
-              "RelativeDocumentMoniker": "GP Framework\\soundsystem.h",
-              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\soundsystem.h",
-              "RelativeToolTip": "GP Framework\\soundsystem.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-28T07:29:19.314Z",
-              "EditorCaption": ""
+              "Title": "blockbloke.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\blockbloke.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\blockbloke.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\blockbloke.cpp",
+              "RelativeToolTip": "GP Framework\\blockbloke.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-28T07:13:46.407Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "laserbullet.cpp",
-              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\laserbullet.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\laserbullet.cpp",
-              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\laserbullet.cpp",
-              "RelativeToolTip": "GP Framework\\laserbullet.cpp",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAiwC4AAAAPAAAA",
+              "DocumentIndex": 9,
+              "Title": "blockbloke.h",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\blockbloke.h",
+              "RelativeDocumentMoniker": "GP Framework\\blockbloke.h",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\blockbloke.h",
+              "RelativeToolTip": "GP Framework\\blockbloke.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-28T07:09:49.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "uihandler.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\uihandler.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\uihandler.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\uihandler.cpp",
+              "RelativeToolTip": "GP Framework\\uihandler.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-28T07:26:46.128Z",
+              "WhenOpened": "2024-09-16T05:49:10.987Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "blockbloke.cpp",
-              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\blockbloke.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\blockbloke.cpp",
-              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\blockbloke.cpp",
-              "RelativeToolTip": "GP Framework\\blockbloke.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAASAAAA",
+              "Title": "sceneblockbloke.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneblockbloke.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\sceneblockbloke.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneblockbloke.cpp",
+              "RelativeToolTip": "GP Framework\\sceneblockbloke.cpp",
+              "ViewState": "AQIAAGgAAAAAAAAAAAArwHwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-28T07:13:46.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T07:39:58.934Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "blockbloke.h",
-              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\blockbloke.h",
-              "RelativeDocumentMoniker": "GP Framework\\blockbloke.h",
-              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\blockbloke.h",
-              "RelativeToolTip": "GP Framework\\blockbloke.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAgAAAA",
+              "DocumentIndex": 5,
+              "Title": "sceneblockbloke.h",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneblockbloke.h",
+              "RelativeDocumentMoniker": "GP Framework\\sceneblockbloke.h",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneblockbloke.h",
+              "RelativeToolTip": "GP Framework\\sceneblockbloke.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-28T07:09:49.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T06:48:33.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "scenebbmainmenu.h",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.h",
+              "RelativeDocumentMoniker": "GP Framework\\scenebbmainmenu.h",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.h",
+              "RelativeToolTip": "GP Framework\\scenebbmainmenu.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACAAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-16T05:52:36.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "scenecheckerboards.h",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenecheckerboards.h",
+              "RelativeDocumentMoniker": "GP Framework\\scenecheckerboards.h",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenecheckerboards.h",
+              "RelativeToolTip": "GP Framework\\scenecheckerboards.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAwAkAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-16T05:52:50.491Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "entity.cpp",
-              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\entity.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\entity.cpp",
               "RelativeDocumentMoniker": "GP Framework\\entity.cpp",
-              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\entity.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\entity.cpp",
               "RelativeToolTip": "GP Framework\\entity.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAA5AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADoAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-28T07:08:29.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-16T06:15:24.367Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "entity.h",
-              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\entity.h",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\entity.h",
               "RelativeDocumentMoniker": "GP Framework\\entity.h",
-              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\entity.h",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\entity.h",
               "RelativeToolTip": "GP Framework\\entity.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-28T07:07:52.521Z",
+              "WhenOpened": "2024-08-28T07:07:52.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "fireball.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\fireball.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\fireball.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\fireball.cpp",
+              "RelativeToolTip": "GP Framework\\fireball.cpp",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAEQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-16T05:37:09.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "scenebox2dtest.h",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebox2dtest.h",
+              "RelativeDocumentMoniker": "GP Framework\\scenebox2dtest.h",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebox2dtest.h",
+              "RelativeToolTip": "GP Framework\\scenebox2dtest.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-16T05:52:48.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "shield.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\shield.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\shield.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\shield.cpp",
+              "RelativeToolTip": "GP Framework\\shield.cpp",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEUAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-16T05:35:42.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "soundsystem.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\soundsystem.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\soundsystem.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\soundsystem.cpp",
+              "RelativeToolTip": "GP Framework\\soundsystem.cpp",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-28T07:29:38.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "soundsystem.h",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\soundsystem.h",
+              "RelativeDocumentMoniker": "GP Framework\\soundsystem.h",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\soundsystem.h",
+              "RelativeToolTip": "GP Framework\\soundsystem.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-28T07:29:19.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "laserbullet.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\laserbullet.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\laserbullet.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\laserbullet.cpp",
+              "RelativeToolTip": "GP Framework\\laserbullet.cpp",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwC4AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-28T07:26:46.128Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "scenebbmainmenu.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\scenebbmainmenu.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.cpp",
+              "RelativeToolTip": "GP Framework\\scenebbmainmenu.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-16T06:08:56.739Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "sceneblockbloke.h",
-              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\sceneblockbloke.h",
-              "RelativeDocumentMoniker": "GP Framework\\sceneblockbloke.h",
-              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GPFramework\\source\\GP Framework\\sceneblockbloke.h",
-              "RelativeToolTip": "GP Framework\\sceneblockbloke.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-28T06:48:33.624Z",
-              "EditorCaption": ""
+              "DocumentIndex": 4,
+              "Title": "sprite.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sprite.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\sprite.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sprite.cpp",
+              "RelativeToolTip": "GP Framework\\sprite.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-16T06:05:23.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "game.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\game.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.cpp",
+              "RelativeToolTip": "GP Framework\\game.cpp",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAFwAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-16T06:02:06.232Z"
             }
           ]
         }

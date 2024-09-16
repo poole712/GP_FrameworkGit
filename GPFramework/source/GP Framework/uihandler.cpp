@@ -18,10 +18,10 @@ UiHandler::~UiHandler()
 
 bool UiHandler::Initialise(Renderer& renderer)
 {
-    renderer.CreateStaticText("87", 72);
-    testWord = renderer.CreateSprite("87");
-    //testWord->SetX(640);
-    //testWord->SetY(500);
+    renderer.CreateStaticText("Hello", 72);
+    testWord = renderer.CreateSprite("Hello");
+    testWord->SetX(640);
+    testWord->SetY(500);
 
     for (int i = 0; i < 10; i++)
     {

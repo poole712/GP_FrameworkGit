@@ -109,13 +109,16 @@ Texture::LoadTextTexture(const char* text, const char* fontname, int pointsize)
 }
 
 
-void
+void 
 Texture::LoadSurfaceIntoTexture(SDL_Surface* pSurface)
 {
 	if (pSurface)
 	{
-		m_iWidth = pSurface->w; m_iHeight = pSurface->h;
-		int bytesPerPixel = pSurface->format->BytesPerPixel; 
+
+		m_iWidth = pSurface->w;
+		m_iHeight = pSurface->h;
+
+		int bytesPerPixel = pSurface->format->BytesPerPixel;
 		unsigned int format = 0;
 
 		if (bytesPerPixel == 3)
@@ -127,11 +130,15 @@ Texture::LoadSurfaceIntoTexture(SDL_Surface* pSurface)
 			format = GL_RGBA;
 		}
 
-		glGenTextures(1, &m_uiTextureId); glBindTexture(GL_TEXTURE_2D, m_uiTextureId);
-		glTexImage2D(GL_TEXTURE_2D, 0, format, m_iWidth, m_iHeight, 0, format, GL_UNSIGNED_BYTE, pSurface->pixels);
-		SDL_FreeSurface(pSurface); pSurface = 0;
+		glGenTextures(1, &m_uiTextureId);
+		glBindTexture(GL_TEXTURE_2D, m_uiTextureId);
 
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); 
+		glTexImage2D(GL_TEXTURE_2D, 0, format, m_iWidth, m_iHeight, 0, format, GL_UNSIGNED_BYTE, pSurface->pixels);
+
+		SDL_FreeSurface(pSurface);
+		pSurface = 0;
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	}
 }

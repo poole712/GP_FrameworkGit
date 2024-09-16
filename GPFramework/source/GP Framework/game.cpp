@@ -8,6 +8,7 @@
 #include "stdlib.h"
 #include "time.h"
 #include "sceneblockbloke.h"
+#include "scenebbmainmenu.h"
 #include "imgui/imgui_impl_sdl2.h"
 #include "iniparser.h"
 #include "inputsystem.h"
@@ -85,9 +86,15 @@ Game::Initialise()
 
 	
 	Scene* pScene = 0;
-	pScene = new SceneBlockBloke();
+	pScene = new SceneBBMainMenu();
 	pScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pScene);
+
+	Scene* pGameScene = 0;
+	pGameScene = new SceneBlockBloke();
+	pGameScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pGameScene);
+
 	m_iCurrentScene = 0;
 	
 

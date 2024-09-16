@@ -67,7 +67,7 @@ Shield::Initialise(Renderer& renderer, b2World* world)
 	fixDef.friction = 0.3f;
 
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
-	m_pBody->SetAngularDamping(7.5f);
+	m_pBody->SetAngularDamping(5.0f);
 	m_pBody->GetFixtureList()->SetSensor(true);
 
 

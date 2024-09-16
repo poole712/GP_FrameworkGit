@@ -186,6 +186,8 @@
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="sceneballgame.cpp" />
+    <ClCompile Include="scenebbmainmenu.cpp" />
+    <ClCompile Include="scenebbmainmenu.h" />
     <ClCompile Include="sceneblockbloke.cpp" />
     <ClCompile Include="scenebouncingballs.h" />
     <ClCompile Include="scenebouncingballs.cpp" />

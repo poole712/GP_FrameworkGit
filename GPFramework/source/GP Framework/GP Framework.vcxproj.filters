@@ -198,6 +198,12 @@
     <ClCompile Include="explosion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scenebbmainmenu.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scenebbmainmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">

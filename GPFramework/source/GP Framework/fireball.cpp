@@ -31,7 +31,7 @@ Fireball::Initialise(Renderer& renderer)
 	}
 	else 
 	{
-		//Rotate(180.0f);
+		m_pASprite->SetAngle(180.0f);
 		m_velocity.x = -250.0f;
 	}
 
@@ -60,7 +60,14 @@ void
 Fireball::Deflect()
 {
 	m_velocity.x = m_velocity.x * -1;
-	Rotate(180.0);
+	if (m_bGoingRight)
+	{
+		m_pASprite->SetAngle(180.0f);
+	}
+	else
+	{
+		m_pASprite->SetAngle(360.0f);
+	}
 }
 
 void
