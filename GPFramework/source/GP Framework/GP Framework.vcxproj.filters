@@ -93,9 +93,6 @@
     <ClCompile Include="entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="invader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="particle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -108,9 +105,6 @@
     <ClCompile Include="soundsystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="shield.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -118,9 +112,6 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="animatedentity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="enemygenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="uihandler.cpp">
@@ -231,9 +222,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="enemygenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="uihandler.h">

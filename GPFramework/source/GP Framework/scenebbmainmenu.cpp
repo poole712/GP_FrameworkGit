@@ -21,7 +21,7 @@ SceneBBMainMenu::~SceneBBMainMenu()
 bool 
 SceneBBMainMenu::Initialise(Renderer& renderer)
 {
-	m_pTitleSprite = renderer.CreateSprite("sprites\\MenuTitle.png");
+	m_pTitleSprite = renderer.CreateSprite("sprites\\anim8strip.png");
 	m_pTitleSprite->SetScale(1.0f);
 	m_pTitleSprite->SetY(240);
 	m_pTitleSprite->SetX(640);

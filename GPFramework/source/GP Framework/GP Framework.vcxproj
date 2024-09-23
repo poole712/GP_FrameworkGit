@@ -149,7 +149,6 @@
     <ClCompile Include="animatedentity.h" />
     <ClCompile Include="animatedsprite.cpp" />
     <ClCompile Include="enemy.cpp" />
-    <ClCompile Include="enemygenerator.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="explosion.cpp" />
     <ClCompile Include="explosion.h" />
@@ -163,7 +162,6 @@
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="iniparser.cpp" />
     <ClCompile Include="inputsystem.cpp" />
-    <ClCompile Include="invader.cpp" />
     <ClCompile Include="logmanager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix4.cpp" />
@@ -174,7 +172,6 @@
     <ClCompile Include="scenebbmainmenu.cpp" />
     <ClCompile Include="scenebbmainmenu.h" />
     <ClCompile Include="shader.cpp" />
-    <ClCompile Include="shield.cpp" />
     <ClCompile Include="soundsystem.cpp" />
     <ClCompile Include="sprite.cpp" />
     <ClCompile Include="texture.cpp" />
@@ -187,7 +184,6 @@
   <ItemGroup>
     <ClInclude Include="animatedsprite.h" />
     <ClInclude Include="enemy.h" />
-    <ClInclude Include="enemygenerator.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="glext.h" />
