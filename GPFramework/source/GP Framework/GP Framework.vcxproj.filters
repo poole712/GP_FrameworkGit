@@ -57,19 +57,7 @@
     <ClCompile Include="scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scenecheckerboards.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="scenebouncingballs.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="vector2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ball.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="scenebouncingballs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="imgui\imgui.cpp">
@@ -99,22 +87,10 @@
     <ClCompile Include="xboxcontroller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sceneballgame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="animatedsprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="scenespaceinvadersclone.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lasercannon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="laserbullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="invader.cpp">
@@ -132,25 +108,7 @@
     <ClCompile Include="soundsystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scenebox2dtest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="crate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="b2debugdraw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="blockbloke.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="sceneblockbloke.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="shield.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="b2GLDraw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="enemy.cpp">
@@ -160,30 +118,6 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="animatedentity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="coalwalker.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="coalwalker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="coalwalkermoving.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="coalwalkerattacking.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="coalwalkerattacking.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="wolfrunner.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fireball.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bomb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="enemygenerator.cpp">
@@ -236,16 +170,10 @@
     <ClInclude Include="scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="scenecheckerboards.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="inlinehelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="vector2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="imgui\imconfig.h">
@@ -281,25 +209,10 @@
     <ClInclude Include="xboxcontroller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sceneballgame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="animatedsprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="scenespaceinvadersclone.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="lasercannon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="laserbullet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="invader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="particle.h">
@@ -314,43 +227,10 @@
     <ClInclude Include="soundsystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="scenebox2dtest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="crate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="b2debugdraw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="sceneblockbloke.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="blockbloke.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="shield.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="b2GLDraw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="glext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="coalwalkermoving.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="wolfrunner.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fireball.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bomb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="enemygenerator.h">

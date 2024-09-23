@@ -148,23 +148,11 @@
     <ClCompile Include="animatedentity.cpp" />
     <ClCompile Include="animatedentity.h" />
     <ClCompile Include="animatedsprite.cpp" />
-    <ClCompile Include="b2debugdraw.cpp" />
-    <ClCompile Include="b2GLDraw.cpp" />
-    <ClCompile Include="ball.cpp" />
-    <ClCompile Include="blockbloke.cpp" />
-    <ClCompile Include="bomb.cpp" />
-    <ClCompile Include="coalwalker.cpp" />
-    <ClCompile Include="coalwalker.h" />
-    <ClCompile Include="coalwalkerattacking.cpp" />
-    <ClCompile Include="coalwalkerattacking.h" />
-    <ClCompile Include="coalwalkermoving.cpp" />
-    <ClCompile Include="crate.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="enemygenerator.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="explosion.cpp" />
     <ClCompile Include="explosion.h" />
-    <ClCompile Include="fireball.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
@@ -176,8 +164,6 @@
     <ClCompile Include="iniparser.cpp" />
     <ClCompile Include="inputsystem.cpp" />
     <ClCompile Include="invader.cpp" />
-    <ClCompile Include="laserbullet.cpp" />
-    <ClCompile Include="lasercannon.cpp" />
     <ClCompile Include="logmanager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix4.cpp" />
@@ -185,15 +171,8 @@
     <ClCompile Include="particleemitter.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="scene.cpp" />
-    <ClCompile Include="sceneballgame.cpp" />
     <ClCompile Include="scenebbmainmenu.cpp" />
     <ClCompile Include="scenebbmainmenu.h" />
-    <ClCompile Include="sceneblockbloke.cpp" />
-    <ClCompile Include="scenebouncingballs.h" />
-    <ClCompile Include="scenebouncingballs.cpp" />
-    <ClCompile Include="scenebox2dtest.cpp" />
-    <ClCompile Include="scenecheckerboards.cpp" />
-    <ClCompile Include="scenespaceinvadersclone.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="shield.cpp" />
     <ClCompile Include="soundsystem.cpp" />
@@ -203,22 +182,13 @@
     <ClCompile Include="uihandler.cpp" />
     <ClCompile Include="vector2.cpp" />
     <ClCompile Include="vertexarray.cpp" />
-    <ClCompile Include="wolfrunner.cpp" />
     <ClCompile Include="xboxcontroller.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedsprite.h" />
-    <ClInclude Include="b2debugdraw.h" />
-    <ClInclude Include="b2GLDraw.h" />
-    <ClInclude Include="ball.h" />
-    <ClInclude Include="blockbloke.h" />
-    <ClInclude Include="bomb.h" />
-    <ClInclude Include="coalwalkermoving.h" />
-    <ClInclude Include="crate.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemygenerator.h" />
     <ClInclude Include="entity.h" />
-    <ClInclude Include="fireball.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="glext.h" />
     <ClInclude Include="imgui\imconfig.h" />
@@ -233,22 +203,13 @@
     <ClInclude Include="iniparser.h" />
     <ClInclude Include="inlinehelper.h" />
     <ClInclude Include="inputsystem.h" />
-    <ClInclude Include="invader.h" />
-    <ClInclude Include="laserbullet.h" />
-    <ClInclude Include="lasercannon.h" />
     <ClInclude Include="logmanager.h" />
     <ClInclude Include="matrix4.h" />
     <ClInclude Include="particle.h" />
     <ClInclude Include="particleemitter.h" />
     <ClInclude Include="renderer.h" />
     <ClInclude Include="scene.h" />
-    <ClInclude Include="sceneballgame.h" />
-    <ClInclude Include="sceneblockbloke.h" />
-    <ClInclude Include="scenebox2dtest.h" />
-    <ClInclude Include="scenecheckerboards.h" />
-    <ClInclude Include="scenespaceinvadersclone.h" />
     <ClInclude Include="shader.h" />
-    <ClInclude Include="shield.h" />
     <ClInclude Include="soundsystem.h" />
     <ClInclude Include="sprite.h" />
     <ClInclude Include="texture.h" />
@@ -256,7 +217,6 @@
     <ClInclude Include="uihandler.h" />
     <ClInclude Include="vector2.h" />
     <ClInclude Include="vertexarray.h" />
-    <ClInclude Include="wolfrunner.h" />
     <ClInclude Include="xboxcontroller.h" />
   </ItemGroup>
   <ItemGroup>
