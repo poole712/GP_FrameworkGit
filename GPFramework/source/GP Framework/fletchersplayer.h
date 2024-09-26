@@ -1,0 +1,59 @@
+#ifndef _FLETCHERSPLAYER_H
+#define _FLETCHERSPLAYER_H
+
+#include "entity.h"
+#include "vector"
+
+class Renderer;
+class Sprite;
+class SoundSystem;
+class Shield;
+class b2World;
+class b2Body;
+class b2PolygonShape;
+class b2Fixture;
+class Explosion;
+class SoundSystem;
+
+
+class FletchersPlayer : public Entity
+{
+public:
+	FletchersPlayer();
+	~FletchersPlayer();
+
+	virtual bool Initialise(Renderer& renderer) override;
+	bool Initialise(Renderer& renderer, b2World* world);
+	void Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem);
+	virtual void Process(float deltaTime, InputSystem& inputSystem) override;
+	virtual void Draw(Renderer& renderer) override;
+
+	float m_fJumpStrength;
+
+protected:
+	void Jump(SoundSystem& soundSystem);
+
+private:
+	FletchersPlayer(const FletchersPlayer& blockBloke);
+	FletchersPlayer& operator=(const FletchersPlayer& blockBloke);
+
+public:
+
+protected:
+	b2Body* m_pBody;
+	b2PolygonShape* m_pShape;
+	b2Fixture* m_pFixture;
+
+	bool m_bHurt;
+
+	bool m_bJumping;
+
+	float m_fTimeSinceJumpStarted;
+	float m_fJumpLength;
+
+	static float sm_fBoundaryWidth;
+	static float sm_fBoundaryHeight;
+
+};
+
+#endif // !_BLOCKBLOKE
