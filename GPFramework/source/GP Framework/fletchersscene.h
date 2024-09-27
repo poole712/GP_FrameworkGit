@@ -3,11 +3,16 @@
 
 #include "scene.h"
 
+#include <vector>
+
 class Renderer;
 class Sprite;
 class InputSystem;
 class UiHandler;
-class Entity;
+class FletchersPlayer;
+class FletchsTestBlock;
+class SoundSystem;
+class b2World;
 
 class FletchersScene : public Scene
 {
@@ -29,7 +34,13 @@ private:
 public:
 
 protected:
-	Entity* m_pPlayer;
+	FletchersPlayer* m_pPlayer;
+
+	std::vector<FletchsTestBlock*> m_pTestBlocks;
+
+	SoundSystem* m_pSoundSystem;
+	b2World* m_pWorld;
+
 
 };
 #endif // ! _SCENECHECKERBOARDS_H

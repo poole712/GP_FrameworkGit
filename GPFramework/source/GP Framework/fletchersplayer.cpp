@@ -31,7 +31,6 @@ FletchersPlayer::~FletchersPlayer()
 bool
 FletchersPlayer::Initialise(Renderer& renderer)
 {
-	m_pSprite = renderer.CreateSprite("sprites\\ball.png");
 
 	return true;
 }
@@ -39,28 +38,28 @@ FletchersPlayer::Initialise(Renderer& renderer)
 bool
 FletchersPlayer::Initialise(Renderer& renderer, b2World* world)
 {
+	m_vVelocity.Set(100.0f, 0);
 	m_fJumpStrength = -600.0f;
 
 	//Setting up sprites
-	m_pSprite = renderer.CreateSprite("sprites\\UprightBB.png");
-	m_pSprite->SetScale(1.25f);
+	m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
 
 	//Physics
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_dynamicBody;
 
-	bodyDef.position.Set(640.0f, 600.0f);
+	bodyDef.position.Set(650.0f, 850.0f);
 	m_pBody = world->CreateBody(&bodyDef);
-	m_pBody->SetGravityScale(2.5f);
+	m_pBody->SetLinearVelocity(m_vVelocity);
 
 	b2PolygonShape polyShape;
-	polyShape.SetAsBox(1.0f, 1.0f);
+	polyShape.SetAsBox(30.0f, 30.0f);
 	m_pShape = &polyShape;
 
 	b2FixtureDef fixDef;
 	fixDef.shape = &polyShape;
 	fixDef.density = 0.5;
-	fixDef.friction = 0.3f;
+	fixDef.friction = 0.1f;
 
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
 
@@ -75,6 +74,8 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 
 	m_position.x = m_pBody->GetPosition().x;
 	m_position.y = m_pBody->GetPosition().y;
+
+	m_pSprite->SetAngle(m_pBody->GetAngle());
 
 	ButtonState spaceState = (inputSystem.GetKeyState(SDL_SCANCODE_SPACE));
 

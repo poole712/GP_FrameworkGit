@@ -2,6 +2,8 @@
 #define _FLETCHERSPLAYER_H
 
 #include "entity.h"
+#include "box2d/box2d.h"
+
 #include "vector"
 
 class Renderer;
@@ -11,6 +13,7 @@ class Shield;
 class b2World;
 class b2Body;
 class b2PolygonShape;
+class b2Vec2;
 class b2Fixture;
 class Explosion;
 class SoundSystem;
@@ -43,6 +46,7 @@ protected:
 	b2Body* m_pBody;
 	b2PolygonShape* m_pShape;
 	b2Fixture* m_pFixture;
+	b2Vec2 m_vVelocity;
 
 	bool m_bHurt;
 

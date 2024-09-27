@@ -135,6 +135,9 @@
     <ClCompile Include="fletchersplayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fletchstestblock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -237,6 +240,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="fletchersplayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fletchstestblock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

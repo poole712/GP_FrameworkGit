@@ -9,9 +9,22 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v17
   explosion.cpp
   explosion.h
   fletchersplayer.cpp
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.h(16,13): warning C4099: 'b2Vec2': type name first seen using 'struct' now seen using 'class'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.2.4.1.5\build\native\include\box2d\b2_world_callbacks.h(29,8): message : see declaration of 'b2Vec2'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.cpp(72,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
 C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.cpp(73,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.cpp(74,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
   fletchersscene.cpp
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.h(16,13): warning C4099: 'b2Vec2': type name first seen using 'struct' now seen using 'class'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.2.4.1.5\build\native\include\box2d\b2_world_callbacks.h(29,8): message : see declaration of 'b2Vec2'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.h(9,13): warning C4099: 'b2Vec2': type name first seen using 'struct' now seen using 'class'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.h(16,7): message : see declaration of 'b2Vec2'
+  fletchstestblock.cpp
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.h(9,13): warning C4099: 'b2Vec2': type name first seen using 'struct' now seen using 'class'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.2.4.1.5\build\native\include\box2d\b2_world_callbacks.h(29,8): message : see declaration of 'b2Vec2'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.cpp(55,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.cpp(56,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.cpp(70,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.cpp(71,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
   game.cpp
   imgui.cpp
   imgui_demo.cpp
@@ -22,8 +35,8 @@ C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framew
   imgui_widgets.cpp
   iniparser.cpp
   inputsystem.cpp
-  logmanager.cpp
   Compiling...
+  logmanager.cpp
   main.cpp
   matrix4.cpp
   particle.cpp
@@ -52,7 +65,7 @@ C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framew
 ..\..\temp\scenebbmainmenu.obj : warning LNK4042: object specified more than once; extras ignored
   Generating code
   Previous IPDB not found, fall back to full compilation.
-  All 2267 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 2489 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   GP Framework.vcxproj -> C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\game\BlockBloke.exe
   C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.redist.2.4.1.5\build\native\bin\Win32\Release\box2d.dll
