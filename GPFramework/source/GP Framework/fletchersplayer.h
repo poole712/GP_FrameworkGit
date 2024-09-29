@@ -31,6 +31,8 @@ public:
 	virtual void Process(float deltaTime, InputSystem& inputSystem) override;
 	virtual void Draw(Renderer& renderer) override;
 
+	void CreateBoxWithEdges(b2Body* body, float width, float height);
+
 	float m_fJumpStrength;
 
 protected:
@@ -47,13 +49,13 @@ protected:
 	b2PolygonShape* m_pShape;
 	b2Fixture* m_pFixture;
 	b2Vec2 m_vVelocity;
+	b2Vec2 m_vJump;
 
 	bool m_bHurt;
 
 	bool m_bJumping;
 
 	float m_fTimeSinceJumpStarted;
-	float m_fJumpLength;
 
 	static float sm_fBoundaryWidth;
 	static float sm_fBoundaryHeight;

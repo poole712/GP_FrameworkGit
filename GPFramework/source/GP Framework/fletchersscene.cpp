@@ -42,15 +42,15 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	m_pPlayer->Initialise(renderer, m_pWorld);
 
 	float currentX = 750;
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		FletchsTestBlock* newBlock = new FletchsTestBlock(currentX, 1000);
-		currentX += 100;
+		currentX += 125;
 		m_pTestBlocks.push_back(newBlock);
 	}
 	for (FletchsTestBlock* block : m_pTestBlocks)
 	{
-		block->Initialise(renderer);
+		block->Initialise(m_pWorld ,renderer);
 	}
 
 	return false;
@@ -58,7 +58,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 
 void FletchersScene::Process(float deltaTime, InputSystem& inputSystem, int& scene)
 {
-	m_pWorld->Step(deltaTime, 6, 2);
+	m_pWorld->Step(deltaTime, 5, 8);
 	m_pSoundSystem->Process(deltaTime);
 	m_pPlayer->Process(deltaTime, inputSystem, *m_pSoundSystem);
 	for (FletchsTestBlock* block : m_pTestBlocks)

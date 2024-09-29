@@ -38,9 +38,7 @@ FletchersPlayer::Initialise(Renderer& renderer)
 bool
 FletchersPlayer::Initialise(Renderer& renderer, b2World* world)
 {
-	m_vVelocity.Set(100.0f, 0);
-	m_fJumpStrength = -600.0f;
-
+	m_vJump = b2Vec2(0, -50000.0f);
 	//Setting up sprites
 	m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
 
@@ -50,7 +48,8 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World* world)
 
 	bodyDef.position.Set(650.0f, 850.0f);
 	m_pBody = world->CreateBody(&bodyDef);
-	m_pBody->SetLinearVelocity(m_vVelocity);
+	m_pBody->SetFixedRotation(true);
+
 
 	b2PolygonShape polyShape;
 	polyShape.SetAsBox(30.0f, 30.0f);
@@ -58,8 +57,9 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World* world)
 
 	b2FixtureDef fixDef;
 	fixDef.shape = &polyShape;
-	fixDef.density = 0.5;
-	fixDef.friction = 0.1f;
+	fixDef.density = 0.1;
+	fixDef.friction = 0.0f;
+	fixDef.restitution = 0.0f;
 
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
 
@@ -69,6 +69,9 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World* world)
 void
 FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem)
 {
+	//m_pBody->ApplyForce(m_vVelocity, m_pBody->GetPosition(), true);
+	m_pBody->SetTransform(b2Vec2(650.0f, m_pBody->GetPosition().y), m_pBody->GetAngle());
+
 	m_pSprite->SetX(m_pBody->GetPosition().x);
 	m_pSprite->SetY(m_pBody->GetPosition().y);
 
@@ -85,7 +88,8 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 	}
 }
 
-void FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem)
+void 
+FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem)
 {
 }
 
@@ -93,12 +97,12 @@ void FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem)
 void
 FletchersPlayer::Jump(SoundSystem& soundSystem)
 {
-	if (m_pBody->GetPosition().y <= 605 && m_pBody->GetPosition().y >= 595)
+	if (m_pBody->GetPosition().y >= 900)
 	{
-		b2Vec2 jumpVec = b2Vec2(0, m_fJumpStrength);
-		soundSystem.PlaySound("Jump");
-		soundSystem.SetVolume("Jump", 0.5f);
-		m_pBody->ApplyLinearImpulse(jumpVec, m_pBody->GetPosition(), true);
+		
+		//soundSystem.PlaySound("Jump");
+		//soundSystem.SetVolume("Jump", 0.5f);
+		m_pBody->ApplyLinearImpulse(m_vJump, m_pBody->GetPosition(), true);
 	}
 }
 
@@ -108,3 +112,4 @@ FletchersPlayer::Draw(Renderer& renderer)
 	m_pSprite->Draw(renderer);
 
 }
+

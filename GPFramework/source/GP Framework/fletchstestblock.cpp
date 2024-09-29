@@ -34,12 +34,16 @@ FletchsTestBlock::Initialise(b2World* world, Renderer& renderer)
 	b2FixtureDef fixDef;
 	fixDef.shape = &polyShape;
 	fixDef.density = 0.1f;
-	fixDef.friction = 0.3f;
+	fixDef.friction = 0.0f;
+	fixDef.restitution = 0.0f;
 
-	m_vVel = b2Vec2(-50.0f, 0.0f);
+	m_vVel = b2Vec2(-30.0f, 0.0f);
 	m_pBody->SetLinearVelocity(m_vVel);
+	m_pBody->SetLinearDamping(0.5f);
+
 
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
+	m_pBody->SetFixedRotation(true);
 
 	m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
 	m_pSprite->SetScale(2.0f);
