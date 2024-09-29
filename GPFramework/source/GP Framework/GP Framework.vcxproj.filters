@@ -129,6 +129,9 @@
     <ClCompile Include="scenebbmainmenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="levelparser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -225,6 +228,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="uihandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelparser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

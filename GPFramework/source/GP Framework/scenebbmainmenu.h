@@ -1,3 +1,4 @@
+#pragma once
 #ifndef  _SCENEBBMAINMENU_H
 #define _SCENEBBMAINMENU_H
 

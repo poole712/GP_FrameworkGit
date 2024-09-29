@@ -27,7 +27,7 @@ IniParser::~IniParser()
 IniParser&
 IniParser::GetInstance()
 {
-	if (m_pInstance == 0)
+	if (m_pInstance == nullptr)
 	{
 		m_pInstance = new IniParser();
 	}

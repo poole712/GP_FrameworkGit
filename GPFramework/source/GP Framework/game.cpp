@@ -10,6 +10,7 @@
 #include "scenebbmainmenu.h"
 #include "imgui/imgui_impl_sdl2.h"
 #include "iniparser.h"
+#include "levelparser.h"
 #include "inputsystem.h"
 #include "xboxcontroller.h"
 
@@ -60,10 +61,12 @@ Game::Quit()
 bool
 Game::Initialise()
 {
+	//Load Level Parser
+	LevelParser::GetInstance().LoadLevelFile("..\\game\\data\\testmapdata.ini");
+
+	//Renderer
 	int bbWidth = 1280;
 	int bbHeight = 720;
-
-
 
 	m_pRenderer = new Renderer();
 	if (!m_pRenderer->Initialise(true, bbWidth, bbHeight))
@@ -76,13 +79,13 @@ Game::Initialise()
 	bbHeight = m_pRenderer->GetHeight();
 	m_iLastTime = SDL_GetPerformanceCounter();
 
-
-
 	m_pInputSystem = new InputSystem();
 	m_pInputSystem->Initialise();
 
 	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
 
+	//Test Level Parsing
+	LevelParser::GetInstance().PrintMapValues();
 	
 	Scene* pScene = 0;
 	pScene = new SceneBBMainMenu();
@@ -94,9 +97,6 @@ Game::Initialise()
 
 	m_pRenderer->SetClearColour(255, 100, 100);
 
-	m_pIniParser = new IniParser();
-	m_pIniParser->LoadIniFile("ini\\test.ini");
-
 	return true;
 }
 
@@ -105,8 +105,6 @@ Game::SwitchScene(int scene)
 {
 	m_iCurrentScene = scene;
 }
-
-
 
 bool 
 Game::DoGameLoop()
@@ -154,9 +152,6 @@ Game::Process(float deltaTime)
 	ProcessFrameCounting(deltaTime);
 	// TODO: Add game objects to process here!
 	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem, m_iCurrentScene);
-
-	
-
 }
 
 void 

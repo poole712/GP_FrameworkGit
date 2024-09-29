@@ -74,8 +74,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\game</OutDir>
-    <IntDir>$(SolutionDir)..\temp</IntDir>
+    <OutDir>..\..\game\</OutDir>
+    <IntDir>..\..\temp\</IntDir>
     <TargetName>$(ProjectName)_debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -162,6 +162,7 @@
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="iniparser.cpp" />
     <ClCompile Include="inputsystem.cpp" />
+    <ClCompile Include="levelparser.cpp" />
     <ClCompile Include="logmanager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix4.cpp" />
@@ -199,6 +200,7 @@
     <ClInclude Include="iniparser.h" />
     <ClInclude Include="inlinehelper.h" />
     <ClInclude Include="inputsystem.h" />
+    <ClInclude Include="levelparser.h" />
     <ClInclude Include="logmanager.h" />
     <ClInclude Include="matrix4.h" />
     <ClInclude Include="particle.h" />
