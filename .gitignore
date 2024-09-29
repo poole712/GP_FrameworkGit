@@ -98,7 +98,12 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+<<<<<<< HEAD
 
+=======
+*.exe
+*.idb
+>>>>>>> gitignore
 # Chutzpah Test files
 _Chutzpah*
 
