@@ -1,5 +1,4 @@
 #ifndef _ANIMATEDSPRITE_H
-#define _ANIMATEDSPRITE_H
 
 #include "sprite.h"
 
@@ -26,8 +25,6 @@ public:
 	int GetHeight() const;
 	void DebugDraw();
 
-	void SetAnimationRange(int startFrame, int endFrame);
-
 protected:
 
 private:
@@ -47,9 +44,6 @@ protected:
 	float totalTime;
 	bool m_bAnimating;
 	bool m_bLooping;
-
-	int m_iStartFrame;
-	int m_iEndFrame;
 
 private:
 

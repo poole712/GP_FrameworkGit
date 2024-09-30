@@ -1,82 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\",
+  "WorkspaceRootPath": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\inputsystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\inputsystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedsprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\animatedsprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedsprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\animatedsprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedentity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\animatedentity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedentity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\animatedentity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneplayeranimation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\sceneplayeranimation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneplayeranimation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\sceneplayeranimation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\explosion.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\explosion.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\explosion.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\explosion.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\scenebbmainmenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\scenebbmainmenu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EC424507-E685-4150-BD06-583F3698B756}|GP Framework\\GP Framework.vcxproj|solutionrelative:GP Framework\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,253 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "inputsystem.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\inputsystem.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\inputsystem.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\inputsystem.cpp",
-              "RelativeToolTip": "GP Framework\\inputsystem.cpp",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACUAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-30T01:16:34.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "player.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\player.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\player.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\player.cpp",
-              "RelativeToolTip": "GP Framework\\player.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-29T22:28:27.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "player.h",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\player.h",
-              "RelativeDocumentMoniker": "GP Framework\\player.h",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\player.h",
-              "RelativeToolTip": "GP Framework\\player.h",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB4AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T22:24:34.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "animatedsprite.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedsprite.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\animatedsprite.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedsprite.cpp",
-              "RelativeToolTip": "GP Framework\\animatedsprite.cpp",
-              "ViewState": "AQIAALEAAAAAAAAAAAAIwLwAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-29T22:21:52.463Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "animatedentity.h",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedentity.h",
-              "RelativeDocumentMoniker": "GP Framework\\animatedentity.h",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedentity.h",
-              "RelativeToolTip": "GP Framework\\animatedentity.h",
-              "ViewState": "AQIAABsAAAAAAAAAAAAIwC0AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T22:25:33.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "animatedsprite.h",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedsprite.h",
-              "RelativeDocumentMoniker": "GP Framework\\animatedsprite.h",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedsprite.h",
-              "RelativeToolTip": "GP Framework\\animatedsprite.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T22:24:43.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "sceneplayeranimation.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneplayeranimation.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\sceneplayeranimation.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneplayeranimation.cpp",
-              "RelativeToolTip": "GP Framework\\sceneplayeranimation.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-29T22:43:12.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "animatedentity.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedentity.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\animatedentity.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\animatedentity.cpp",
-              "RelativeToolTip": "GP Framework\\animatedentity.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-29T22:21:55.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "sceneplayeranimation.h",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneplayeranimation.h",
-              "RelativeDocumentMoniker": "GP Framework\\sceneplayeranimation.h",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\sceneplayeranimation.h",
-              "RelativeToolTip": "GP Framework\\sceneplayeranimation.h",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T22:41:00.336Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "game.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\game.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.cpp",
-              "RelativeToolTip": "GP Framework\\game.cpp",
-              "ViewState": "AQIAAMAAAAAAAAAAAAAAAMkAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-23T05:39:09.885Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "game.h",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.h",
-              "RelativeDocumentMoniker": "GP Framework\\game.h",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.h",
-              "RelativeToolTip": "GP Framework\\game.h",
-              "ViewState": "AQIAABYAAAAAAAAAAAAIwCgAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T22:45:53.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "explosion.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\explosion.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\explosion.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\explosion.cpp",
-              "RelativeToolTip": "GP Framework\\explosion.cpp",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAADUAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-29T22:32:35.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "enemy.h",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\enemy.h",
-              "RelativeDocumentMoniker": "GP Framework\\enemy.h",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\enemy.h",
-              "RelativeToolTip": "GP Framework\\enemy.h",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAADAAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T22:56:16.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "explosion.h",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\explosion.h",
-              "RelativeDocumentMoniker": "GP Framework\\explosion.h",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\explosion.h",
-              "RelativeToolTip": "GP Framework\\explosion.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T22:33:07.701Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "renderer.h",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\renderer.h",
-              "RelativeDocumentMoniker": "GP Framework\\renderer.h",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\renderer.h",
-              "RelativeToolTip": "GP Framework\\renderer.h",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABAAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T22:31:36.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "enemy.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\enemy.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\enemy.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\enemy.cpp",
-              "RelativeToolTip": "GP Framework\\enemy.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-29T22:56:20.658Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "entity.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\entity.cpp",
-              "RelativeDocumentMoniker": "GP Framework\\entity.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\entity.cpp",
-              "RelativeToolTip": "GP Framework\\entity.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-29T22:58:29.816Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
               "Title": "scenebbmainmenu.cpp",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.cpp",
               "RelativeDocumentMoniker": "GP Framework\\scenebbmainmenu.cpp",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.cpp",
               "RelativeToolTip": "GP Framework\\scenebbmainmenu.cpp",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-23T05:43:38.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "scenebbmainmenu.h",
-              "DocumentMoniker": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.h",
-              "RelativeDocumentMoniker": "GP Framework\\scenebbmainmenu.h",
-              "ToolTip": "C:\\Users\\lenovo\\Documents\\GitHub\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\scenebbmainmenu.h",
-              "RelativeToolTip": "GP Framework\\scenebbmainmenu.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T22:40:14.561Z",
+              "DocumentIndex": 1,
+              "Title": "game.cpp",
+              "DocumentMoniker": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.cpp",
+              "RelativeDocumentMoniker": "GP Framework\\game.cpp",
+              "ToolTip": "C:\\Users\\fpool\\Documents\\AUT\\Year3\\COMP710\\GP_FrameworkGit\\GPFramework\\source\\GP Framework\\game.cpp",
+              "RelativeToolTip": "GP Framework\\game.cpp",
+              "ViewState": "AQIAAHYAAAAAAAAAAAApwJAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-23T05:39:09.885Z",
               "EditorCaption": ""
             }
           ]

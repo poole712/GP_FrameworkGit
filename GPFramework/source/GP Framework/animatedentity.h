@@ -17,7 +17,8 @@ public:
 
 	virtual bool Initialise(Renderer& renderer) = 0;
 	virtual void Process(float deltaTime) = 0;
-	virtual void Draw(Renderer& renderer) = 0;
+	virtual void Draw(Renderer& renderer);
+
 
 	void Rotate(float direction);
 	void SetPosition(float posX, float posY);
@@ -50,7 +51,6 @@ protected:
 	bool m_bAlive;
 	float m_fCurrentRotation;
 
-	InputSystem* m_iInputSystem;
 
 private:
 

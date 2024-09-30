@@ -1,4 +1,4 @@
-/*#ifndef _EXPLOSION_H
+#ifndef _EXPLOSION_H
 #define _EXPLOSION_H
 
 #include <vector>
@@ -32,4 +32,3 @@ protected:
 };
 
 #endif // !_EXPLOSION_H
-*/
