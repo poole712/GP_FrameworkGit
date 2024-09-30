@@ -8,6 +8,7 @@
 #include "stdlib.h"
 #include "time.h"
 #include "scenebbmainmenu.h"
+#include "fletchersscene.h"
 #include "imgui/imgui_impl_sdl2.h"
 #include "iniparser.h"
 #include "inputsystem.h"
@@ -60,10 +61,8 @@ Game::Quit()
 bool
 Game::Initialise()
 {
-	int bbWidth = 1280;
-	int bbHeight = 720;
-
-
+	int bbWidth = 1920;
+	int bbHeight = 1080;
 
 	m_pRenderer = new Renderer();
 	if (!m_pRenderer->Initialise(true, bbWidth, bbHeight))
@@ -76,8 +75,6 @@ Game::Initialise()
 	bbHeight = m_pRenderer->GetHeight();
 	m_iLastTime = SDL_GetPerformanceCounter();
 
-
-
 	m_pInputSystem = new InputSystem();
 	m_pInputSystem->Initialise();
 
@@ -88,6 +85,11 @@ Game::Initialise()
 	pScene = new SceneBBMainMenu();
 	pScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pScene);
+
+	Scene* pGameScene = 0;
+	pGameScene = new FletchersScene();
+	pGameScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pGameScene);
 
 	m_iCurrentScene = 0;
 	

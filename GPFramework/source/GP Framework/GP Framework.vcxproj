@@ -152,6 +152,9 @@
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="explosion.cpp" />
     <ClCompile Include="explosion.h" />
+    <ClCompile Include="fletchersplayer.cpp" />
+    <ClCompile Include="fletchersscene.cpp" />
+    <ClCompile Include="fletchstestblock.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
@@ -185,6 +188,9 @@
     <ClInclude Include="animatedsprite.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="fletchersplayer.h" />
+    <ClInclude Include="fletchersscene.h" />
+    <ClInclude Include="fletchstestblock.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="glext.h" />
     <ClInclude Include="imgui\imconfig.h" />
