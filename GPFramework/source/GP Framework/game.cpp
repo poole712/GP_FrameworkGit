@@ -7,12 +7,14 @@
 #include "sprite.h"
 #include "stdlib.h"
 #include "time.h"
-#include "scenebbmainmenu.h"
-#include "fletchersscene.h"
 #include "imgui/imgui_impl_sdl2.h"
 #include "iniparser.h"
 #include "inputsystem.h"
 #include "xboxcontroller.h"
+
+#include "scenebbmainmenu.h"
+#include "sceneplayeranimation.h"
+#include "fletchersscene.h"
 
 
 //Static members:
@@ -90,6 +92,10 @@ Game::Initialise()
 	pGameScene = new FletchersScene();
 	pGameScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pGameScene);
+
+	pScene = new ScenePlayerAnimation();
+	pScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pScene);
 
 	m_iCurrentScene = 0;
 	
