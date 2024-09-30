@@ -170,10 +170,12 @@
     <ClCompile Include="matrix4.cpp" />
     <ClCompile Include="particle.cpp" />
     <ClCompile Include="particleemitter.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="scenebbmainmenu.cpp" />
     <ClCompile Include="scenebbmainmenu.h" />
+    <ClCompile Include="sceneplayeranimation.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="soundsystem.cpp" />
     <ClCompile Include="sprite.cpp" />
@@ -209,8 +211,10 @@
     <ClInclude Include="matrix4.h" />
     <ClInclude Include="particle.h" />
     <ClInclude Include="particleemitter.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="renderer.h" />
     <ClInclude Include="scene.h" />
+    <ClInclude Include="sceneplayeranimation.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="soundsystem.h" />
     <ClInclude Include="sprite.h" />

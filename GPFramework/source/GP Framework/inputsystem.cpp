@@ -42,7 +42,7 @@ InputSystem::Initialise()
 		LogManager::GetInstance().Log("SDL Init Game Controller System");
 	}
 
-	ShowMouseCursor(false);
+	ShowMouseCursor(true);
 
 	m_iNumAttachedControllers = SDL_NumJoysticks();
 

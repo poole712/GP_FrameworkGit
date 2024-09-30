@@ -60,6 +60,10 @@ AnimatedSprite::SetupFrames(int fixedFrameWidth, int fixedFrameHeight)
 	const float vFrameHeight = 1.0f / totalFramesHigh;
 	m_iTotalFrames = totalFramesWide * totalFramesHigh;
 
+	// initialize start and end frames to define animation range
+	m_iStartFrame = 0;
+	m_iEndFrame = m_iTotalFrames - 1;
+
 	const int vertsPerSprite = 4;
 	const int numVertices = vertsPerSprite * (m_iTotalFrames);
 
@@ -118,7 +122,7 @@ AnimatedSprite::SetupFrames(int fixedFrameWidth, int fixedFrameHeight)
 	allIndices = 0;
 }
 
-void 
+void
 AnimatedSprite::Process(float deltaTime)
 {
 	totalTime += deltaTime;
@@ -131,15 +135,18 @@ AnimatedSprite::Process(float deltaTime)
 		{
 			++m_iCurrentFrame;
 
-			if (m_iCurrentFrame >= m_iTotalFrames)
+			// adjust the condition to check against m_iEndFrame
+			if (m_iCurrentFrame > m_iEndFrame)
 			{
 				if (m_bLooping)
 				{
-					Restart();
+					// reset to the start frame of the range
+					m_iCurrentFrame = m_iStartFrame;  
 				}
 				else
 				{
-					m_iCurrentFrame = m_iTotalFrames - 1;
+					// stop at the last frame of the range
+					m_iCurrentFrame = m_iEndFrame;   
 					m_bAnimating = false;
 				}
 			}
@@ -147,6 +154,7 @@ AnimatedSprite::Process(float deltaTime)
 		}
 	}
 }
+
 
 void
 AnimatedSprite::Draw(Renderer& renderer)
@@ -178,7 +186,7 @@ AnimatedSprite::SetLooping(bool loop)
 void
 AnimatedSprite::Restart()
 {
-	m_iCurrentFrame = 0;
+	m_iCurrentFrame = m_iStartFrame;
 	m_fTimeElapsed = 0.0f;
 }
 
@@ -186,4 +194,16 @@ void
 AnimatedSprite::DebugDraw()
 {
 	ImGui::SliderInt("Frame", &m_iCurrentFrame, 0, m_iTotalFrames - 1);
+}
+
+// sets a range for the sprite to animate
+void AnimatedSprite::SetAnimationRange(int startFrame, int endFrame)
+{
+	// checks if start and end frames are in bounds and valid
+	if (startFrame >= 0 && endFrame < m_iTotalFrames && startFrame <= endFrame)
+	{
+		m_iStartFrame = startFrame;
+		m_iEndFrame = endFrame;
+		m_iCurrentFrame = m_iStartFrame;  // reset current frame to start of the new range
+	}
 }
