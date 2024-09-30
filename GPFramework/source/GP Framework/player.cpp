@@ -40,19 +40,22 @@ void Player::Process(float deltaTime)
 	{
 		m_pASprite->Process(deltaTime);
 
-		if (IsKey1() && !m_bSwitchingAnimation)
+		if (IsKey1() && !m_bSwitchingAnimation && m_iActiveSpell != 1)
 		{
 			AnimateAnimation1();
+			m_iActiveSpell = 1;
 		}
 		
-		if (IsKey2() && !m_bSwitchingAnimation)
+		if (IsKey2() && !m_bSwitchingAnimation && m_iActiveSpell != 2)
 		{
 			AnimateAnimation2();
+			m_iActiveSpell = 2;
 		}
 		
-		if (IsKey3() && !m_bSwitchingAnimation)
+		if (IsKey3() && !m_bSwitchingAnimation && m_iActiveSpell != 3)
 		{
 			AnimateAnimation3();
+			m_iActiveSpell = 3;
 		}
 
 		if (!m_pASprite->IsAnimating() && m_bSwitchingAnimation)

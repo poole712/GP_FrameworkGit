@@ -36,6 +36,7 @@ public:
 
 private:
 	bool m_bSwitchingAnimation;
+	int m_iActiveSpell;
 };
 
 #endif // _PLAYER_H
