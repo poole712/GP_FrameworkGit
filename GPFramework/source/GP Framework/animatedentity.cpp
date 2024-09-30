@@ -11,7 +11,7 @@
 #include <cstdlib>
 
 AnimatedEntity::AnimatedEntity()
-	: m_pASprite(0), m_bAlive(false)
+	: m_pASprite(nullptr), m_bAlive(true)
 {
 
 }
@@ -20,31 +20,6 @@ AnimatedEntity::~AnimatedEntity()
 {
 	delete m_pASprite;
 	m_pASprite = 0;
-}
-
-bool
-AnimatedEntity::Initialise(Renderer& renderer)
-{
-	return true;
-}
-
-void
-AnimatedEntity::Process(float deltaTime)
-{
-	m_position += m_velocity * deltaTime;
-	m_pASprite->SetX(static_cast<int>(m_position.x));
-	m_pASprite->SetY(static_cast<int>(m_position.y));
-	m_pASprite->Process(deltaTime);
-	m_pASprite->Animate();
-}
-
-void
-AnimatedEntity::Draw(Renderer& renderer)
-{
-	if (m_bAlive)
-	{
-		m_pASprite->Draw(renderer);
-	}
 }
 
 Vector2&
