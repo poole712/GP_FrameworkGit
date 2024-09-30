@@ -1,0 +1,27 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (..\..\temp\) contains files shared from another project (GP Framework.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  fletchersplayer.cpp
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.h(16,13): warning C4099: 'b2Vec2': type name first seen using 'struct' now seen using 'class'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.2.4.1.5\build\native\include\box2d\b2_world_callbacks.h(29,8): message : see declaration of 'b2Vec2'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.cpp(60,19): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.cpp(75,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchersplayer.cpp(76,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+  fletchstestblock.cpp
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.h(9,13): warning C4099: 'b2Vec2': type name first seen using 'struct' now seen using 'class'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.2.4.1.5\build\native\include\box2d\b2_world_callbacks.h(29,8): message : see declaration of 'b2Vec2'
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.cpp(57,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.cpp(58,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.cpp(72,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\GP Framework\fletchstestblock.cpp(73,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+..\..\temp\animatedentity.obj : warning LNK4042: object specified more than once; extras ignored
+..\..\temp\explosion.obj : warning LNK4042: object specified more than once; extras ignored
+..\..\temp\scenebbmainmenu.obj : warning LNK4042: object specified more than once; extras ignored
+  Generating code
+  6 of 2411 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    25 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  GP Framework.vcxproj -> C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\game\BlockBloke.exe
+  C:\Users\User\Documents\AUT\COMP710\GP_FrameworkGit\GPFramework\source\packages\Box2D-cpp.redist.2.4.1.5\build\native\bin\Win32\Release\box2d.dll
+  1 File(s) copied
