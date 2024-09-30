@@ -1,4 +1,4 @@
-/*#include "explosion.h"
+#include "explosion.h"
 
 #include "renderer.h"
 #include "animatedsprite.h"
@@ -51,4 +51,3 @@ Explosion::SetThePosition(float x, float y)
 {
 	SetPosition(x, y);
 }
-*/
