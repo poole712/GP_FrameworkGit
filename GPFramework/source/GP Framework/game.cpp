@@ -7,11 +7,13 @@
 #include "sprite.h"
 #include "stdlib.h"
 #include "time.h"
-#include "scenebbmainmenu.h"
 #include "imgui/imgui_impl_sdl2.h"
 #include "iniparser.h"
 #include "inputsystem.h"
 #include "xboxcontroller.h"
+
+#include "scenebbmainmenu.h"
+#include "sceneplayeranimation.h"
 
 
 //Static members:
@@ -85,7 +87,12 @@ Game::Initialise()
 
 	
 	Scene* pScene = 0;
+
 	pScene = new SceneBBMainMenu();
+	pScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pScene);
+
+	pScene = new ScenePlayerAnimation();
 	pScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pScene);
 
@@ -193,8 +200,6 @@ void
 Game::ToggleDebugWindow()
 {
 	m_bShowDebugWindow = !m_bShowDebugWindow;
-
-	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
 }
 
 void

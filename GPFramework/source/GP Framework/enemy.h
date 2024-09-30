@@ -1,4 +1,4 @@
-#ifndef _ENEMY_
+/*#ifndef _ENEMY_
 #define _ENEMY_
 
 #include "animatedentity.h"
@@ -46,4 +46,4 @@ protected:
 };
 
 #endif // !_SHIELD_H
- 
+ */

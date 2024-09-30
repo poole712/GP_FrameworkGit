@@ -1,4 +1,4 @@
-#include "enemy.h"
+/*#include "enemy.h"
 
 #include "logmanager.h"
 #include "renderer.h"
@@ -55,3 +55,4 @@ void Enemy::Attack()
 void Enemy::Die()
 {
 }
+*/
