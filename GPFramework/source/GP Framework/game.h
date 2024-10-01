@@ -2,6 +2,8 @@
 #ifndef _GAME_H_
 #define _GAME_H_
 
+#define USE_LAG
+
 #include <vector>
 //Forward Declarations
 class Renderer;

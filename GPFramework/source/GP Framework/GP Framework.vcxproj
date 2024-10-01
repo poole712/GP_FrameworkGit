@@ -55,6 +55,9 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <LocalDebuggerWorkingDirectory>$(SolutionDir)..\game</LocalDebuggerWorkingDirectory>
+</PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -74,13 +77,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\game\</OutDir>
-    <IntDir>..\..\temp\</IntDir>
+    <OutDir>$(SolutionDir)..\game\</OutDir>
+    <IntDir>$(SolutionDir)..\temp\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\..\game</OutDir>
-    <IntDir>..\..\temp</IntDir>
+    <OutDir>$(SolutionDir)..\game\</OutDir>
+    <IntDir>$(SolutionDir)..\temp\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -88,12 +91,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\FMOD Studio API Windows\api\core\inc;$(SolutionDir)..\Studio7Resources\SDL2_ttf-2.22.0\include;$(SolutionDir)..\Studio5Resources\glew-2.1.0\include;$(SolutionDir)..\Studio5Resources\SDL2-2.0.22\include;$(SolutionDir)..\Studio5Resources\SDL2_image-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\lib\fmodstudioapi20223win-installer\api\core\inc;$(SolutionDir)..\lib\SDL2_ttf-2.22.0\include;$(SolutionDir)..\lib\glew-2.1.0\include;$(SolutionDir)..\lib\SDL2-2.0.22\include;$(SolutionDir)..\lib\SDL2_image-2.6.1\include;$(SolutionDir)..\lib\box2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\FMOD Studio API Windows\api\core\lib\x86;$(SolutionDir)..\Studio7Resources\SDL2_ttf-2.22.0\lib\x86;$(SolutionDir)..\Studio5Resources\SDL2-2.0.22\lib\x86;$(SolutionDir)..\Studio5Resources\SDL2_image-2.6.1\lib\x86;$(SolutionDir)..\Studio5Resources\glew-2.1.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\lib\fmodstudioapi20223win-installer\api\core\lib\x86\;$(SolutionDir)..\lib\SDL2_ttf-2.22.0\lib\x86\;$(SolutionDir)..\lib\SDL2-2.0.22\lib\x86\;$(SolutionDir)..\lib\SDL2_image-2.6.1\lib\x86\;$(SolutionDir)..\lib\glew-2.1.0\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;glew32.lib;opengl32.lib;SDL2_ttf.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -105,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\FMOD Studio API Windows\api\core\inc;$(SolutionDir)..\Studio7Resources\SDL2_ttf-2.22.0\include;$(SolutionDir)..\Studio5Resources\glew-2.1.0\include;$(SolutionDir)..\Studio5Resources\SDL2-2.0.22\include;$(SolutionDir)..\Studio5Resources\SDL2_image-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\lib\fmodstudioapi20223win-installer\api\core\inc;$(SolutionDir)..\lib\SDL2_ttf-2.22.0\include;$(SolutionDir)..\lib\glew-2.1.0\include;$(SolutionDir)..\lib\SDL2-2.0.22\include;$(SolutionDir)..\lib\SDL2_image-2.6.1\include;$(SolutionDir)..\lib\box2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,7 +116,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;glew32.lib;opengl32.lib;SDL2_ttf.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\FMOD Studio API Windows\api\core\lib\x86;$(SolutionDir)..\Studio7Resources\SDL2_ttf-2.22.0\lib\x86;$(SolutionDir)..\Studio5Resources\SDL2-2.0.22\lib\x86;$(SolutionDir)..\Studio5Resources\SDL2_image-2.6.1\lib\x86;$(SolutionDir)..\Studio5Resources\glew-2.1.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\lib\fmodstudioapi20223win-installer\api\core\lib\x86\;$(SolutionDir)..\lib\SDL2_ttf-2.22.0\lib\x86\;$(SolutionDir)..\lib\SDL2-2.0.22\lib\x86\;$(SolutionDir)..\lib\SDL2_image-2.6.1\lib\x86\;$(SolutionDir)..\lib\glew-2.1.0\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -152,6 +155,9 @@
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="explosion.cpp" />
     <ClCompile Include="explosion.h" />
+    <ClCompile Include="fletchersplayer.cpp" />
+    <ClCompile Include="fletchersscene.cpp" />
+    <ClCompile Include="fletchstestblock.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
@@ -162,16 +168,17 @@
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="iniparser.cpp" />
     <ClCompile Include="inputsystem.cpp" />
-    <ClCompile Include="levelparser.cpp" />
     <ClCompile Include="logmanager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix4.cpp" />
     <ClCompile Include="particle.cpp" />
     <ClCompile Include="particleemitter.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="scenebbmainmenu.cpp" />
     <ClCompile Include="scenebbmainmenu.h" />
+    <ClCompile Include="sceneplayeranimation.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="soundsystem.cpp" />
     <ClCompile Include="sprite.cpp" />
@@ -186,6 +193,9 @@
     <ClInclude Include="animatedsprite.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="fletchersplayer.h" />
+    <ClInclude Include="fletchersscene.h" />
+    <ClInclude Include="fletchstestblock.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="glext.h" />
     <ClInclude Include="imgui\imconfig.h" />
@@ -200,13 +210,14 @@
     <ClInclude Include="iniparser.h" />
     <ClInclude Include="inlinehelper.h" />
     <ClInclude Include="inputsystem.h" />
-    <ClInclude Include="levelparser.h" />
     <ClInclude Include="logmanager.h" />
     <ClInclude Include="matrix4.h" />
     <ClInclude Include="particle.h" />
     <ClInclude Include="particleemitter.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="renderer.h" />
     <ClInclude Include="scene.h" />
+    <ClInclude Include="sceneplayeranimation.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="soundsystem.h" />
     <ClInclude Include="sprite.h" />

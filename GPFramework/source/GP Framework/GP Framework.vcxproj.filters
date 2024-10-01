@@ -129,7 +129,19 @@
     <ClCompile Include="scenebbmainmenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="levelparser.cpp">
+    <ClCompile Include="fletchersscene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fletchersplayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fletchstestblock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneplayeranimation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -230,7 +242,19 @@
     <ClInclude Include="uihandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="levelparser.h">
+    <ClInclude Include="fletchersscene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fletchersplayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fletchstestblock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneplayeranimation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

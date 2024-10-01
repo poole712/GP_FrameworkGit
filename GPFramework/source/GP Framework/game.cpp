@@ -7,12 +7,15 @@
 #include "sprite.h"
 #include "stdlib.h"
 #include "time.h"
-#include "scenebbmainmenu.h"
+
 #include "imgui/imgui_impl_sdl2.h"
 #include "iniparser.h"
-#include "levelparser.h"
 #include "inputsystem.h"
 #include "xboxcontroller.h"
+
+#include "scenebbmainmenu.h"
+#include "sceneplayeranimation.h"
+#include "fletchersscene.h"
 
 
 //Static members:
@@ -61,12 +64,8 @@ Game::Quit()
 bool
 Game::Initialise()
 {
-	//Load Level Parser
-	LevelParser::GetInstance().LoadLevelFile("..\\game\\data\\testmapdata.ini");
-
-	//Renderer
-	int bbWidth = 1280;
-	int bbHeight = 720;
+	int bbWidth = 1920;
+	int bbHeight = 1080;
 
 	m_pRenderer = new Renderer();
 	if (!m_pRenderer->Initialise(true, bbWidth, bbHeight))
@@ -84,11 +83,19 @@ Game::Initialise()
 
 	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
 
-	//Test Level Parsing
-	LevelParser::GetInstance().PrintMapValues();
 	
 	Scene* pScene = 0;
+
 	pScene = new SceneBBMainMenu();
+	pScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pScene);
+
+	Scene* pGameScene = 0;
+	pGameScene = new FletchersScene();
+	pGameScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pGameScene);
+
+	pScene = new ScenePlayerAnimation();
 	pScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pScene);
 
@@ -96,6 +103,9 @@ Game::Initialise()
 	
 
 	m_pRenderer->SetClearColour(255, 100, 100);
+
+	m_pIniParser = new IniParser();
+	m_pIniParser->LoadIniFile("ini\\test.ini");
 
 	return true;
 }
@@ -105,6 +115,8 @@ Game::SwitchScene(int scene)
 {
 	m_iCurrentScene = scene;
 }
+
+
 
 bool 
 Game::DoGameLoop()
@@ -152,6 +164,9 @@ Game::Process(float deltaTime)
 	ProcessFrameCounting(deltaTime);
 	// TODO: Add game objects to process here!
 	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem, m_iCurrentScene);
+
+	
+
 }
 
 void 
@@ -188,8 +203,6 @@ void
 Game::ToggleDebugWindow()
 {
 	m_bShowDebugWindow = !m_bShowDebugWindow;
-
-	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
 }
 
 void
