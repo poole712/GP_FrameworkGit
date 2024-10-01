@@ -7,6 +7,7 @@
 
 class Renderer;
 class Sprite;
+class Game;
 class InputSystem;
 class UiHandler;
 class FletchersPlayer;
@@ -21,7 +22,7 @@ public:
 	virtual ~FletchersScene();
 
 	virtual bool Initialise(Renderer& renderer);
-	virtual void Process(float deltaTime, InputSystem& inputSystem, int& scene);
+	virtual void Process(float deltaTime, InputSystem& inputSystem, Game& game);
 	virtual void Draw(Renderer& renderer);
 	virtual void DebugDraw();
 
@@ -37,6 +38,7 @@ protected:
 	FletchersPlayer* m_pPlayer;
 
 	std::vector<FletchsTestBlock*> m_pTestBlocks;
+	FletchsTestBlock* m_pSingleBlock;
 
 	SoundSystem* m_pSoundSystem;
 	b2World* m_pWorld;

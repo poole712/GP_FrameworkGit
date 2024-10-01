@@ -20,6 +20,8 @@ FletchsTestBlock::~FletchsTestBlock()
 bool
 FletchsTestBlock::Initialise(b2World* world, Renderer& renderer)
 {
+	m_bAlive = true;
+
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_kinematicBody;
 

@@ -57,7 +57,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <LocalDebuggerWorkingDirectory>$(SolutionDir)..\game</LocalDebuggerWorkingDirectory>
-</PropertyGroup>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -151,6 +151,8 @@
     <ClCompile Include="animatedentity.cpp" />
     <ClCompile Include="animatedentity.h" />
     <ClCompile Include="animatedsprite.cpp" />
+    <ClCompile Include="contactlistener.cpp" />
+    <ClCompile Include="scenedeathmenu.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="explosion.cpp" />
@@ -191,6 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedsprite.h" />
+    <ClInclude Include="scenedeathmenu.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="fletchersplayer.h" />

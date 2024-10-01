@@ -10,6 +10,11 @@ ScenePlayerAnimation::ScenePlayerAnimation()
 
 ScenePlayerAnimation::~ScenePlayerAnimation()
 {
+	delete m_pPlayer;
+	m_pPlayer = 0;
+
+	delete m_rRenderer;
+	m_rRenderer = 0;
 }
 
 bool ScenePlayerAnimation::Initialise(Renderer& renderer)
@@ -23,7 +28,7 @@ bool ScenePlayerAnimation::Initialise(Renderer& renderer)
 	return true;
 }
 
-void ScenePlayerAnimation::Process(float deltaTime, InputSystem& inputSystem, int& scene)
+void ScenePlayerAnimation::Process(float deltaTime, InputSystem& inputSystem, Game& game)
 {
 	m_pPlayer->Process(deltaTime);
 }

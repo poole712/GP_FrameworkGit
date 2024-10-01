@@ -16,6 +16,7 @@
 #include "scenebbmainmenu.h"
 #include "sceneplayeranimation.h"
 #include "fletchersscene.h"
+#include "scenedeathmenu.h"
 
 
 //Static members:
@@ -95,14 +96,17 @@ Game::Initialise()
 	pGameScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pGameScene);
 
-	pScene = new ScenePlayerAnimation();
-	pScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pScene);
+	Scene* pAnimScene = new ScenePlayerAnimation();
+	pAnimScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pAnimScene);
+
+	Scene* pDeathScene = new SceneDeathMenu();
+	pDeathScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pDeathScene);
 
 	m_iCurrentScene = 0;
-	
 
-	m_pRenderer->SetClearColour(255, 100, 100);
+	m_pRenderer->SetClearColour(100, 100, 100);
 
 	m_pIniParser = new IniParser();
 	m_pIniParser->LoadIniFile("ini\\test.ini");
@@ -113,6 +117,11 @@ Game::Initialise()
 void 
 Game::SwitchScene(int scene)
 {
+	//Re-initialise game scene
+	if (scene == 1)
+	{
+		m_scenes[1]->Initialise(*m_pRenderer);
+	}
 	m_iCurrentScene = scene;
 }
 
@@ -163,10 +172,7 @@ Game::Process(float deltaTime)
 {
 	ProcessFrameCounting(deltaTime);
 	// TODO: Add game objects to process here!
-	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem, m_iCurrentScene);
-
-	
-
+	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem, *this);
 }
 
 void 

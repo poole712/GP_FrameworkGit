@@ -144,6 +144,12 @@
     <ClCompile Include="sceneplayeranimation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scenedeathmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="contactlistener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -255,6 +261,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sceneplayeranimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scenedeathmenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
