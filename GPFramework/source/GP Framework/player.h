@@ -20,6 +20,13 @@ public:
 	void Process(float deltaTime);
 	void Draw(Renderer& renderer);
 
+	enum ActiveSpell
+	{
+		FIRE = 1,
+		EARTH = 2,
+		ICE = 3
+	};
+
 	bool IsKey1();
 	bool IsKey2();
 	bool IsKey3();
@@ -30,13 +37,15 @@ public:
 	void AnimationCount5to6();
 	void AnimationCount6to7();
 
-	void AnimateAnimation1();
-	void AnimateAnimation2();
-	void AnimateAnimation3();
+	void AnimateAnimationFire();
+	void AnimateAnimationEarth();
+	void AnimateAnimationIce();
+
+	ActiveSpell GetActiveSpell();
 
 private:
 	bool m_bSwitchingAnimation;
-	int m_iActiveSpell;
+	ActiveSpell m_iActiveSpell;
 };
 
 #endif // _PLAYER_H
