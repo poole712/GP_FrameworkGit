@@ -23,7 +23,7 @@ bool Player::Initialise(Renderer& renderer)
 
 	m_pASprite = renderer.CreateAnimatedSprite("sprites\\anim8strip.png");
 	m_pASprite->SetupFrames(64, 64);
-	m_pASprite->SetFrameDuration(0.2f);
+	m_pASprite->SetFrameDuration(1.0f);
 	m_pASprite->SetScale(1.0f);
 	m_pASprite->SetLooping(false);
 
