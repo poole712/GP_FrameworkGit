@@ -4,9 +4,10 @@
 #include "box2d/box2d.h"
 #include "renderer.h"
 
-FletchsTestBlock::FletchsTestBlock(float x, float y)
+FletchsTestBlock::FletchsTestBlock(float x, float y, ElementType type)
 {
 	m_vStartPos = b2Vec2(x, y);
+	m_eType = type;
 }
 
 FletchsTestBlock::~FletchsTestBlock()
@@ -47,6 +48,23 @@ FletchsTestBlock::Initialise(b2World* world, Renderer& renderer)
 
 	m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
 	m_pSprite->SetScale(2.0f);
+
+	switch (m_eType)
+	{
+	case FIRE:
+		m_pSprite->SetGreenTint(0);
+		m_pSprite->SetBlueTint(0);
+		break;
+	case EARTH:
+		m_pSprite->SetRedTint(0);
+		m_pSprite->SetBlueTint(0);
+		break;
+	case ICE:
+		m_pSprite->SetGreenTint(0);
+		m_pSprite->SetRedTint(0);
+		break;
+	}
+
 
 	return true;
 }

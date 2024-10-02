@@ -48,7 +48,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	float currentX = 750;
 	for (int i = 0; i < 5; i++)
 	{
-		FletchsTestBlock* newBlock = new FletchsTestBlock(currentX, 1000);
+		FletchsTestBlock* newBlock = new FletchsTestBlock(currentX, 1000, ICE);
 		currentX += 125;
 		m_pTestBlocks.push_back(newBlock);
 	}
@@ -56,7 +56,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	{
 		block->Initialise(m_pWorld ,renderer);
 	}
-	m_pSingleBlock = new FletchsTestBlock(1100, 950);
+	m_pSingleBlock = new FletchsTestBlock(1100, 950, EARTH);
 	m_pSingleBlock->Initialise(m_pWorld, renderer);
 
 	return false;

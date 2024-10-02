@@ -3,6 +3,7 @@
 
 #include "box2d/box2d.h"
 #include "entity.h"
+#include "elementtype.h"
 
 class Renderer;
 class Sprite;
@@ -12,7 +13,7 @@ class FletchsTestBlock : public Entity
 {
 public:
 
-	FletchsTestBlock(float startX, float startY);
+	FletchsTestBlock(float startX, float startY, ElementType type);
 	~FletchsTestBlock();
 
 	virtual bool Initialise(Renderer& renderer) override;
@@ -36,7 +37,7 @@ protected:
 	Sprite* m_pSprite;
 	b2Vec2 m_vVel;
 	b2Vec2 m_vStartPos;
-
+	ElementType m_eType;
 
 	// Inherited via Entity
 
