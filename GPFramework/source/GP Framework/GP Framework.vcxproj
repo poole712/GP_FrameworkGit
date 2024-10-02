@@ -193,6 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedsprite.h" />
+    <ClInclude Include="spelltypes.h" />
     <ClInclude Include="scenedeathmenu.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="entity.h" />

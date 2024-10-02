@@ -266,6 +266,9 @@
     <ClInclude Include="scenedeathmenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="spelltypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

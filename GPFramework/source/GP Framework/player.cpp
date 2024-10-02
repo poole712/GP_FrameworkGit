@@ -136,3 +136,8 @@ void Player::AnimateAnimationIce()
 	AnimationCount6to7();
 	m_bSwitchingAnimation = true;
 }
+
+SpellType Player::GetActiveSpell() const
+{
+	return m_iActiveSpell;
+}

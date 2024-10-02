@@ -4,6 +4,8 @@
 #include "animatedentity.h"
 #include "animatedsprite.h"
 
+#include "spelltypes.h"
+
 class Renderer;
 class Sprite;
 class InputSystem;
@@ -20,13 +22,6 @@ public:
 	void Process(float deltaTime);
 	void Draw(Renderer& renderer);
 
-	enum ActiveSpell
-	{
-		FIRE = 1,
-		EARTH = 2,
-		ICE = 3
-	};
-
 	bool IsKey1();
 	bool IsKey2();
 	bool IsKey3();
@@ -41,11 +36,11 @@ public:
 	void AnimateAnimationEarth();
 	void AnimateAnimationIce();
 
-	ActiveSpell GetActiveSpell();
+	SpellType GetActiveSpell() const;
 
 private:
 	bool m_bSwitchingAnimation;
-	ActiveSpell m_iActiveSpell;
+	SpellType m_iActiveSpell;
 };
 
 #endif // _PLAYER_H
