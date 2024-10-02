@@ -4,7 +4,7 @@
 #include "animatedentity.h"
 #include "animatedsprite.h"
 
-#include "spelltypes.h"
+#include "elementtype.h"
 
 class Renderer;
 class Sprite;
@@ -36,11 +36,11 @@ public:
 	void AnimateAnimationEarth();
 	void AnimateAnimationIce();
 
-	SpellType GetActiveSpell() const;
+	ElementType GetActiveSpell() const;
 
 private:
 	bool m_bSwitchingAnimation;
-	SpellType m_iActiveSpell;
+	ElementType m_iActiveSpell;
 };
 
 #endif // _PLAYER_H
