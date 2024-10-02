@@ -25,6 +25,7 @@ FletchersPlayer::FletchersPlayer()
 
 FletchersPlayer::~FletchersPlayer()
 {
+	
 }
 
 bool
@@ -50,7 +51,6 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World* world)
 	bodyDef.position.Set(650.0f, 850.0f);
 	m_pBody = world->CreateBody(&bodyDef);
 	m_pBody->SetFixedRotation(true);
-	m_pBody->GetUserData().pointer = reinterpret_cast<uintptr_t>(otherBlock);
 
 	b2PolygonShape polyShape;
 	polyShape.SetAsBox(30.0f, 30.0f);

@@ -30,10 +30,9 @@ public:
 
 protected:
 	Sprite* m_pTitleSprite;
-
 	Sprite* m_pPlayButton;
 	Sprite* m_pQuitButton;
 
 
 };
-#endif // ! _SCENECHECKERBOARDS_H
+#endif

@@ -11,10 +11,8 @@ FletchsTestBlock::FletchsTestBlock(float x, float y)
 
 FletchsTestBlock::~FletchsTestBlock()
 {
-
 	delete m_pSprite;
 	m_pSprite = 0;
-
 }
 
 bool

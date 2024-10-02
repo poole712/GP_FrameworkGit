@@ -13,6 +13,7 @@ Player::Player()
 Player::~Player()
 {
 	delete m_iInputSystem;
+	m_iInputSystem = 0;
 }
 
 bool Player::Initialise(Renderer& renderer)

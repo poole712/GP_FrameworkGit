@@ -20,6 +20,9 @@ AnimatedEntity::~AnimatedEntity()
 {
 	delete m_pASprite;
 	m_pASprite = 0;
+
+	delete m_iInputSystem;
+	m_iInputSystem = 0;
 }
 
 Vector2&

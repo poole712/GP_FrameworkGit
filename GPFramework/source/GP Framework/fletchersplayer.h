@@ -51,7 +51,6 @@ protected:
 	b2Fixture* m_pFixture;
 	b2Vec2 m_vVelocity;
 	b2Vec2 m_vJump;
-	FletchsTestBlock* otherBlock;
 
 
 	bool m_bHurt;
