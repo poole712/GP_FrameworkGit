@@ -40,22 +40,22 @@ void Player::Process(float deltaTime)
 	{
 		m_pASprite->Process(deltaTime);
 
-		if (IsKey1() && !m_bSwitchingAnimation && m_iActiveSpell != 1)
+		if (IsKey1() && !m_bSwitchingAnimation && m_iActiveSpell != FIRE)
 		{
-			AnimateAnimation1();
-			m_iActiveSpell = 1;
+			AnimateAnimationFire();
+			m_iActiveSpell = FIRE;
 		}
 		
-		if (IsKey2() && !m_bSwitchingAnimation && m_iActiveSpell != 2)
+		if (IsKey2() && !m_bSwitchingAnimation && m_iActiveSpell != EARTH)
 		{
-			AnimateAnimation2();
-			m_iActiveSpell = 2;
+			AnimateAnimationEarth();
+			m_iActiveSpell = EARTH;
 		}
 		
-		if (IsKey3() && !m_bSwitchingAnimation && m_iActiveSpell != 3)
+		if (IsKey3() && !m_bSwitchingAnimation && m_iActiveSpell != ICE)
 		{
-			AnimateAnimation3();
-			m_iActiveSpell = 3;
+			AnimateAnimationIce();
+			m_iActiveSpell = ICE;
 		}
 
 		if (!m_pASprite->IsAnimating() && m_bSwitchingAnimation)
@@ -115,21 +115,21 @@ void Player::AnimationCount6to7()
 	m_pASprite->Restart();
 }
 
-void Player::AnimateAnimation1()
+void Player::AnimateAnimationFire()
 {
 	m_pASprite->SetLooping(false);
 	AnimationCount4to5();
 	m_bSwitchingAnimation = true;
 }
 
-void Player::AnimateAnimation2()
+void Player::AnimateAnimationEarth()
 {
 	m_pASprite->SetLooping(false);
 	AnimationCount5to6();
 	m_bSwitchingAnimation = true;
 }
 
-void Player::AnimateAnimation3()
+void Player::AnimateAnimationIce()
 {
 	m_pASprite->SetLooping(false);
 	AnimationCount6to7();
