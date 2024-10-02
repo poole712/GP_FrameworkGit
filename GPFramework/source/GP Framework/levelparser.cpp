@@ -3,6 +3,10 @@
 
 //Local
 #include "logmanager.h"
+#include "entity.h"
+#include "fletchstestblock.h"
+#include "fletchersplayer.h"
+#include "box2d/box2d.h"
 
 //Library
 #include <string>
@@ -15,6 +19,7 @@ LevelParser* LevelParser::sm_pInstance = 0;
 
 LevelParser::LevelParser()
 	: m_pLevelData(new std::map<string, std::map<int, string>>())
+	, m_tileSize(256.0f)
 {
 
 }
@@ -108,4 +113,43 @@ LevelParser::Trim(const string& str)
 
 	return (first == std::string::npos || last == std::string::npos)
 		? "" : str.substr(first, last - first + 1);
+}
+
+std::vector<Entity*>
+LevelParser::LoadLevel(const string& levelname)
+{
+	std::vector<Entity*> tileMap;
+	auto levelSection = m_pLevelData->find(levelname);
+
+	for (const auto& iValue : levelSection->second)
+	{
+		float y = static_cast<float>(iValue.first) * m_tileSize;
+		float x = 0;
+
+		//Generate Tilemap
+		for (int i = 0; i < iValue.second.length(); i++)
+		{
+			Entity* tile;
+			if (iValue.second[i] == '#')
+			{
+				tile = new FletchsTestBlock(x, y);
+				tileMap.push_back(tile);
+			}
+
+			if (iValue.second[i] == 'p')
+			{
+				tile = new FletchersPlayer();
+				tileMap.push_back(tile);
+			}
+			x += m_tileSize;
+		}
+	}
+
+	return tileMap;
+}
+
+void
+LevelParser::SetTileSize(float size)
+{
+	m_tileSize = size;
 }

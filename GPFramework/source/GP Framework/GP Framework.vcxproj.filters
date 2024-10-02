@@ -108,12 +108,6 @@
     <ClCompile Include="enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="animatedentity.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="animatedentity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="uihandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -138,10 +132,10 @@
     <ClCompile Include="fletchstestblock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
+    <ClCompile Include="levelparser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sceneplayeranimation.cpp">
+    <ClCompile Include="levelparsetest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -255,6 +249,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sceneplayeranimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelparser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelparsetest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

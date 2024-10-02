@@ -7,6 +7,12 @@
 class Renderer;
 class Sprite;
 class InputSystem;
+class b2World;
+
+enum EntityType {
+	Tile,
+	Block,
+};
 
 class Entity
 {
@@ -15,6 +21,7 @@ public:
 	virtual ~Entity();
 
 	virtual bool Initialise(Renderer& renderer) = 0;
+	virtual bool Initialise(b2World& world, Renderer& renderer) = 0;
 	virtual void Process(float deltaTime, InputSystem& inputSystem) = 0;
 	virtual void Draw(Renderer& renderer);
 
@@ -32,6 +39,7 @@ public:
 	Vector2& GetVelocity();
 
 	bool IsCollidingWith(Entity& toCheck);
+	EntityType GetEntityType();
 
 protected:
 
@@ -48,6 +56,7 @@ protected:
 	Vector2 m_rotation;
 	bool m_bAlive;
 	float m_fCurrentRotation;
+	EntityType m_entityType;
 
 
 private:

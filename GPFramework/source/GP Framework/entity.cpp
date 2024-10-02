@@ -131,3 +131,8 @@ Entity::GetRotation()
 	return m_fCurrentRotation;
 }
 
+EntityType 
+Entity::GetEntityType() 
+{
+	return m_entityType;
+}

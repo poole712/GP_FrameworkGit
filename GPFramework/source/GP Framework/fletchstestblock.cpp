@@ -18,13 +18,13 @@ FletchsTestBlock::~FletchsTestBlock()
 }
 
 bool
-FletchsTestBlock::Initialise(b2World* world, Renderer& renderer)
+FletchsTestBlock::Initialise(b2World& world, Renderer& renderer)
 {
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_kinematicBody;
 
 	bodyDef.position.Set(m_vStartPos.x, m_vStartPos.y);
-	m_pBody = world->CreateBody(&bodyDef);
+	m_pBody = world.CreateBody(&bodyDef);
 	m_pBody->SetGravityScale(0.0f);
 
 	b2PolygonShape polyShape;

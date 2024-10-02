@@ -4,8 +4,10 @@
 
 #include <string>
 #include <map>
+#include <vector>
 
 class map;
+class Entity;
 
 using namespace std;
 
@@ -17,7 +19,9 @@ public:
 	static void DestroyInstance();
 
 	bool LoadLevelFile(const string& filename);
+	std::vector<Entity*> LoadLevel(const string& levelname);
 	void PrintMapValues();
+	void SetTileSize(float size);
 
 private:
 	LevelParser();
@@ -36,6 +40,8 @@ public:
 protected:
 	static LevelParser* sm_pInstance;
 	std::map<string, std::map<int, string>>* m_pLevelData;
+
+	float m_tileSize;
 
 private:
 };

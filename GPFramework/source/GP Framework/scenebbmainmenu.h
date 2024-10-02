@@ -20,6 +20,7 @@ public:
 	virtual void Draw(Renderer& renderer);
 	virtual void DebugDraw();
 	bool IsMouseOverObject(int mouseX, int mouseY, const Sprite& object);
+
 protected:
 
 private:

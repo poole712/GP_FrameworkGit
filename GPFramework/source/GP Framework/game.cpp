@@ -10,12 +10,14 @@
 
 #include "imgui/imgui_impl_sdl2.h"
 #include "iniparser.h"
+#include "levelparser.h"
 #include "inputsystem.h"
 #include "xboxcontroller.h"
 
 #include "scenebbmainmenu.h"
 #include "sceneplayeranimation.h"
 #include "fletchersscene.h"
+#include "levelparsetest.h"
 
 
 //Static members:
@@ -64,6 +66,7 @@ Game::Quit()
 bool
 Game::Initialise()
 {
+	LevelParser::GetInstance().LoadLevelFile("data\\testmapdata.ini");
 	int bbWidth = 1920;
 	int bbHeight = 1080;
 
@@ -84,28 +87,30 @@ Game::Initialise()
 	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
 
 	
-	Scene* pScene = 0;
+	//Scene* pScene = 0;
+	//pScene = new SceneBBMainMenu();
+	//pScene->Initialise(*m_pRenderer);
+	//m_scenes.push_back(pScene);
 
-	pScene = new SceneBBMainMenu();
-	pScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pScene);
+	//Scene* pGameScene = 0;
+	//pGameScene = new FletchersScene();
+	//pGameScene->Initialise(*m_pRenderer);
+	//m_scenes.push_back(pGameScene);
 
-	Scene* pGameScene = 0;
-	pGameScene = new FletchersScene();
-	pGameScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pGameScene);
+	Scene* pTestScene = 0;
+	pTestScene = new LevelParseTest();
+	pTestScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pTestScene);
 
-	pScene = new ScenePlayerAnimation();
-	pScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pScene);
+
+	//pScene = new ScenePlayerAnimation();
+	//pScene->Initialise(*m_pRenderer);
+	//m_scenes.push_back(pScene);
 
 	m_iCurrentScene = 0;
 	
 
 	m_pRenderer->SetClearColour(255, 100, 100);
-
-	m_pIniParser = new IniParser();
-	m_pIniParser->LoadIniFile("ini\\test.ini");
 
 	return true;
 }

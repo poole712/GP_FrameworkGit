@@ -36,7 +36,7 @@ FletchersPlayer::Initialise(Renderer& renderer)
 }
 
 bool
-FletchersPlayer::Initialise(Renderer& renderer, b2World* world)
+FletchersPlayer::Initialise(b2World& world, Renderer& renderer)
 {
 	m_vJump = b2Vec2(0, -50000.0f);
 	//Setting up sprites
@@ -47,7 +47,7 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World* world)
 	bodyDef.type = b2_dynamicBody;
 
 	bodyDef.position.Set(650.0f, 850.0f);
-	m_pBody = world->CreateBody(&bodyDef);
+	m_pBody = world.CreateBody(&bodyDef);
 	m_pBody->SetFixedRotation(true);
 
 
@@ -91,6 +91,16 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 void 
 FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem)
 {
+	//m_pBody->ApplyForce(m_vVelocity, m_pBody->GetPosition(), true);
+	m_pBody->SetTransform(b2Vec2(650.0f, m_pBody->GetPosition().y), m_pBody->GetAngle());
+
+	m_pSprite->SetX(m_pBody->GetPosition().x);
+	m_pSprite->SetY(m_pBody->GetPosition().y);
+
+	m_position.x = m_pBody->GetPosition().x;
+	m_position.y = m_pBody->GetPosition().y;
+
+	m_pSprite->SetAngle(m_pBody->GetAngle());
 }
 
 

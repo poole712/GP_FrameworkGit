@@ -57,7 +57,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <LocalDebuggerWorkingDirectory>$(SolutionDir)..\game</LocalDebuggerWorkingDirectory>
-</PropertyGroup>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -148,8 +148,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="animatedentity.cpp" />
-    <ClCompile Include="animatedentity.h" />
     <ClCompile Include="animatedsprite.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="entity.cpp" />
@@ -168,17 +166,17 @@
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="iniparser.cpp" />
     <ClCompile Include="inputsystem.cpp" />
+    <ClCompile Include="levelparser.cpp" />
+    <ClCompile Include="levelparsetest.cpp" />
     <ClCompile Include="logmanager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix4.cpp" />
     <ClCompile Include="particle.cpp" />
     <ClCompile Include="particleemitter.cpp" />
-    <ClCompile Include="player.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="scenebbmainmenu.cpp" />
     <ClCompile Include="scenebbmainmenu.h" />
-    <ClCompile Include="sceneplayeranimation.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="soundsystem.cpp" />
     <ClCompile Include="sprite.cpp" />
@@ -210,6 +208,8 @@
     <ClInclude Include="iniparser.h" />
     <ClInclude Include="inlinehelper.h" />
     <ClInclude Include="inputsystem.h" />
+    <ClInclude Include="levelparser.h" />
+    <ClInclude Include="levelparsetest.h" />
     <ClInclude Include="logmanager.h" />
     <ClInclude Include="matrix4.h" />
     <ClInclude Include="particle.h" />

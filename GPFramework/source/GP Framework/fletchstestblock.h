@@ -18,7 +18,7 @@ public:
 	virtual bool Initialise(Renderer& renderer) override;
 	virtual void Process(float deltaTime, InputSystem& inputSystem) override;
 
-	bool Initialise(b2World* b2world, Renderer& renderer);
+	bool Initialise(b2World& b2world, Renderer& renderer);
 	void Draw(Renderer& renderer);
 
 protected:
