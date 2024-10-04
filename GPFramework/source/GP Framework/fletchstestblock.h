@@ -22,6 +22,9 @@ public:
 	bool Initialise(b2World* b2world, Renderer& renderer);
 	void Draw(Renderer& renderer);
 
+	void Toggle(ElementType type);
+	ElementType GetType();
+
 protected:
 
 private:

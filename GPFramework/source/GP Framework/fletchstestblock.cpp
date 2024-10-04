@@ -3,6 +3,7 @@
 #include "sprite.h"
 #include "box2d/box2d.h"
 #include "renderer.h"
+#include "elementtype.h"
 
 FletchsTestBlock::FletchsTestBlock(float x, float y, ElementType type)
 {
@@ -76,6 +77,30 @@ FletchsTestBlock::Draw(Renderer& renderer)
 	m_pSprite->SetY(m_pBody->GetPosition().y);
 
 	m_pSprite->Draw(renderer);
+}
+
+void
+FletchsTestBlock::Toggle(ElementType type)
+{
+	b2Filter filter;
+	if (m_eType == type)
+	{
+		filter.maskBits = 0xFFFF;
+		m_pFixture->SetFilterData(filter);
+		m_pSprite->SetAlpha(1.0f);
+	}
+	else
+	{
+		filter.maskBits = 0x0000;
+		m_pFixture->SetFilterData(filter);
+		m_pSprite->SetAlpha(0.1f);
+	}
+}
+
+ElementType 
+FletchsTestBlock::GetType()
+{
+	return m_eType;
 }
 
 

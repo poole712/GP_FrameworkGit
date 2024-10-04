@@ -152,6 +152,7 @@
     <ClCompile Include="animatedentity.h" />
     <ClCompile Include="animatedsprite.cpp" />
     <ClCompile Include="contactlistener.cpp" />
+    <ClCompile Include="hud.cpp" />
     <ClCompile Include="scenedeathmenu.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="entity.cpp" />
@@ -194,6 +195,7 @@
   <ItemGroup>
     <ClInclude Include="animatedsprite.h" />
     <ClInclude Include="elementtype.h" />
+    <ClInclude Include="hud.h" />
     <ClInclude Include="scenedeathmenu.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="entity.h" />
