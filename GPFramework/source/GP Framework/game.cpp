@@ -10,14 +10,13 @@
 
 #include "imgui/imgui_impl_sdl2.h"
 #include "iniparser.h"
-#include "levelparser.h"
 #include "inputsystem.h"
 #include "xboxcontroller.h"
 
 #include "scenebbmainmenu.h"
 #include "sceneplayeranimation.h"
 #include "fletchersscene.h"
-#include "levelparsetest.h"
+#include "scenedeathmenu.h"
 
 
 //Static members:
@@ -66,7 +65,6 @@ Game::Quit()
 bool
 Game::Initialise()
 {
-	LevelParser::GetInstance().LoadLevelFile("data\\testmapdata.ini");
 	int bbWidth = 1920;
 	int bbHeight = 1080;
 
@@ -87,30 +85,31 @@ Game::Initialise()
 	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
 
 	
-	//Scene* pScene = 0;
-	//pScene = new SceneBBMainMenu();
-	//pScene->Initialise(*m_pRenderer);
-	//m_scenes.push_back(pScene);
+	Scene* pScene = 0;
 
-	//Scene* pGameScene = 0;
-	//pGameScene = new FletchersScene();
-	//pGameScene->Initialise(*m_pRenderer);
-	//m_scenes.push_back(pGameScene);
+	pScene = new SceneBBMainMenu();
+	pScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pScene);
 
-	Scene* pTestScene = 0;
-	pTestScene = new LevelParseTest();
-	pTestScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pTestScene);
+	Scene* pGameScene = 0;
+	pGameScene = new FletchersScene();
+	pGameScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pGameScene);
 
+	Scene* pAnimScene = new ScenePlayerAnimation();
+	pAnimScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pAnimScene);
 
-	//pScene = new ScenePlayerAnimation();
-	//pScene->Initialise(*m_pRenderer);
-	//m_scenes.push_back(pScene);
+	Scene* pDeathScene = new SceneDeathMenu();
+	pDeathScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pDeathScene);
 
 	m_iCurrentScene = 0;
-	
 
-	m_pRenderer->SetClearColour(255, 100, 100);
+	m_pRenderer->SetClearColour(100, 100, 100);
+
+	m_pIniParser = new IniParser();
+	m_pIniParser->LoadIniFile("ini\\test.ini");
 
 	return true;
 }
@@ -118,6 +117,11 @@ Game::Initialise()
 void 
 Game::SwitchScene(int scene)
 {
+	//Re-initialise game scene
+	if (scene == 1)
+	{
+		m_scenes[1]->Initialise(*m_pRenderer);
+	}
 	m_iCurrentScene = scene;
 }
 
@@ -168,10 +172,7 @@ Game::Process(float deltaTime)
 {
 	ProcessFrameCounting(deltaTime);
 	// TODO: Add game objects to process here!
-	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem, m_iCurrentScene);
-
-	
-
+	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem, *this);
 }
 
 void 

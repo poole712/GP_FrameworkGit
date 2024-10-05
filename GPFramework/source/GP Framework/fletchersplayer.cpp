@@ -38,6 +38,8 @@ FletchersPlayer::Initialise(Renderer& renderer)
 bool
 FletchersPlayer::Initialise(b2World& world, Renderer& renderer)
 {
+	m_bAlive = true;
+
 	m_vJump = b2Vec2(0, -50000.0f);
 	//Setting up sprites
 	m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
@@ -49,7 +51,6 @@ FletchersPlayer::Initialise(b2World& world, Renderer& renderer)
 	bodyDef.position.Set(650.0f, 850.0f);
 	m_pBody = world.CreateBody(&bodyDef);
 	m_pBody->SetFixedRotation(true);
-
 
 	b2PolygonShape polyShape;
 	polyShape.SetAsBox(30.0f, 30.0f);

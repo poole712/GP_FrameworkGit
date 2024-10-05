@@ -4,6 +4,8 @@
 #include "animatedentity.h"
 #include "animatedsprite.h"
 
+#include "elementtype.h"
+
 class Renderer;
 class Sprite;
 class InputSystem;
@@ -30,13 +32,15 @@ public:
 	void AnimationCount5to6();
 	void AnimationCount6to7();
 
-	void AnimateAnimation1();
-	void AnimateAnimation2();
-	void AnimateAnimation3();
+	void AnimateAnimationFire();
+	void AnimateAnimationEarth();
+	void AnimateAnimationIce();
+
+	ElementType GetActiveSpell() const;
 
 private:
 	bool m_bSwitchingAnimation;
-	int m_iActiveSpell;
+	ElementType m_iActiveSpell;
 };
 
 #endif // _PLAYER_H

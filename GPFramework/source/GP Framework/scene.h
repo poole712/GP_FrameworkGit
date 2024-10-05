@@ -4,6 +4,7 @@
 
 class Renderer;
 class InputSystem;
+class Game;
 
 class Scene {
 public: 
@@ -11,7 +12,7 @@ public:
 	virtual ~Scene();
 
 	virtual bool Initialise(Renderer& renderer) = 0;
-	virtual void Process(float deltaTime, InputSystem& inputSystem, int& scene) = 0;
+	virtual void Process(float deltaTime, InputSystem& inputSystem, Game& game) = 0;
 	virtual void Draw(Renderer& renderer) = 0;
 	virtual void DebugDraw() = 0;
 

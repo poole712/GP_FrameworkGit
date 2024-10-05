@@ -17,6 +17,7 @@ class b2Vec2;
 class b2Fixture;
 class Explosion;
 class SoundSystem;
+class FletchsTestBlock;
 
 
 class FletchersPlayer : public Entity
@@ -50,6 +51,7 @@ protected:
 	b2Fixture* m_pFixture;
 	b2Vec2 m_vVelocity;
 	b2Vec2 m_vJump;
+
 
 	bool m_bHurt;
 
