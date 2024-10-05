@@ -43,7 +43,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	m_pWorld = new b2World(gravity);
 
 	m_pPlayer = new FletchersPlayer();
-	m_pPlayer->Initialise(renderer, m_pWorld);
+	//m_pPlayer->Initialise(renderer, m_pWorld);
 	
 	float currentX = 750;
 	for (int i = 0; i < 5; i++)
@@ -54,10 +54,10 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	}
 	for (FletchsTestBlock* block : m_pTestBlocks)
 	{
-		block->Initialise(m_pWorld ,renderer);
+		block->Initialise(*m_pWorld ,renderer);
 	}
 	m_pSingleBlock = new FletchsTestBlock(1100, 950);
-	m_pSingleBlock->Initialise(m_pWorld, renderer);
+	m_pSingleBlock->Initialise(*m_pWorld, renderer);
 
 	return false;
 }

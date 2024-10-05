@@ -5,7 +5,7 @@
 #include "logmanager.h"
 #include "entity.h"
 #include "fletchstestblock.h"
-#include "fletchersplayer.h"
+#include "player.h"
 #include "box2d/box2d.h"
 
 //Library
@@ -138,7 +138,7 @@ LevelParser::LoadLevel(const string& levelname)
 
 			if (iValue.second[i] == 'p')
 			{
-				tile = new FletchersPlayer();
+				tile = new Player();
 				tileMap.push_back(tile);
 			}
 			x += m_tileSize;

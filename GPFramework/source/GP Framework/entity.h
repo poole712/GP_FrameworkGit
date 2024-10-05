@@ -20,8 +20,7 @@ public:
 	Entity();
 	virtual ~Entity();
 
-	virtual bool Initialise(Renderer& renderer) = 0;
-	virtual bool Initialise(b2World& world, Renderer& renderer) = 0;
+	virtual bool Initialise(Renderer& renderer, b2World& world) = 0;
 	virtual void Process(float deltaTime, InputSystem& inputSystem) = 0;
 	virtual void Draw(Renderer& renderer);
 

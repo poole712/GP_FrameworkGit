@@ -16,7 +16,7 @@ FletchsTestBlock::~FletchsTestBlock()
 }
 
 bool
-FletchsTestBlock::Initialise(b2World& world, Renderer& renderer)
+FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 {
 	m_bAlive = true;
 

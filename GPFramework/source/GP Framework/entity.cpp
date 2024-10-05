@@ -24,7 +24,7 @@ Entity::~Entity()
 }
 
 bool
-Entity::Initialise(Renderer& renderer)
+Entity::Initialise(Renderer& renderer, b2World& world)
 {
 	return true;
 }
