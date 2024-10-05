@@ -54,10 +54,10 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	}
 	for (FletchsTestBlock* block : m_pTestBlocks)
 	{
-		block->Initialise(*m_pWorld ,renderer);
+		block->Initialise(renderer, *m_pWorld);
 	}
 	m_pSingleBlock = new FletchsTestBlock(1100, 950);
-	m_pSingleBlock->Initialise(*m_pWorld, renderer);
+	m_pSingleBlock->Initialise(renderer, *m_pWorld);
 
 	return false;
 }

@@ -46,7 +46,7 @@ LevelParseTest::Initialise(Renderer& renderer, const string& levelname)
 
 	for (auto it = m_entityList.begin(); it != m_entityList.end();)
 	{
-		(*it)->Initialise(*m_pWorld, renderer);
+		(*it)->Initialise(renderer, *m_pWorld);
 		++it;
 	}
 
@@ -54,7 +54,7 @@ LevelParseTest::Initialise(Renderer& renderer, const string& levelname)
 }
 
 void
-LevelParseTest::Process(float deltaTime, InputSystem& inputSystem, int& scene)
+LevelParseTest::Process(float deltaTime, InputSystem& inputSystem, Game& game)
 {
 	for (auto it = m_entityList.begin(); it != m_entityList.end();)
 	{

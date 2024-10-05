@@ -29,14 +29,7 @@ FletchersPlayer::~FletchersPlayer()
 }
 
 bool
-FletchersPlayer::Initialise(Renderer& renderer)
-{
-
-	return true;
-}
-
-bool
-FletchersPlayer::Initialise(b2World& world, Renderer& renderer)
+FletchersPlayer::Initialise(Renderer& renderer, b2World& world)
 {
 	m_bAlive = true;
 

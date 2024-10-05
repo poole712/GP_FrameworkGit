@@ -148,8 +148,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animatedentity.cpp" />
     <ClCompile Include="animatedsprite.cpp" />
     <ClCompile Include="contactlistener.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="scenedeathmenu.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="entity.cpp" />
@@ -179,6 +181,7 @@
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="scenebbmainmenu.cpp" />
     <ClCompile Include="scenebbmainmenu.h" />
+    <ClCompile Include="sceneplayeranimation.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="soundsystem.cpp" />
     <ClCompile Include="sprite.cpp" />
@@ -190,6 +193,7 @@
     <ClCompile Include="xboxcontroller.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animatedentity.h" />
     <ClInclude Include="animatedsprite.h" />
     <ClInclude Include="spelltypes.h" />
     <ClInclude Include="scenedeathmenu.h" />

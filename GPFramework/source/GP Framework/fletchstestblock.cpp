@@ -60,12 +60,6 @@ FletchsTestBlock::Draw(Renderer& renderer)
 	m_pSprite->Draw(renderer);
 }
 
-
-bool FletchsTestBlock::Initialise(Renderer& renderer)
-{
-	return false;
-}
-
 void
 FletchsTestBlock::Process(float deltaTime, InputSystem& inputSystem)
 {

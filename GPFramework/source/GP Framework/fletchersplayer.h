@@ -26,7 +26,7 @@ public:
 	FletchersPlayer();
 	~FletchersPlayer();
 
-	virtual bool Initialise(Renderer& renderer) override;
+	virtual bool Initialise(Renderer& renderer, b2World& world) override;
 	bool Initialise(b2World& world, Renderer& renderer);
 	void Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem);
 	virtual void Process(float deltaTime, InputSystem& inputSystem) override;

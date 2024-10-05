@@ -35,10 +35,6 @@ protected:
 	b2Vec2 m_vVel;
 	b2Vec2 m_vStartPos;
 
-
-	// Inherited via Entity
-
-
 };
 
 

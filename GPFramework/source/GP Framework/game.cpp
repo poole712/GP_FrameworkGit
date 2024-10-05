@@ -17,6 +17,7 @@
 #include "sceneplayeranimation.h"
 #include "fletchersscene.h"
 #include "scenedeathmenu.h"
+#include "levelparsetest.h"
 
 
 //Static members:
@@ -91,6 +92,11 @@ Game::Initialise()
 	pScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pScene);
 
+	Scene* pLevelTest = 0;
+	pLevelTest = new LevelParseTest();
+	pLevelTest->Initialise(*m_pRenderer);
+	m_scenes.push_back(pLevelTest);
+
 	Scene* pGameScene = 0;
 	pGameScene = new FletchersScene();
 	pGameScene->Initialise(*m_pRenderer);
@@ -107,9 +113,6 @@ Game::Initialise()
 	m_iCurrentScene = 0;
 
 	m_pRenderer->SetClearColour(100, 100, 100);
-
-	m_pIniParser = new IniParser();
-	m_pIniParser->LoadIniFile("ini\\test.ini");
 
 	return true;
 }
