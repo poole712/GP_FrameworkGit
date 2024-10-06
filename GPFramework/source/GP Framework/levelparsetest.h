@@ -7,6 +7,7 @@
 
 class Entity;
 class b2World;
+class SoundSystem;
 
 using namespace std;
 
@@ -32,6 +33,7 @@ public:
 protected:
 	std::vector<Entity*> m_entityList;
 	b2World* m_pWorld;
+	SoundSystem* m_pSoundSystem;
 
 private:
 

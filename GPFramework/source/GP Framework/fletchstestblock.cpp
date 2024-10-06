@@ -48,6 +48,8 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 	m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
 	m_pSprite->SetScale(2.0f);
 
+	m_entityType = Block;
+
 	return true;
 }
 

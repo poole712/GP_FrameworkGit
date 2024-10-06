@@ -3,15 +3,18 @@
 
 #include "entity.h"
 #include "vector2.h"
+#include "box2d/box2d.h"
 
 class Renderer;
 class Sprite;
 class InputSystem;
 class b2World;
+class b2Vec2;
 
 enum EntityType {
 	Tile,
 	Block,
+	Player,
 };
 
 class Entity
@@ -53,6 +56,7 @@ protected:
 	Vector2 m_position;
 	Vector2 m_velocity;
 	Vector2 m_rotation;
+	b2Vec2 m_vStartPos;
 	bool m_bAlive;
 	float m_fCurrentRotation;
 	EntityType m_entityType;

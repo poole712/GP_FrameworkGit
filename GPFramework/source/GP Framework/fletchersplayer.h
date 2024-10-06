@@ -24,6 +24,7 @@ class FletchersPlayer : public Entity
 {
 public:
 	FletchersPlayer();
+	FletchersPlayer(float x, float y);
 	~FletchersPlayer();
 
 	virtual bool Initialise(Renderer& renderer, b2World& world) override;
@@ -38,6 +39,7 @@ public:
 
 protected:
 	void Jump(SoundSystem& soundSystem);
+	void Jump();
 
 private:
 	FletchersPlayer(const FletchersPlayer& blockBloke);
@@ -51,7 +53,6 @@ protected:
 	b2Fixture* m_pFixture;
 	b2Vec2 m_vVelocity;
 	b2Vec2 m_vJump;
-
 
 	bool m_bHurt;
 

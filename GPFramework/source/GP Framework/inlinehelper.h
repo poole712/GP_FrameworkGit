@@ -43,6 +43,18 @@ inline float EaseInOutQuad(float time, float start, float change, float duration
 	return -change / 2.0f * (((time - 2.0f) * (--time)) - 1.0f) + start;
 }
 
+inline bool InRange(float x, float low, float high)
+{
+	if (x >= low && x <= high)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 
 
 

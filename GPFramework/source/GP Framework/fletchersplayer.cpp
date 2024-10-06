@@ -8,6 +8,7 @@
 #include "sprite.h"
 #include "soundsystem.h"
 #include "inputsystem.h"
+#include "inlinehelper.h"
 #include "box2d/box2d.h"
 
 #include <SDL_scancode.h>
@@ -21,6 +22,13 @@ float FletchersPlayer::sm_fBoundaryHeight = 0.0f;
 FletchersPlayer::FletchersPlayer()
 	: m_fTimeSinceJumpStarted(0)
 {
+	m_vStartPos = b2Vec2(650.0f, 850.0f);
+}
+
+FletchersPlayer::FletchersPlayer(float x, float y)
+	: m_fTimeSinceJumpStarted(0)
+{
+	m_vStartPos = b2Vec2(x, y);
 }
 
 FletchersPlayer::~FletchersPlayer()
@@ -41,7 +49,7 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World& world)
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_dynamicBody;
 
-	bodyDef.position.Set(650.0f, 850.0f);
+	bodyDef.position.Set(m_vStartPos.x, m_vStartPos.y);
 	m_pBody = world.CreateBody(&bodyDef);
 	m_pBody->SetFixedRotation(true);
 
@@ -56,6 +64,7 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World& world)
 	fixDef.restitution = 0.0f;
 
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
+	m_entityType = Player;
 
 	return true;
 }
@@ -95,6 +104,22 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem)
 	m_position.y = m_pBody->GetPosition().y;
 
 	m_pSprite->SetAngle(m_pBody->GetAngle());
+
+	ButtonState spaceState = (inputSystem.GetKeyState(SDL_SCANCODE_SPACE));
+
+	if (spaceState == BS_PRESSED)
+	{
+		Jump();
+	}
+}
+
+void
+FletchersPlayer::Jump()
+{
+	if (m_pBody->GetPosition().y > m_vStartPos.y)
+	{
+		m_pBody->ApplyLinearImpulse(m_vJump, m_pBody->GetPosition(), true);
+	}
 }
 
 

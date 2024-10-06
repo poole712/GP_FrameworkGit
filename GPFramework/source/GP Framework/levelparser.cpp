@@ -5,7 +5,7 @@
 #include "logmanager.h"
 #include "entity.h"
 #include "fletchstestblock.h"
-#include "player.h"
+#include "fletchersplayer.h"
 #include "box2d/box2d.h"
 
 //Library
@@ -118,6 +118,11 @@ LevelParser::Trim(const string& str)
 std::vector<Entity*>
 LevelParser::LoadLevel(const string& levelname)
 {
+	if (m_pLevelData->empty())
+	{
+		LoadLevelFile("data\\testmapdata.ini");
+	}
+
 	std::vector<Entity*> tileMap;
 	auto levelSection = m_pLevelData->find(levelname);
 
@@ -138,7 +143,7 @@ LevelParser::LoadLevel(const string& levelname)
 
 			if (iValue.second[i] == 'p')
 			{
-				tile = new Player();
+				tile = new FletchersPlayer(x, y);
 				tileMap.push_back(tile);
 			}
 			x += m_tileSize;

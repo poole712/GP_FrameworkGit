@@ -9,7 +9,7 @@
 #include "time.h"
 
 #include "imgui/imgui_impl_sdl2.h"
-#include "iniparser.h"
+#include "levelparser.h"
 #include "inputsystem.h"
 #include "xboxcontroller.h"
 
@@ -86,11 +86,11 @@ Game::Initialise()
 	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
 
 	
-	Scene* pScene = 0;
+	//Scene* pScene = 0;
 
-	pScene = new SceneBBMainMenu();
-	pScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pScene);
+	//pScene = new SceneBBMainMenu();
+	//pScene->Initialise(*m_pRenderer);
+	//m_scenes.push_back(pScene);
 
 	Scene* pLevelTest = 0;
 	pLevelTest = new LevelParseTest();
@@ -102,9 +102,9 @@ Game::Initialise()
 	pGameScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pGameScene);
 
-	Scene* pAnimScene = new ScenePlayerAnimation();
-	pAnimScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pAnimScene);
+	//Scene* pAnimScene = new ScenePlayerAnimation();
+	//pAnimScene->Initialise(*m_pRenderer);
+	//m_scenes.push_back(pAnimScene);
 
 	Scene* pDeathScene = new SceneDeathMenu();
 	pDeathScene->Initialise(*m_pRenderer);

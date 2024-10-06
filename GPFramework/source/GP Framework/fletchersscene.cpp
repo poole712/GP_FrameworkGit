@@ -33,7 +33,6 @@ FletchersScene::~FletchersScene()
 
 bool FletchersScene::Initialise(Renderer& renderer)
 {
-
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();
 
@@ -43,7 +42,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	m_pWorld = new b2World(gravity);
 
 	m_pPlayer = new FletchersPlayer();
-	//m_pPlayer->Initialise(renderer, m_pWorld);
+	m_pPlayer->Initialise(renderer, *m_pWorld);
 	
 	float currentX = 750;
 	for (int i = 0; i < 5; i++)
