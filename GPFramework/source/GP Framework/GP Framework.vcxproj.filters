@@ -159,6 +159,9 @@
     <ClCompile Include="level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="hud.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -275,7 +278,25 @@
     <ClInclude Include="scenedeathmenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="spelltypes.h">
+    <ClInclude Include="elementtype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hud.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="animatedentity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelparser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelparsetest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="animatedentity.h">

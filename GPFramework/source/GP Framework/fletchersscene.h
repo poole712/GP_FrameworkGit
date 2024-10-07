@@ -2,6 +2,7 @@
 #define _FLETCHERSSCENE_H
 
 #include "scene.h"
+#include "elementtype.h"
 
 #include <vector>
 
@@ -14,6 +15,7 @@ class FletchersPlayer;
 class FletchsTestBlock;
 class SoundSystem;
 class b2World;
+class Hud;
 
 class FletchersScene : public Scene
 {
@@ -26,6 +28,8 @@ public:
 	virtual void Draw(Renderer& renderer);
 	virtual void DebugDraw();
 
+	void ToggleBlocks(ElementType type);
+
 protected:
 
 private:
@@ -36,6 +40,7 @@ public:
 
 protected:
 	FletchersPlayer* m_pPlayer;
+	Hud* m_pHud;
 
 	std::vector<FletchsTestBlock*> m_pTestBlocks;
 	FletchsTestBlock* m_pSingleBlock;

@@ -3,10 +3,12 @@
 #include "sprite.h"
 #include "box2d/box2d.h"
 #include "renderer.h"
+#include "elementtype.h"
 
-FletchsTestBlock::FletchsTestBlock(float x, float y)
+FletchsTestBlock::FletchsTestBlock(float x, float y, ElementType type)
 {
 	m_vStartPos = b2Vec2(x, y);
+	m_eType = type;
 }
 
 FletchsTestBlock::~FletchsTestBlock()
@@ -48,7 +50,22 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 	m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
 	m_pSprite->SetScale(2.0f);
 
-	m_entityType = Block;
+	switch (m_eType)
+	{
+	case FIRE:
+		m_pSprite->SetGreenTint(0);
+		m_pSprite->SetBlueTint(0);
+		break;
+	case EARTH:
+		m_pSprite->SetRedTint(0);
+		m_pSprite->SetBlueTint(0);
+		break;
+	case ICE:
+		m_pSprite->SetGreenTint(0);
+		m_pSprite->SetRedTint(0);
+		break;
+	}
+
 
 	return true;
 }
@@ -60,6 +77,36 @@ FletchsTestBlock::Draw(Renderer& renderer)
 	m_pSprite->SetY(m_pBody->GetPosition().y);
 
 	m_pSprite->Draw(renderer);
+}
+
+void
+FletchsTestBlock::Toggle(ElementType type)
+{
+	b2Filter filter;
+	if (m_eType == type)
+	{
+		filter.maskBits = 0xFFFF;
+		m_pFixture->SetFilterData(filter);
+		m_pSprite->SetAlpha(1.0f);
+	}
+	else
+	{
+		filter.maskBits = 0x0000;
+		m_pFixture->SetFilterData(filter);
+		m_pSprite->SetAlpha(0.1f);
+	}
+}
+
+ElementType 
+FletchsTestBlock::GetType()
+{
+	return m_eType;
+}
+
+
+bool FletchsTestBlock::Initialise(Renderer& renderer)
+{
+	return false;
 }
 
 void

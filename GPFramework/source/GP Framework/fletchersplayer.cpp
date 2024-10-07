@@ -10,6 +10,7 @@
 #include "inputsystem.h"
 #include "inlinehelper.h"
 #include "box2d/box2d.h"
+#include "fletchersscene.h"
 
 #include <SDL_scancode.h>
 #include <thread>
@@ -37,7 +38,14 @@ FletchersPlayer::~FletchersPlayer()
 }
 
 bool
-FletchersPlayer::Initialise(Renderer& renderer, b2World& world)
+FletchersPlayer::Initialise(Renderer& renderer)
+{
+
+	return true;
+}
+
+bool
+FletchersPlayer::Initialise(Renderer& renderer, b2World* world, FletchersScene& scene)
 {
 	m_bAlive = true;
 
@@ -66,11 +74,14 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World& world)
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
 	m_entityType = Player;
 
+	m_eCurrentType = FIRE;
+	scene.ToggleBlocks(m_eCurrentType);
+
 	return true;
 }
 
 void
-FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem)
+FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, FletchersScene& scene)
 {
 	//m_pBody->ApplyForce(m_vVelocity, m_pBody->GetPosition(), true);
 	m_pBody->SetTransform(b2Vec2(650.0f, m_pBody->GetPosition().y), m_pBody->GetAngle());
@@ -83,11 +94,29 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 
 	m_pSprite->SetAngle(m_pBody->GetAngle());
 
-	ButtonState spaceState = (inputSystem.GetKeyState(SDL_SCANCODE_SPACE));
+	ButtonState spaceState = inputSystem.GetKeyState(SDL_SCANCODE_SPACE);
+	ButtonState key1State = inputSystem.GetKeyState(SDL_SCANCODE_1);
+	ButtonState key2State = inputSystem.GetKeyState(SDL_SCANCODE_2);
+	ButtonState key3State = inputSystem.GetKeyState(SDL_SCANCODE_3);
 
 	if (spaceState == BS_PRESSED)
 	{
 		Jump(soundSystem);
+	}
+	if (key1State == BS_PRESSED)
+	{
+		m_eCurrentType = FIRE;
+		scene.ToggleBlocks(m_eCurrentType);
+	}
+	if (key2State == BS_PRESSED)
+	{
+		m_eCurrentType = EARTH;
+		scene.ToggleBlocks(m_eCurrentType);
+	}
+	if (key3State == BS_PRESSED)
+	{
+		m_eCurrentType = ICE;
+		scene.ToggleBlocks(m_eCurrentType);
 	}
 }
 
@@ -122,6 +151,11 @@ FletchersPlayer::Jump()
 	}
 }
 
+ElementType
+FletchersPlayer::GetType()
+{
+	return m_eCurrentType;
+}
 
 void
 FletchersPlayer::Jump(SoundSystem& soundSystem)

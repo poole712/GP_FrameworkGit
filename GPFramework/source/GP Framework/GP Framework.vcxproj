@@ -151,6 +151,7 @@
     <ClCompile Include="animatedentity.cpp" />
     <ClCompile Include="animatedsprite.cpp" />
     <ClCompile Include="contactlistener.cpp" />
+    <ClCompile Include="hud.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="levelmanager.cpp" />
     <ClCompile Include="player.cpp" />
@@ -199,7 +200,8 @@
     <ClInclude Include="animatedsprite.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="levelmanager.h" />
-    <ClInclude Include="spelltypes.h" />
+    <ClInclude Include="elementtype.h" />
+    <ClInclude Include="hud.h" />
     <ClInclude Include="scenedeathmenu.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="entity.h" />
