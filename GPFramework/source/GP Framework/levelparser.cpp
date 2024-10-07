@@ -158,3 +158,9 @@ LevelParser::SetTileSize(float size)
 {
 	m_tileSize = size;
 }
+
+std::map<string, std::map<int, string>>*
+LevelParser::GetLevelData()
+{
+	return m_pLevelData;
+}

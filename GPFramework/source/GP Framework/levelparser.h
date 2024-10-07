@@ -17,8 +17,9 @@ class LevelParser
 public:
 	static LevelParser& GetInstance();
 	static void DestroyInstance();
-
+	std::map<string, std::map<int, string>>* GetLevelData();
 	bool LoadLevelFile(const string& filename);
+	
 	std::vector<Entity*> LoadLevel(const string& levelname);
 	void PrintMapValues();
 	void SetTileSize(float size);

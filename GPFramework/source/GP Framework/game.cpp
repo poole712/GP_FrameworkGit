@@ -17,7 +17,7 @@
 #include "sceneplayeranimation.h"
 #include "fletchersscene.h"
 #include "scenedeathmenu.h"
-#include "levelparsetest.h"
+#include "levelmanager.h"
 
 
 //Static members:
@@ -93,7 +93,7 @@ Game::Initialise()
 	//m_scenes.push_back(pScene);
 
 	Scene* pLevelTest = 0;
-	pLevelTest = new LevelParseTest();
+	pLevelTest = new LevelManager();
 	pLevelTest->Initialise(*m_pRenderer);
 	m_scenes.push_back(pLevelTest);
 
@@ -217,13 +217,13 @@ Game::ToggleDebugWindow()
 void
 Game::DebugDraw()
 {
-	m_scenes[m_iCurrentScene]->DebugDraw();
 
 	if (m_bShowDebugWindow)
 	{
 		bool open = true;
 
 		ImGui::Begin("Debug Window", &open, ImGuiWindowFlags_MenuBar);
+
 
 		ImGui::Text("COMP710 GP Framework (%s)", "2024, S2");
 
@@ -233,6 +233,9 @@ Game::DebugDraw()
 		}
 
 		ImGui::SliderInt("Active scene", &m_iCurrentScene, 0, m_scenes.size() - 1, "%d");
+
+		m_scenes[m_iCurrentScene]->DebugDraw();
+
 		ImGui::End();
 		
 	}

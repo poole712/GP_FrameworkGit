@@ -151,6 +151,8 @@
     <ClCompile Include="animatedentity.cpp" />
     <ClCompile Include="animatedsprite.cpp" />
     <ClCompile Include="contactlistener.cpp" />
+    <ClCompile Include="level.cpp" />
+    <ClCompile Include="levelmanager.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="scenedeathmenu.cpp" />
     <ClCompile Include="enemy.cpp" />
@@ -195,6 +197,8 @@
   <ItemGroup>
     <ClInclude Include="animatedentity.h" />
     <ClInclude Include="animatedsprite.h" />
+    <ClInclude Include="level.h" />
+    <ClInclude Include="levelmanager.h" />
     <ClInclude Include="spelltypes.h" />
     <ClInclude Include="scenedeathmenu.h" />
     <ClInclude Include="enemy.h" />
