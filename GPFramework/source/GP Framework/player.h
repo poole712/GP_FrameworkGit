@@ -25,21 +25,31 @@ public:
 	bool IsKey1();
 	bool IsKey2();
 	bool IsKey3();
+	bool IsKeySpace();
 
-	void AnimationCount0to3();
+	void AnimationRunning();
+	void AnimationJump();
+	void AnimationFall();
 
-	void AnimationCount4to5();
-	void AnimationCount5to6();
-	void AnimationCount6to7();
+	void AnimationFire();
+	void AnimationEarth();
+	void AnimationIce();
 
 	void AnimateAnimationFire();
 	void AnimateAnimationEarth();
 	void AnimateAnimationIce();
 
+	void AnimateAnimationJump();
+	void AnimateAnimationFall();
+
 	ElementType GetActiveSpell() const;
 
 private:
 	bool m_bSwitchingAnimation;
+
+	bool m_bJumping;
+	bool m_bFalling;
+
 	ElementType m_iActiveSpell;
 };
 
