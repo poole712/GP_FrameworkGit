@@ -8,6 +8,7 @@
 class Entity;
 class b2World;
 class SoundSystem;
+class Hud;
 
 using namespace std;
 
@@ -39,6 +40,7 @@ protected:
 	vector<Entity*> m_entityList;
 	b2World* m_pWorld;
 	SoundSystem* m_pSoundSystem;
+	Hud* m_pHud;
 
 private:
 

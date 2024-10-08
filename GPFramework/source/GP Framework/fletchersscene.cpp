@@ -92,7 +92,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 
 void FletchersScene::Process(float deltaTime, InputSystem& inputSystem, Game& game)
 {
-	m_pHud->Process(deltaTime, inputSystem, game);
+	m_pHud->Process(deltaTime, inputSystem);
 	m_pWorld->Step(deltaTime, 5, 8);
 	m_pSoundSystem->Process(deltaTime);
 	//m_pPlayer->Process(deltaTime, inputSystem, *m_pSoundSystem, *this);

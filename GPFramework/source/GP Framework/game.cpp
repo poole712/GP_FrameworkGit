@@ -55,6 +55,16 @@ Game::~Game()
 {
 	delete m_pRenderer;
 	m_pRenderer = 0;
+
+	delete m_pInputSystem;
+	m_pInputSystem = 0;
+
+	for (auto it = m_scenes.begin(); it != m_scenes.end();)
+	{
+		delete (*it);
+		(*it) = 0;
+		++it;
+	}
 }
 
 void

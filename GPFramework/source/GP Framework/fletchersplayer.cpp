@@ -76,7 +76,6 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World& world, Level& scene)
 	m_entityType = Player;
 
 	m_eCurrentType = FIRE;
-	//scene.ToggleBlocks(m_eCurrentType);
 
 	return true;
 }
@@ -168,9 +167,6 @@ FletchersPlayer::Jump(SoundSystem& soundSystem)
 {
 	if (m_pBody->GetPosition().y >= 900)
 	{
-		
-		//soundSystem.PlaySound("Jump");
-		//soundSystem.SetVolume("Jump", 0.5f);
 		m_pBody->ApplyLinearImpulse(m_vJump, m_pBody->GetPosition(), true);
 	}
 }

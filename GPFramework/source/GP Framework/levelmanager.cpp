@@ -24,7 +24,8 @@ LevelManager::LevelManager()
 
 LevelManager::~LevelManager()
 {
-
+	delete m_pActiveLevel;
+	m_pActiveLevel = 0;
 }
 
 bool

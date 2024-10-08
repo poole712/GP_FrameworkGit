@@ -8,6 +8,7 @@
 #include "box2d/box2d.h"
 #include "soundsystem.h"
 #include "renderer.h"
+#include "hud.h"
 
 using namespace std;
 
@@ -39,6 +40,10 @@ Level::Initialise(Renderer& renderer, vector<Entity*> entityList)
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();
 
+	//Hud
+	m_pHud = new Hud();
+	m_pHud->Initialise(renderer);
+
 	//Physics
 	b2Vec2 gravity;
 	gravity.Set(0.0f, 100.0f);
@@ -66,6 +71,7 @@ Level::Process(float deltaTime, InputSystem& inputSystem)
 		(*it)->Process(deltaTime, inputSystem, *m_pSoundSystem, *this);
 		++it;
 	}
+	m_pHud->Process(deltaTime, inputSystem);
 }
 
 void
@@ -76,6 +82,7 @@ Level::Draw(Renderer& renderer)
 		(*it)->Draw(renderer);
 		++it;
 	}
+	m_pHud->Draw(renderer);
 }
 
 void
