@@ -174,7 +174,6 @@
     <ClCompile Include="iniparser.cpp" />
     <ClCompile Include="inputsystem.cpp" />
     <ClCompile Include="levelparser.cpp" />
-    <ClCompile Include="levelparsetest.cpp" />
     <ClCompile Include="logmanager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix4.cpp" />
@@ -223,7 +222,6 @@
     <ClInclude Include="inlinehelper.h" />
     <ClInclude Include="inputsystem.h" />
     <ClInclude Include="levelparser.h" />
-    <ClInclude Include="levelparsetest.h" />
     <ClInclude Include="logmanager.h" />
     <ClInclude Include="matrix4.h" />
     <ClInclude Include="particle.h" />

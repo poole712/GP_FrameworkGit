@@ -150,9 +150,6 @@
     <ClCompile Include="levelparser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="levelparsetest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="levelmanager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -288,9 +285,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="levelparser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="levelparsetest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="levelmanager.h">

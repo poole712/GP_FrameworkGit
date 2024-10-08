@@ -85,7 +85,7 @@ void
 FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene)
 {
 	//m_pBody->ApplyForce(m_vVelocity, m_pBody->GetPosition(), true);
-	m_pBody->SetTransform(b2Vec2(650.0f, m_pBody->GetPosition().y), m_pBody->GetAngle());
+	m_pBody->SetTransform(b2Vec2(m_vStartPos.x, m_pBody->GetPosition().y), m_pBody->GetAngle());
 
 	m_pSprite->SetX(m_pBody->GetPosition().x);
 	m_pSprite->SetY(m_pBody->GetPosition().y);

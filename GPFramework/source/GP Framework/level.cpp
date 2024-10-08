@@ -7,6 +7,7 @@
 #include "fletchstestblock.h"
 #include "box2d/box2d.h"
 #include "soundsystem.h"
+#include "renderer.h"
 
 using namespace std;
 

@@ -62,7 +62,7 @@ LevelManager::LoadLevel(const string& level)
 
 	//Load new Level
 	m_pActiveLevel = new Level();
-	vector<Entity*> entityList = LevelParser::GetInstance().LoadLevel(level);
+	vector<Entity*> entityList = LevelParser::GetInstance().LoadLevel(level, *m_pRenderer);
 	m_pActiveLevel->Initialise(*m_pRenderer, entityList);
 }
 

@@ -8,6 +8,7 @@
 
 class map;
 class Entity;
+class Renderer;
 
 using namespace std;
 
@@ -20,7 +21,7 @@ public:
 	std::map<string, std::map<int, string>>* GetLevelData();
 	bool LoadLevelFile(const string& filename);
 	
-	std::vector<Entity*> LoadLevel(const string& levelname);
+	std::vector<Entity*> LoadLevel(const string& levelname, Renderer& renderer);
 	void PrintMapValues();
 	void SetTileSize(float size);
 

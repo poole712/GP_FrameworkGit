@@ -51,7 +51,7 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 	fixDef.friction = 0.0f;
 	fixDef.restitution = 0.0f;
 
-	m_vVel = b2Vec2(-30.0f, 0.0f);
+	m_vVel = b2Vec2(-60.0f, 0.0f);
 	m_pBody->SetLinearVelocity(m_vVel);
 	m_pBody->SetLinearDamping(0.5f);
 
@@ -77,6 +77,8 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 		m_pSprite->SetRedTint(0);
 		break;
 	}
+
+	Toggle(NONE);
 
 	return true;
 }

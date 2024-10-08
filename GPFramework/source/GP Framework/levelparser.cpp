@@ -8,6 +8,7 @@
 #include "fletchersplayer.h"
 #include "box2d/box2d.h"
 #include "elementtype.h"
+#include "renderer.h"
 
 //Library
 #include <string>
@@ -117,7 +118,7 @@ LevelParser::Trim(const string& str)
 }
 
 std::vector<Entity*>
-LevelParser::LoadLevel(const string& levelname)
+LevelParser::LoadLevel(const string& levelname, Renderer& renderer)
 {
 	if (m_pLevelData->empty())
 	{
@@ -130,7 +131,7 @@ LevelParser::LoadLevel(const string& levelname)
 	for (const auto& iValue : levelSection->second)
 	{
 		float y = static_cast<float>(iValue.first) * m_tileSize;
-		float x = 0;
+		float x = static_cast<int>(renderer.GetWidth() / 2);
 
 		//Generate Tilemap
 		for (int i = 0; i < iValue.second.length(); i++)
