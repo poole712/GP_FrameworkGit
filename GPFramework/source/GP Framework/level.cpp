@@ -18,18 +18,18 @@ Level::Level()
 
 Level::~Level()
 {
+	delete m_pSoundSystem;
+	m_pSoundSystem = 0;
+
+	delete m_pWorld;
+	m_pWorld = 0;
+
 	for (auto it = m_entityList.begin(); it != m_entityList.end();)
 	{
 		delete (*it);
 		(*it) = 0;
 		++it;
 	}
-
-	delete m_pSoundSystem;
-	m_pSoundSystem = 0;
-
-	delete m_pWorld;
-	m_pWorld = 0;
 }
 
 bool
