@@ -2,7 +2,9 @@
 #include "level.h"
 
 //Libraries
+#include <typeinfo>
 #include "entity.h"
+#include "fletchstestblock.h"
 #include "box2d/box2d.h"
 #include "soundsystem.h"
 
@@ -45,7 +47,7 @@ Level::Initialise(Renderer& renderer, vector<Entity*> entityList)
 
 	for (auto it = m_entityList.begin(); it != m_entityList.end();)
 	{
-		(*it)->Initialise(renderer, *m_pWorld);
+		(*it)->Initialise(renderer, *m_pWorld, *this);
 		++it;
 	}
 
@@ -60,7 +62,7 @@ Level::Process(float deltaTime, InputSystem& inputSystem)
 
 	for (auto it = m_entityList.begin(); it != m_entityList.end();)
 	{
-		(*it)->Process(deltaTime, inputSystem);
+		(*it)->Process(deltaTime, inputSystem, *m_pSoundSystem, *this);
 		++it;
 	}
 }
@@ -79,4 +81,13 @@ void
 Level::DebugDraw()
 {
 
+}
+
+void 
+Level::ToggleBlocks(ElementType type)
+{
+	for (Entity* block : m_entityList)
+	{
+		block->Toggle(type);
+	}
 }

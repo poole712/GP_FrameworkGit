@@ -8,15 +8,19 @@
 class Renderer;
 class Sprite;
 class b2Vec2;
+class Scene;
 
 class FletchsTestBlock : public Entity
 {
 public:
 
 	FletchsTestBlock(float startX, float startY, ElementType type);
+	FletchsTestBlock(float startX, float startY);
 	~FletchsTestBlock();
 
 	virtual bool Initialise(Renderer& renderer, b2World& world) override;
+	bool Initialise(Renderer& renderer, b2World& world, Level& scene);
+	void Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene) { Process(deltaTime, inputSystem); };
 	virtual void Process(float deltaTime, InputSystem& inputSystem) override;
 	void Draw(Renderer& renderer);
 

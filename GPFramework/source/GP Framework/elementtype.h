@@ -3,6 +3,7 @@
 
 enum ElementType
 {
+    NONE = 0,
     FIRE = 1,
     EARTH = 2,
     ICE = 3

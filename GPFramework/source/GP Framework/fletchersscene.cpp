@@ -49,7 +49,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	m_pWorld = new b2World(gravity);
 
 	m_pPlayer = new FletchersPlayer();
-	m_pPlayer->Initialise(renderer, *m_pWorld, *this);
+	m_pPlayer->Initialise(renderer, *m_pWorld);
 	
 	float currentX = 600;
 	for (int i = 0; i < 8; i++)
@@ -78,12 +78,12 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	
 	for (FletchsTestBlock* block : m_pTestBlocks)
 	{
-		block->Initialise(m_pWorld ,renderer);
+		block->Initialise(renderer, *m_pWorld);
 		block->Toggle(FIRE);
 	}
 
 	m_pSingleBlock = new FletchsTestBlock(850, 900, EARTH);
-	m_pSingleBlock->Initialise(m_pWorld, renderer);
+	m_pSingleBlock->Initialise(renderer, *m_pWorld);
 	m_pSingleBlock->Toggle(FIRE);
 
 
@@ -95,7 +95,7 @@ void FletchersScene::Process(float deltaTime, InputSystem& inputSystem, Game& ga
 	m_pHud->Process(deltaTime, inputSystem, game);
 	m_pWorld->Step(deltaTime, 5, 8);
 	m_pSoundSystem->Process(deltaTime);
-	m_pPlayer->Process(deltaTime, inputSystem, *m_pSoundSystem, *this);
+	//m_pPlayer->Process(deltaTime, inputSystem, *m_pSoundSystem, *this);
 	m_pSingleBlock->Process(deltaTime, inputSystem);
 
 	for (FletchsTestBlock* block : m_pTestBlocks)

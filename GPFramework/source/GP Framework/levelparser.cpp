@@ -7,6 +7,7 @@
 #include "fletchstestblock.h"
 #include "fletchersplayer.h"
 #include "box2d/box2d.h"
+#include "elementtype.h"
 
 //Library
 #include <string>
@@ -138,6 +139,24 @@ LevelParser::LoadLevel(const string& levelname)
 			if (iValue.second[i] == '#')
 			{
 				tile = new FletchsTestBlock(x, y);
+				tileMap.push_back(tile);
+			}
+
+			if (iValue.second[i] == 'i')
+			{
+				tile = new FletchsTestBlock(x, y, ICE);
+				tileMap.push_back(tile);
+			}
+
+			if (iValue.second[i] == 'e')
+			{
+				tile = new FletchsTestBlock(x, y, EARTH);
+				tileMap.push_back(tile);
+			}
+
+			if (iValue.second[i] == 'f')
+			{
+				tile = new FletchsTestBlock(x, y, FIRE);
 				tileMap.push_back(tile);
 			}
 

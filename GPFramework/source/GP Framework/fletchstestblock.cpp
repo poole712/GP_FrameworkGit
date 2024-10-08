@@ -11,10 +11,22 @@ FletchsTestBlock::FletchsTestBlock(float x, float y, ElementType type)
 	m_eType = type;
 }
 
+FletchsTestBlock::FletchsTestBlock(float x, float y)
+{
+	m_vStartPos = b2Vec2(x, y);
+	m_eType = NONE;
+}
+
 FletchsTestBlock::~FletchsTestBlock()
 {
 	delete m_pSprite;
 	m_pSprite = 0;
+}
+
+bool
+FletchsTestBlock::Initialise(Renderer& renderer, b2World& world, Level& scene)
+{
+	return Initialise(renderer, world);
 }
 
 bool
@@ -66,7 +78,6 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 		break;
 	}
 
-
 	return true;
 }
 
@@ -83,7 +94,7 @@ void
 FletchsTestBlock::Toggle(ElementType type)
 {
 	b2Filter filter;
-	if (m_eType == type)
+	if (m_eType == type || m_eType == NONE)
 	{
 		filter.maskBits = 0xFFFF;
 		m_pFixture->SetFilterData(filter);
@@ -103,20 +114,12 @@ FletchsTestBlock::GetType()
 	return m_eType;
 }
 
-
-bool FletchsTestBlock::Initialise(Renderer& renderer)
-{
-	return false;
-}
-
 void
 FletchsTestBlock::Process(float deltaTime, InputSystem& inputSystem)
 {
 	m_pSprite->SetX(m_pBody->GetPosition().x);
 	m_pSprite->SetY(m_pBody->GetPosition().y);
 	m_pSprite->SetAngle(m_pBody->GetAngle());
-
-
 	
 	m_position.x = m_pBody->GetPosition().x;
 	m_position.y = m_pBody->GetPosition().y;

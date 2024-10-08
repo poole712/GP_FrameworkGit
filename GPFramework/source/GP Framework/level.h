@@ -2,6 +2,7 @@
 #ifndef _LEVEL_H
 
 #include "scene.h"
+#include "elementtype.h"
 #include <vector>
 
 class Entity;
@@ -22,6 +23,8 @@ public:
 	void Process(float deltaTime, InputSystem& inputSystem);
 	void Draw(Renderer& renderer);
 	void DebugDraw();
+
+	void ToggleBlocks(ElementType type);
 
 protected:
 

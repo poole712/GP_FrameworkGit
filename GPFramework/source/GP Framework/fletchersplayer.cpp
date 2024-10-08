@@ -11,6 +11,8 @@
 #include "inlinehelper.h"
 #include "box2d/box2d.h"
 #include "fletchersscene.h"
+#include "level.h"
+#include "game.h"
 
 #include <SDL_scancode.h>
 #include <thread>
@@ -38,14 +40,13 @@ FletchersPlayer::~FletchersPlayer()
 }
 
 bool
-FletchersPlayer::Initialise(Renderer& renderer)
+FletchersPlayer::Initialise(Renderer& renderer, b2World& world)
 {
-
 	return true;
 }
 
 bool
-FletchersPlayer::Initialise(Renderer& renderer, b2World* world, FletchersScene& scene)
+FletchersPlayer::Initialise(Renderer& renderer, b2World& world, Level& scene)
 {
 	m_bAlive = true;
 
@@ -75,13 +76,13 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World* world, FletchersScene& 
 	m_entityType = Player;
 
 	m_eCurrentType = FIRE;
-	scene.ToggleBlocks(m_eCurrentType);
+	//scene.ToggleBlocks(m_eCurrentType);
 
 	return true;
 }
 
 void
-FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, FletchersScene& scene)
+FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene)
 {
 	//m_pBody->ApplyForce(m_vVelocity, m_pBody->GetPosition(), true);
 	m_pBody->SetTransform(b2Vec2(650.0f, m_pBody->GetPosition().y), m_pBody->GetAngle());
@@ -117,6 +118,11 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 	{
 		m_eCurrentType = ICE;
 		scene.ToggleBlocks(m_eCurrentType);
+	}
+
+	if (GetPosition().y > 1080)
+	{
+		Game::GetInstance().SwitchScene(2);
 	}
 }
 

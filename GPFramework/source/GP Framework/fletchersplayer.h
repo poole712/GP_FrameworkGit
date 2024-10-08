@@ -30,13 +30,14 @@ public:
 	~FletchersPlayer();
 
 	virtual bool Initialise(Renderer& renderer, b2World& world) override;
-	bool Initialise(b2World& world, Renderer& renderer, FletchersScene& scene);
-	void Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, FletchersScene& scene);
+	bool Initialise(Renderer& renderer, b2World& world, Level& scene);
+	void Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene);
 	virtual void Process(float deltaTime, InputSystem& inputSystem) override;
 	virtual void Draw(Renderer& renderer) override;
 
 	void CreateBoxWithEdges(b2Body* body, float width, float height);
 	ElementType GetType();
+	void Toggle(ElementType type) {};
 
 	float m_fJumpStrength;
 
@@ -56,7 +57,7 @@ protected:
 	b2Fixture* m_pFixture;
 	b2Vec2 m_vVelocity;
 	b2Vec2 m_vJump;
-
+	ElementType m_eCurrentType;
 
 	bool m_bHurt;
 

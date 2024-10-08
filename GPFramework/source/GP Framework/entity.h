@@ -3,6 +3,7 @@
 
 #include "entity.h"
 #include "vector2.h"
+#include "elementtype.h"
 #include "box2d/box2d.h"
 
 class Renderer;
@@ -10,6 +11,8 @@ class Sprite;
 class InputSystem;
 class b2World;
 class b2Vec2;
+class Level;
+class SoundSystem;
 
 enum EntityType {
 	Tile,
@@ -24,7 +27,9 @@ public:
 	virtual ~Entity();
 
 	virtual bool Initialise(Renderer& renderer, b2World& world) = 0;
+	virtual bool Initialise(Renderer& renderer, b2World& world, Level& scene) = 0;
 	virtual void Process(float deltaTime, InputSystem& inputSystem) = 0;
+	virtual void Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene) = 0;
 	virtual void Draw(Renderer& renderer);
 
 	void Rotate(float direction);
@@ -42,6 +47,7 @@ public:
 
 	bool IsCollidingWith(Entity& toCheck);
 	EntityType GetEntityType();
+	virtual void Toggle(ElementType type) = 0;
 
 protected:
 

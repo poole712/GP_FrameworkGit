@@ -86,21 +86,20 @@ Game::Initialise()
 	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
 
 	
-	//Scene* pScene = 0;
-
-	//pScene = new SceneBBMainMenu();
-	//pScene->Initialise(*m_pRenderer);
-	//m_scenes.push_back(pScene);
+	Scene* pScene = 0;
+	pScene = new SceneBBMainMenu();
+	pScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pScene);
 
 	Scene* pLevelTest = 0;
 	pLevelTest = new LevelManager();
 	pLevelTest->Initialise(*m_pRenderer);
 	m_scenes.push_back(pLevelTest);
 
-	Scene* pGameScene = 0;
-	pGameScene = new FletchersScene();
-	pGameScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pGameScene);
+	//Scene* pGameScene = 0;
+	//pGameScene = new FletchersScene();
+	//pGameScene->Initialise(*m_pRenderer);
+	//m_scenes.push_back(pGameScene);
 
 	//Scene* pAnimScene = new ScenePlayerAnimation();
 	//pAnimScene->Initialise(*m_pRenderer);
