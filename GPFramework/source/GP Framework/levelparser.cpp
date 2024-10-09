@@ -161,9 +161,16 @@ LevelParser::LoadLevel(const string& levelname, Renderer& renderer)
 				tileMap.push_back(tile);
 			}
 
+			if (iValue.second[i] == 't')
+			{
+				tile = new FletchsTestBlock(x, y, TRAMP);
+				tileMap.push_back(tile);
+			}
+
 			if (iValue.second[i] == 'p')
 			{
 				tile = new FletchersPlayer(x, y);
+				tile->SetElementType(PLAYER);
 				tileMap.push_back(tile);
 			}
 			x += m_tileSize;

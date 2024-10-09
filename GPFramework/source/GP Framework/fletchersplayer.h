@@ -41,9 +41,10 @@ public:
 
 	float m_fJumpStrength;
 
-protected:
-	void Jump(SoundSystem& soundSystem);
 	void Jump();
+	void Jump(SoundSystem& soundSystem);
+
+protected:
 
 private:
 	FletchersPlayer(const FletchersPlayer& blockBloke);

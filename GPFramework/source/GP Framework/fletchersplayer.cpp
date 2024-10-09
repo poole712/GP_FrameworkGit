@@ -73,7 +73,6 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World& world, Level& scene)
 	fixDef.restitution = 0.0f;
 
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
-	m_entityType = Player;
 
 	m_eCurrentType = FIRE;
 

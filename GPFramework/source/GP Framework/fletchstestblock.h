@@ -39,9 +39,12 @@ protected:
 	b2Body* m_pBody;
 	b2Fixture* m_pFixture;
 	b2PolygonShape* m_pShape;
+
 	Sprite* m_pSprite;
+
 	b2Vec2 m_vVel;
 	b2Vec2 m_vStartPos;
+
 	ElementType m_eType;
 
 	// Inherited via Entity

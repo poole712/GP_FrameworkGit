@@ -35,6 +35,8 @@ public:
 	void Rotate(float direction);
 	void SetPosition(float posX, float posY);
 
+	void SetElementType(ElementType type);
+
 	bool IsAlive() const;
 	void SetAliveState(bool state);
 	float GetRadius();
@@ -46,7 +48,7 @@ public:
 	Vector2& GetVelocity();
 
 	bool IsCollidingWith(Entity& toCheck);
-	EntityType GetEntityType();
+	ElementType GetElementType();
 	virtual void Toggle(ElementType type) = 0;
 
 protected:
@@ -65,7 +67,7 @@ protected:
 	b2Vec2 m_vStartPos;
 	bool m_bAlive;
 	float m_fCurrentRotation;
-	EntityType m_entityType;
+	ElementType m_elementType;
 
 
 private:

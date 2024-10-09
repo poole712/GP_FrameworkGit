@@ -8,6 +8,7 @@
 #include "imgui/imgui.h"
 #include "logmanager.h"
 
+
 #include <cassert>
 #include <cstdlib>
 
@@ -21,6 +22,12 @@ Entity::~Entity()
 {
 	delete m_pSprite;
 	m_pSprite = 0;
+}
+
+void
+Entity::SetElementType(ElementType type)
+{
+	m_elementType = type;
 }
 
 bool
@@ -141,8 +148,8 @@ Entity::GetRotation()
 	return m_fCurrentRotation;
 }
 
-EntityType 
-Entity::GetEntityType() 
+ElementType 
+Entity::GetElementType() 
 {
-	return m_entityType;
+	return m_elementType;
 }

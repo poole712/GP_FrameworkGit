@@ -9,6 +9,7 @@ class Entity;
 class b2World;
 class SoundSystem;
 class Hud;
+class FletchersPlayer;
 
 using namespace std;
 
@@ -24,7 +25,7 @@ public:
 	void Process(float deltaTime, InputSystem& inputSystem);
 	void Draw(Renderer& renderer);
 	void DebugDraw();
-
+	void CheckCollisions();
 	void ToggleBlocks(ElementType type);
 
 protected:
@@ -41,6 +42,8 @@ protected:
 	b2World* m_pWorld;
 	SoundSystem* m_pSoundSystem;
 	Hud* m_pHud;
+	FletchersPlayer* m_pPlayer;
+	Entity* m_pTestTramp;
 
 private:
 

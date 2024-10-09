@@ -5,6 +5,7 @@
 #include <typeinfo>
 #include "entity.h"
 #include "fletchstestblock.h"
+#include "fletchersplayer.h"
 #include "box2d/box2d.h"
 #include "soundsystem.h"
 #include "renderer.h"
@@ -31,6 +32,9 @@ Level::~Level()
 		(*it) = 0;
 		++it;
 	}
+
+	/*delete m_pPlayer;
+	m_pPlayer = 0;*/
 }
 
 bool
@@ -54,6 +58,10 @@ Level::Initialise(Renderer& renderer, vector<Entity*> entityList)
 	for (auto it = m_entityList.begin(); it != m_entityList.end();)
 	{
 		(*it)->Initialise(renderer, *m_pWorld, *this);
+		if ((*it)->GetElementType() == PLAYER)
+		{
+			m_pPlayer = static_cast<FletchersPlayer*>((*it));
+		}
 		++it;
 	}
 
@@ -72,6 +80,19 @@ Level::Process(float deltaTime, InputSystem& inputSystem)
 		++it;
 	}
 	m_pHud->Process(deltaTime, inputSystem);
+	CheckCollisions();
+}
+
+void 
+Level::CheckCollisions()
+{
+	for (Entity* entity : m_entityList)
+	{
+		if (m_pPlayer->IsCollidingWith(*entity) && entity->GetElementType() == TRAMP)
+		{
+			m_pPlayer->Jump();
+		}
+	}
 }
 
 void
@@ -98,4 +119,5 @@ Level::ToggleBlocks(ElementType type)
 	{
 		block->Toggle(type);
 	}
+	//m_pTestTramp->Toggle(type);
 }
