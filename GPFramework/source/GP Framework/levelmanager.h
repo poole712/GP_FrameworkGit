@@ -1,0 +1,49 @@
+#pragma once
+#ifndef _LEVELMANAGER_H
+
+#include "scene.h"
+
+#include <vector>
+#include <map>
+#include <string>
+
+class Renderer;
+class InputSystem;
+class Level;
+
+using namespace std;
+
+class LevelManager : public Scene
+{
+	//Member Methods
+public:
+	LevelManager();
+	virtual ~LevelManager();
+
+	bool Initialise(Renderer& renderer);
+	void Process(float deltaTime, InputSystem& inputSystem);
+	void Process(float deltaTime, InputSystem& inputSystem, Game& game) { Process(deltaTime, inputSystem); };
+	void LoadLevel(const string& level);
+	void UnloadLevel();
+	void Draw(Renderer& renderer);
+	void DebugDraw();
+
+protected:
+
+private:
+	LevelManager(const LevelManager& levelmanager);
+	LevelManager& operator=(const LevelManager& levelmanager);
+
+	//MemberData
+public:
+
+protected:
+	std::map<string, std::map<int, string>>* m_pLevelData;
+	Level* m_pActiveLevel;
+	Renderer* m_pRenderer;
+
+private:
+
+};
+
+#endif //_LEVELMANAGER_H

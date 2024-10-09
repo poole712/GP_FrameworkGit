@@ -3,6 +3,7 @@
 
 #include "entity.h"
 #include "box2d/box2d.h"
+#include "elementtype.h"
 
 #include "vector"
 
@@ -17,26 +18,32 @@ class b2Vec2;
 class b2Fixture;
 class Explosion;
 class SoundSystem;
+class FletchsTestBlock;
+class FletchersScene;
 
 
 class FletchersPlayer : public Entity
 {
 public:
 	FletchersPlayer();
+	FletchersPlayer(float x, float y);
 	~FletchersPlayer();
 
-	virtual bool Initialise(Renderer& renderer) override;
-	bool Initialise(Renderer& renderer, b2World* world);
-	void Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem);
+	virtual bool Initialise(Renderer& renderer, b2World& world) override;
+	bool Initialise(Renderer& renderer, b2World& world, Level& scene);
+	void Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene);
 	virtual void Process(float deltaTime, InputSystem& inputSystem) override;
 	virtual void Draw(Renderer& renderer) override;
 
 	void CreateBoxWithEdges(b2Body* body, float width, float height);
+	ElementType GetType();
+	void Toggle(ElementType type) {};
 
 	float m_fJumpStrength;
 
 protected:
 	void Jump(SoundSystem& soundSystem);
+	void Jump();
 
 private:
 	FletchersPlayer(const FletchersPlayer& blockBloke);
@@ -50,6 +57,7 @@ protected:
 	b2Fixture* m_pFixture;
 	b2Vec2 m_vVelocity;
 	b2Vec2 m_vJump;
+	ElementType m_eCurrentType;
 
 	bool m_bHurt;
 

@@ -1,6 +1,8 @@
 #include "entity.h"
 
 #include "renderer.h"
+#include <cmath>
+#include <string>    
 #include "sprite.h"
 #include "inlinehelper.h"
 #include "imgui/imgui.h"
@@ -22,7 +24,7 @@ Entity::~Entity()
 }
 
 bool
-Entity::Initialise(Renderer& renderer)
+Entity::Initialise(Renderer& renderer, b2World& world)
 {
 	return true;
 }
@@ -107,8 +109,16 @@ Entity::IsCollidingWith(Entity& toCheck)
 		// Calculate the squared distance
 		float distanceSquared = dx * dx + dy * dy;
 
+		// Calculate the actual distance
+		float distance = std::sqrt(distanceSquared);
+
+		// Log the distance
+		std::string logMessage = "Distance between entities: " + std::to_string(distance);
+		LogManager::GetInstance().Log(logMessage.c_str());
+
+
 		// Calculate the squared sum of radii
-		float radiiSum = 5 + 5;
+		float radiiSum = 100;
 		float radiiSumSquared = radiiSum * radiiSum;
 		// Return if the squared distance is less than or equal to the squared sum of radii
 		return distanceSquared <= radiiSumSquared;
@@ -131,3 +141,8 @@ Entity::GetRotation()
 	return m_fCurrentRotation;
 }
 
+EntityType 
+Entity::GetEntityType() 
+{
+	return m_entityType;
+}

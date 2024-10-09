@@ -10,7 +10,6 @@ class Renderer;
 class Sprite;
 class Scene;
 class InputSystem;
-class IniParser;
 
 class Game {
 
@@ -51,7 +50,6 @@ protected:
 	float m_fElapsedSeconds;
 	int m_iFrameCount;
 	int m_iFPS;
-	IniParser* m_pIniParser;
 
 #ifdef USE_LAG
 	float m_fLag;

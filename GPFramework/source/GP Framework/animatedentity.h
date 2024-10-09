@@ -1,38 +1,25 @@
+#pragma once
 #ifndef _ANIMATEDENTITY_H
 #define _ANIMATEDENTITY_H
 
 #include "animatedentity.h"
 #include "vector2.h"
+#include "entity.h"
 
 class Renderer;
 class AnimatedSprite;
 class InputSystem;
 class Entity;
 
-class AnimatedEntity
+class AnimatedEntity : public Entity
 {
 public:
 	AnimatedEntity();
 	virtual ~AnimatedEntity();
 
-	virtual bool Initialise(Renderer& renderer) = 0;
-	virtual void Process(float deltaTime) = 0;
-	virtual void Draw(Renderer& renderer) = 0;
-
-	void Rotate(float direction);
-	void SetPosition(float posX, float posY);
-
-	bool IsAlive() const;
-	void SetAliveState(bool state);
-	float GetRadius();
-	float GetRotation();
-
-	Vector2 GetFacingDirection();
-
-	Vector2& GetPosition();
-	Vector2& GetVelocity();
-
-	bool IsCollidingWith(Entity& toCheck);
+	bool Initialise(Renderer& renderer, b2World& world) { return true; };
+	void Process(float deltaTime, InputSystem& inputSystem) {};
+	void Draw(Renderer& renderer) {};
 
 protected:
 
@@ -56,4 +43,4 @@ private:
 
 };
 
-#endif // !_ENTITY_H
+#endif // !_ANIMATED_ENTITY_H

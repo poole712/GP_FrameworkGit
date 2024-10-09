@@ -3,10 +3,22 @@
 
 #include "entity.h"
 #include "vector2.h"
+#include "elementtype.h"
+#include "box2d/box2d.h"
 
 class Renderer;
 class Sprite;
 class InputSystem;
+class b2World;
+class b2Vec2;
+class Level;
+class SoundSystem;
+
+enum EntityType {
+	Tile,
+	Block,
+	Player,
+};
 
 class Entity
 {
@@ -14,8 +26,10 @@ public:
 	Entity();
 	virtual ~Entity();
 
-	virtual bool Initialise(Renderer& renderer) = 0;
+	virtual bool Initialise(Renderer& renderer, b2World& world) = 0;
+	virtual bool Initialise(Renderer& renderer, b2World& world, Level& scene) = 0;
 	virtual void Process(float deltaTime, InputSystem& inputSystem) = 0;
+	virtual void Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene) = 0;
 	virtual void Draw(Renderer& renderer);
 
 	void Rotate(float direction);
@@ -32,6 +46,8 @@ public:
 	Vector2& GetVelocity();
 
 	bool IsCollidingWith(Entity& toCheck);
+	EntityType GetEntityType();
+	virtual void Toggle(ElementType type) = 0;
 
 protected:
 
@@ -46,8 +62,10 @@ protected:
 	Vector2 m_position;
 	Vector2 m_velocity;
 	Vector2 m_rotation;
+	b2Vec2 m_vStartPos;
 	bool m_bAlive;
 	float m_fCurrentRotation;
+	EntityType m_entityType;
 
 
 private:

@@ -3,6 +3,7 @@
 
 #include "game.h"
 #include "logmanager.h"
+#include "levelparser.h"
 
 int main(int argc, char* argv[])
 {
@@ -22,6 +23,7 @@ int main(int argc, char* argv[])
 	}
 
 	Game::DestroyInstance();
+	LevelParser::DestroyInstance();
 	LogManager::DestroyInstance();
 
 	return 0;

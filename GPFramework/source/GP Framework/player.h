@@ -4,6 +4,8 @@
 #include "animatedentity.h"
 #include "animatedsprite.h"
 
+#include "elementtype.h"
+
 class Renderer;
 class Sprite;
 class InputSystem;
@@ -23,20 +25,32 @@ public:
 	bool IsKey1();
 	bool IsKey2();
 	bool IsKey3();
+	bool IsKeySpace();
 
-	void AnimationCount0to3();
+	void AnimationRunning();
+	void AnimationJump();
+	void AnimationFall();
 
-	void AnimationCount4to5();
-	void AnimationCount5to6();
-	void AnimationCount6to7();
+	void AnimationFire();
+	void AnimationEarth();
+	void AnimationIce();
 
-	void AnimateAnimation1();
-	void AnimateAnimation2();
-	void AnimateAnimation3();
+	void AnimateAnimationFire();
+	void AnimateAnimationEarth();
+	void AnimateAnimationIce();
+
+	void AnimateAnimationJump();
+	void AnimateAnimationFall();
+
+	ElementType GetActiveSpell() const;
 
 private:
 	bool m_bSwitchingAnimation;
-	int m_iActiveSpell;
+
+	bool m_bJumping;
+	bool m_bFalling;
+
+	ElementType m_iActiveSpell;
 };
 
 #endif // _PLAYER_H

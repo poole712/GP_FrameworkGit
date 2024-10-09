@@ -108,9 +108,6 @@
     <ClCompile Include="enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="animatedentity.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="animatedentity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -142,6 +139,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sceneplayeranimation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scenedeathmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="contactlistener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levelparser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levelparsetest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levelmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hud.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -255,6 +273,45 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sceneplayeranimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scenedeathmenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="elementtype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hud.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="animatedentity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelparser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelparsetest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="animatedentity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelparser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelparsetest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

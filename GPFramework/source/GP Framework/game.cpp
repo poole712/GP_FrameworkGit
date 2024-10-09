@@ -9,13 +9,15 @@
 #include "time.h"
 
 #include "imgui/imgui_impl_sdl2.h"
-#include "iniparser.h"
+#include "levelparser.h"
 #include "inputsystem.h"
 #include "xboxcontroller.h"
 
 #include "scenebbmainmenu.h"
 #include "sceneplayeranimation.h"
 #include "fletchersscene.h"
+#include "scenedeathmenu.h"
+#include "levelmanager.h"
 
 
 //Static members:
@@ -85,27 +87,31 @@ Game::Initialise()
 
 	
 	Scene* pScene = 0;
-
 	pScene = new SceneBBMainMenu();
 	pScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pScene);
 
-	Scene* pGameScene = 0;
-	pGameScene = new FletchersScene();
-	pGameScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pGameScene);
+	Scene* pLevelTest = 0;
+	pLevelTest = new LevelManager();
+	pLevelTest->Initialise(*m_pRenderer);
+	m_scenes.push_back(pLevelTest);
 
-	pScene = new ScenePlayerAnimation();
-	pScene->Initialise(*m_pRenderer);
-	m_scenes.push_back(pScene);
+	//Scene* pGameScene = 0;
+	//pGameScene = new FletchersScene();
+	//pGameScene->Initialise(*m_pRenderer);
+	//m_scenes.push_back(pGameScene);
+
+	//Scene* pAnimScene = new ScenePlayerAnimation();
+	//pAnimScene->Initialise(*m_pRenderer);
+	//m_scenes.push_back(pAnimScene);
+
+	Scene* pDeathScene = new SceneDeathMenu();
+	pDeathScene->Initialise(*m_pRenderer);
+	m_scenes.push_back(pDeathScene);
 
 	m_iCurrentScene = 0;
-	
 
-	m_pRenderer->SetClearColour(255, 100, 100);
-
-	m_pIniParser = new IniParser();
-	m_pIniParser->LoadIniFile("ini\\test.ini");
+	m_pRenderer->SetClearColour(100, 100, 100);
 
 	return true;
 }
@@ -113,6 +119,11 @@ Game::Initialise()
 void 
 Game::SwitchScene(int scene)
 {
+	//Re-initialise game scene
+	if (scene == 1)
+	{
+		m_scenes[1]->Initialise(*m_pRenderer);
+	}
 	m_iCurrentScene = scene;
 }
 
@@ -163,10 +174,7 @@ Game::Process(float deltaTime)
 {
 	ProcessFrameCounting(deltaTime);
 	// TODO: Add game objects to process here!
-	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem, m_iCurrentScene);
-
-	
-
+	m_scenes[m_iCurrentScene]->Process(deltaTime, *m_pInputSystem, *this);
 }
 
 void 
@@ -208,13 +216,13 @@ Game::ToggleDebugWindow()
 void
 Game::DebugDraw()
 {
-	m_scenes[m_iCurrentScene]->DebugDraw();
 
 	if (m_bShowDebugWindow)
 	{
 		bool open = true;
 
 		ImGui::Begin("Debug Window", &open, ImGuiWindowFlags_MenuBar);
+
 
 		ImGui::Text("COMP710 GP Framework (%s)", "2024, S2");
 
@@ -224,6 +232,9 @@ Game::DebugDraw()
 		}
 
 		ImGui::SliderInt("Active scene", &m_iCurrentScene, 0, m_scenes.size() - 1, "%d");
+
+		m_scenes[m_iCurrentScene]->DebugDraw();
+
 		ImGui::End();
 		
 	}

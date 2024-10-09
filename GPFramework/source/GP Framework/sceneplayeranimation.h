@@ -8,6 +8,7 @@ class Sprite;
 class AnimatedSprite;
 class InputSystem;
 class Player;
+class Game;
 
 class ScenePlayerAnimation : public Scene
 {
@@ -16,7 +17,7 @@ public:
 	virtual ~ScenePlayerAnimation();
 
 	virtual bool Initialise(Renderer& renderer);
-	virtual void Process(float deltaTime, InputSystem& inputSystem, int& scene);
+	virtual void Process(float deltaTime, InputSystem& inputSystem, Game& game);
 	virtual void Draw(Renderer& renderer);
 	virtual void DebugDraw();
 

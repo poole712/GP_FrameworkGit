@@ -1,31 +1,47 @@
-#ifndef _INIPARSER_H_
-#define _INIPARSER_H_
+#pragma once
+#ifndef __INIPARSER_H
+#define __INIPARSER_H
 
 #include <string>
 #include <map>
 
-using std::string;
+class map;
+
+using namespace std;
 
 class IniParser
 {
+	//Member Methods
 public:
-	bool LoadIniFile(const string& filename);
+	static IniParser& GetInstance();
+	static void DestroyInstance();
 
+	bool LoadIniFile(const string& filename);
 	string GetValueAsString(const string& iniSection, const string& key);
 	int GetValueAsInt(const string& iniSection, const string& key);
 	float GetValueAsFloat(const string& iniSection, const string& key);
 	bool GetValueAsBoolean(const string& iniSection, const string& key);
+	void PrintMapValues();
+
+private:
+	IniParser();
+	~IniParser();
+	IniParser(const IniParser& iniParser);
+	IniParser& operator=(const IniParser& iniParser);
 
 protected:
 
 private:
+	string Trim(const string& str);
 
+	//Member Data
 public:
 
 protected:
-	std::map<std::string, std::string> m_dataMap;
-private:
+	static IniParser* m_pInstance;
+	std::map<string, std::map<string, string>>* m_pIniData;
 
+private:
 };
 
-#endif // !_INIPARSER_H
+#endif // !__INIPARSER_H
