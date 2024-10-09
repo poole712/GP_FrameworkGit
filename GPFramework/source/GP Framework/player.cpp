@@ -24,7 +24,7 @@ bool Player::Initialise(Renderer& renderer)
 	m_pASprite = renderer.CreateAnimatedSprite("sprites\\playersheet.png");
 	m_pASprite->SetupFrames(48, 48);
 	m_pASprite->SetFrameDuration(0.2f);
-	m_pASprite->SetScale(4.0f);
+	m_pASprite->SetScale(2.66f);
 	m_pASprite->SetLooping(false);
 
 	AnimationRunning();
