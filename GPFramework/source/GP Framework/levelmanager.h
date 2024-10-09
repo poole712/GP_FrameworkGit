@@ -24,6 +24,7 @@ public:
 	void Process(float deltaTime, InputSystem& inputSystem);
 	void Process(float deltaTime, InputSystem& inputSystem, Game& game) { Process(deltaTime, inputSystem); };
 	void LoadLevel(const string& level);
+	void ResetLevel();
 	void UnloadLevel();
 	void Draw(Renderer& renderer);
 	void DebugDraw();
@@ -40,6 +41,7 @@ public:
 protected:
 	std::map<string, std::map<int, string>>* m_pLevelData;
 	Level* m_pActiveLevel;
+	string m_pLevelString;
 	Renderer* m_pRenderer;
 
 private:

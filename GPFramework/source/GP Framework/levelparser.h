@@ -38,10 +38,12 @@ private:
 
 	//Member Data
 public:
+	string m_pLevelString;
 
 protected:
 	static LevelParser* sm_pInstance;
 	std::map<string, std::map<int, string>>* m_pLevelData;
+	
 
 	float m_tileSize;
 

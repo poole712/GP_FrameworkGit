@@ -110,7 +110,6 @@ void FletchersScene::Process(float deltaTime, InputSystem& inputSystem, Game& ga
 	{
 		game.SwitchScene(3);
 	}
-
 }
 
 

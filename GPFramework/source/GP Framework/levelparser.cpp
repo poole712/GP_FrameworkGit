@@ -38,6 +38,11 @@ LevelParser::GetInstance()
 	if (sm_pInstance == 0)
 	{
 		sm_pInstance = new LevelParser();
+
+		sm_pInstance->LoadLevelFile("data\\testmapdata.ini");
+
+		auto firstLevel = sm_pInstance->m_pLevelData->begin();
+		sm_pInstance->m_pLevelString = firstLevel->first;
 	}
 
 	return (*sm_pInstance);

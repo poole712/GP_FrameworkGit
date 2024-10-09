@@ -33,12 +33,10 @@ LevelManager::Initialise(Renderer& renderer)
 {
 	m_pRenderer = &renderer;
 
-	LevelParser::GetInstance().LoadLevelFile("data\\testmapdata.ini");
 	m_pLevelData = LevelParser::GetInstance().GetLevelData();
 	LevelParser::GetInstance().SetTileSize(128.0f);
 	
-	auto firstLevel = m_pLevelData->begin();
-	LoadLevel(firstLevel->first);
+	LoadLevel(LevelParser::GetInstance().m_pLevelString);
 
 	return true;
 }
@@ -65,15 +63,18 @@ LevelManager::LoadLevel(const string& level)
 	m_pActiveLevel = new Level();
 	vector<Entity*> entityList = LevelParser::GetInstance().LoadLevel(level, *m_pRenderer);
 	m_pActiveLevel->Initialise(*m_pRenderer, entityList);
+	LevelParser::GetInstance().m_pLevelString = level;
+}
+
+void
+LevelManager::ResetLevel()
+{
+	LoadLevel(LevelParser::GetInstance().m_pLevelString);
 }
 
 void LevelManager::UnloadLevel()
 {
-	if (m_pActiveLevel != nullptr)
-	{
-		delete m_pActiveLevel;
-		m_pActiveLevel = 0;
-	}
+
 }
 
 void
