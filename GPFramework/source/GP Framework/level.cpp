@@ -88,9 +88,10 @@ Level::CheckCollisions()
 {
 	for (Entity* entity : m_entityList)
 	{
-		if (m_pPlayer->IsCollidingWith(*entity) && entity->GetElementType() == TRAMP)
+		if (m_pPlayer->IsAnimationCollidingWith(*entity) && entity->GetElementType() == TRAMP && entity->IsAlive())
 		{
 			m_pPlayer->Jump();
+			entity->SetAliveState(false);
 		}
 	}
 }

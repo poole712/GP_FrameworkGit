@@ -68,7 +68,7 @@ protected:
 	bool m_bAlive;
 	float m_fCurrentRotation;
 	ElementType m_elementType;
-
+	bool m_bUpdateWithVel;
 
 private:
 
