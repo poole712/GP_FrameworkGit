@@ -82,7 +82,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 		block->Toggle(FIRE);
 	}
 
-	m_pSingleBlock = new FletchsTestBlock(850, 900, EARTH);
+	m_pSingleBlock = new FletchsTestBlock(850, 900, TRAMP);
 	m_pSingleBlock->Initialise(renderer, *m_pWorld);
 	m_pSingleBlock->Toggle(FIRE);
 

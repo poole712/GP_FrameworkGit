@@ -8,11 +8,12 @@
 #include "imgui/imgui.h"
 #include "logmanager.h"
 
+
 #include <cassert>
 #include <cstdlib>
 
 Entity::Entity()
-	: m_pSprite(0), m_bAlive(false)
+	: m_pSprite(0), m_bAlive(false), m_bUpdateWithVel(true)
 {
 
 }
@@ -21,6 +22,12 @@ Entity::~Entity()
 {
 	delete m_pSprite;
 	m_pSprite = 0;
+}
+
+void
+Entity::SetElementType(ElementType type)
+{
+	m_elementType = type;
 }
 
 bool
@@ -32,9 +39,13 @@ Entity::Initialise(Renderer& renderer, b2World& world)
 void
 Entity::Process(float deltaTime, InputSystem& inputSystem)
 {
-	m_position += m_velocity * deltaTime;
+	if (m_bUpdateWithVel)
+	{
+		m_position += m_velocity * deltaTime;
+	}
 	m_pSprite->Process(deltaTime);
 }
+
 
 void
 Entity::Draw(Renderer& renderer)
@@ -141,8 +152,8 @@ Entity::GetRotation()
 	return m_fCurrentRotation;
 }
 
-EntityType 
-Entity::GetEntityType() 
+ElementType 
+Entity::GetElementType() 
 {
-	return m_entityType;
+	return m_elementType;
 }

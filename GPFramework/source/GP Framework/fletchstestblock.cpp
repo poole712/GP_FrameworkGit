@@ -9,6 +9,7 @@ FletchsTestBlock::FletchsTestBlock(float x, float y, ElementType type)
 {
 	m_vStartPos = b2Vec2(x, y);
 	m_eType = type;
+	m_elementType = type;
 }
 
 FletchsTestBlock::FletchsTestBlock(float x, float y)
@@ -51,31 +52,42 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 	fixDef.friction = 0.0f;
 	fixDef.restitution = 0.0f;
 
-	m_vVel = b2Vec2(-120.0f, 0.0f);
+	m_vVel = b2Vec2(-75.0f, 0.0f);
 	m_pBody->SetLinearVelocity(m_vVel);
 	m_pBody->SetLinearDamping(0.5f);
+
 
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
 	m_pBody->SetFixedRotation(true);
 
-	m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
-	m_pSprite->SetScale(2.0f);
 
 	switch (m_eType)
 	{
 	case FIRE:
+		m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
 		m_pSprite->SetGreenTint(0);
 		m_pSprite->SetBlueTint(0);
 		break;
 	case EARTH:
+		m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
 		m_pSprite->SetRedTint(0);
 		m_pSprite->SetBlueTint(0);
 		break;
 	case ICE:
+		m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
 		m_pSprite->SetGreenTint(0);
 		m_pSprite->SetRedTint(0);
 		break;
+	case TRAMP:
+		m_pSprite = renderer.CreateSprite("sprites\\temptramp.png");
+		m_pSprite->SetGreenTint(0);
+		break;
+	default:
+		m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
+		break;
 	}
+
+	m_pSprite->SetScale(2.0f);
 
 	Toggle(NONE);
 
@@ -101,11 +113,16 @@ FletchsTestBlock::Toggle(ElementType type)
 		m_pFixture->SetFilterData(filter);
 		m_pSprite->SetAlpha(1.0f);
 	}
-	else
+	else if(m_eType != TRAMP)
 	{
 		filter.maskBits = 0x0000;
 		m_pFixture->SetFilterData(filter);
 		m_pSprite->SetAlpha(0.1f);
+	}
+	if(m_eType != PLAYER && m_eType == TRAMP)
+	{
+		filter.maskBits = 0x0000;
+		m_pFixture->SetFilterData(filter);
 	}
 }
 
