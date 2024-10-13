@@ -27,7 +27,7 @@ public:
 	void UnloadLevel();
 	void Draw(Renderer& renderer);
 	void DebugDraw();
-
+	void BeginPlay();
 protected:
 
 private:

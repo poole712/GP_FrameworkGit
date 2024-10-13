@@ -27,7 +27,7 @@ public:
 	void DebugDraw();
 	void CheckCollisions();
 	void ToggleBlocks(ElementType type);
-
+	void BeginPlay();
 protected:
 
 private:

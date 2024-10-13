@@ -77,6 +77,13 @@ void LevelManager::UnloadLevel()
 }
 
 void
+LevelManager::BeginPlay()
+{
+	m_pActiveLevel->BeginPlay();
+}
+
+
+void
 LevelManager::DebugDraw()
 {
 	for (const auto& section : *m_pLevelData)

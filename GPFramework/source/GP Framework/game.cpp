@@ -129,12 +129,10 @@ Game::Initialise()
 void 
 Game::SwitchScene(int scene)
 {
-	//Re-initialise game scene
-	if (scene == 1)
-	{
-		m_scenes[1]->Initialise(*m_pRenderer);
-	}
+	//m_scenes[scene]->Initialise(*m_pRenderer);
 	m_iCurrentScene = scene;
+	if (scene == 1) { static_cast<LevelManager*>(m_scenes[scene])->BeginPlay(); }
+
 }
 
 

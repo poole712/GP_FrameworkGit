@@ -83,3 +83,19 @@ SoundSystem::SetVolume(const char* soundName, float volume)
 		LogManager::GetInstance().Log("Failed to find channel for the given sound.");
 	}
 }
+
+void
+SoundSystem::PauseSound(const char* soundName, bool pause)
+{
+	auto it = m_Channels.find(soundName);
+
+	if (it != m_Channels.end())
+	{
+		FMOD::Channel* channel = it->second;
+		channel->setPaused(pause);  // Pause or resume the sound
+	}
+	else
+	{
+		LogManager::GetInstance().Log("Failed to find channel for the given sound.");
+	}
+}

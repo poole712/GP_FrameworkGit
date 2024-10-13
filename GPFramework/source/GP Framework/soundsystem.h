@@ -17,7 +17,7 @@ public:
 	void CreateSound(const char* filename, const char* soundName);
 	void PlaySound(const char* soundname);
 	void SetVolume(const char* soundName, float volume);
-
+	void PauseSound(const char* soundName, bool pause);
 protected:
 
 private:

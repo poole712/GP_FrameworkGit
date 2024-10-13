@@ -42,7 +42,8 @@ bool FletchersScene::Initialise(Renderer& renderer)
 
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();
-
+	m_pSoundSystem->CreateSound("GameMusic.mp3", "Game Music");
+	m_pSoundSystem->PlaySound("Game Music");
 	//Physics
 	b2Vec2 gravity;
 	gravity.Set(0.0f, 100.0f);

@@ -37,12 +37,25 @@ Level::~Level()
 	m_pPlayer = 0;*/
 }
 
+
 bool
 Level::Initialise(Renderer& renderer, vector<Entity*> entityList)
 {
 	//Sound System
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();
+	m_pSoundSystem->CreateSound("sounds\\GameMusic.mp3", "Game Music");
+	m_pSoundSystem->CreateSound("sounds\\Earth.mp3", "Earth");
+	m_pSoundSystem->CreateSound("sounds\\Ice.mp3", "Ice");
+	m_pSoundSystem->CreateSound("sounds\\Fire.mp3", "Fire");
+	m_pSoundSystem->CreateSound("sounds\\Bounce.wav", "Bounce");
+
+	m_pSoundSystem->CreateSound("sounds\\Footstep0.mp3", "Footstep0");
+	m_pSoundSystem->CreateSound("sounds\\Footstep1.mp3", "Footstep1");
+	m_pSoundSystem->CreateSound("sounds\\Footstep2.mp3", "Footstep2");
+	m_pSoundSystem->CreateSound("sounds\\Footstep3.mp3", "Footstep3");
+	m_pSoundSystem->CreateSound("sounds\\Footstep4.mp3", "Footstep4");
+
 
 	//Hud
 	m_pHud = new Hud();
@@ -70,6 +83,13 @@ Level::Initialise(Renderer& renderer, vector<Entity*> entityList)
 
 
 void
+Level::BeginPlay()
+{
+	m_pSoundSystem->PlaySound("Game Music");
+}
+
+
+void
 Level::Process(float deltaTime, InputSystem& inputSystem)
 {
 	m_pWorld->Step(deltaTime, 5, 8);
@@ -90,7 +110,7 @@ Level::CheckCollisions()
 	{
 		if (m_pPlayer->IsAnimationCollidingWith(*entity) && entity->GetElementType() == TRAMP && entity->IsAlive())
 		{
-			m_pPlayer->Jump();
+			m_pPlayer->Jump(*m_pSoundSystem);
 			entity->SetAliveState(false);
 		}
 	}
