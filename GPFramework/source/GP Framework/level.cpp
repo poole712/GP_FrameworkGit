@@ -10,6 +10,7 @@
 #include "soundsystem.h"
 #include "renderer.h"
 #include "hud.h"
+#include "levelmanager.h"
 
 using namespace std;
 
@@ -26,20 +27,23 @@ Level::~Level()
 	delete m_pWorld;
 	m_pWorld = 0;
 
+	delete m_pHud;
+	m_pHud = 0;
+
 	for (auto it = m_entityList.begin(); it != m_entityList.end();)
 	{
 		delete (*it);
 		(*it) = 0;
 		++it;
 	}
-
-	/*delete m_pPlayer;
-	m_pPlayer = 0;*/
 }
 
 bool
-Level::Initialise(Renderer& renderer, vector<Entity*> entityList)
+Level::Initialise(Renderer& renderer, vector<Entity*> entityList, LevelManager& levelManager)
 {
+	//Manager
+	m_pLevelManager = &levelManager;
+
 	//Sound System
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();
@@ -93,6 +97,12 @@ Level::CheckCollisions()
 			m_pPlayer->Jump();
 			entity->SetAliveState(false);
 		}
+
+		if (m_pPlayer->IsAnimationCollidingWith(*entity) && entity->GetElementType() == FLAG && entity->IsAlive())
+		{
+			m_pLevelManager->NextLevel();
+			entity->SetAliveState(false);
+		}
 	}
 }
 
@@ -120,5 +130,4 @@ Level::ToggleBlocks(ElementType type)
 	{
 		block->Toggle(type);
 	}
-	//m_pTestTramp->Toggle(type);
 }

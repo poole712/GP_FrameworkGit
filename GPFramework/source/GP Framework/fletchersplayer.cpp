@@ -35,7 +35,7 @@ FletchersPlayer::FletchersPlayer(float x, float y)
 
 FletchersPlayer::~FletchersPlayer()
 {
-	
+
 }
 
 bool

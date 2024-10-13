@@ -106,7 +106,7 @@ void FletchersScene::Process(float deltaTime, InputSystem& inputSystem, Game& ga
 	{
 		game.SwitchScene(3);
 	}
-	if (m_pPlayer->IsCollidingWith(*m_pSingleBlock) && m_pPlayer->GetPosition().y > m_pSingleBlock->GetPosition().y - 50 && m_pSingleBlock->GetType() == m_pPlayer->GetType())
+	if (m_pPlayer->IsCollidingWith(*m_pSingleBlock) && m_pPlayer->GetPosition().y > m_pSingleBlock->GetPosition().y - 50 && m_pSingleBlock->GetElementType() == m_pPlayer->GetElementType())
 	{
 		game.SwitchScene(3);
 	}

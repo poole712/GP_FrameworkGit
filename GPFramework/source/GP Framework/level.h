@@ -10,6 +10,7 @@ class b2World;
 class SoundSystem;
 class Hud;
 class FletchersPlayer;
+class LevelManager;
 
 using namespace std;
 
@@ -20,7 +21,7 @@ public:
 	virtual ~Level();
 
 	bool Initialise(Renderer& renderer) { return false; };
-	bool Initialise(Renderer& renderer, vector<Entity*> entityList);
+	bool Initialise(Renderer& renderer, vector<Entity*> entityList, LevelManager& levelManager);
 	void Process(float deltaTime, InputSystem& inputSystem, Game& game) { Process(deltaTime, inputSystem); };
 	void Process(float deltaTime, InputSystem& inputSystem);
 	void Draw(Renderer& renderer);
@@ -44,6 +45,7 @@ protected:
 	Hud* m_pHud;
 	FletchersPlayer* m_pPlayer;
 	Entity* m_pTestTramp;
+	LevelManager* m_pLevelManager;
 
 private:
 

@@ -3,12 +3,13 @@
 
 enum ElementType
 {
-    NONE = 0,
-    FIRE = 1,
-    EARTH = 2,
-    ICE = 3,
-    TRAMP = 4,
-    PLAYER = 5
+    NONE,
+    FIRE,
+    EARTH,
+    ICE,
+    TRAMP,
+    FLAG,
+    PLAYER
 };
 
 #endif // _ELEMENTTYPE_H

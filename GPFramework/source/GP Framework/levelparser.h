@@ -43,7 +43,6 @@ public:
 protected:
 	static LevelParser* sm_pInstance;
 	std::map<string, std::map<int, string>>* m_pLevelData;
-	
 
 	float m_tileSize;
 

@@ -28,6 +28,7 @@ public:
 	void UnloadLevel();
 	void Draw(Renderer& renderer);
 	void DebugDraw();
+	void NextLevel();
 
 protected:
 
@@ -41,7 +42,6 @@ public:
 protected:
 	std::map<string, std::map<int, string>>* m_pLevelData;
 	Level* m_pActiveLevel;
-	string m_pLevelString;
 	Renderer* m_pRenderer;
 
 private:

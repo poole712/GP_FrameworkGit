@@ -14,12 +14,6 @@ class b2Vec2;
 class Level;
 class SoundSystem;
 
-enum EntityType {
-	Tile,
-	Block,
-	Player,
-};
-
 class Entity
 {
 public:

@@ -6,6 +6,7 @@
 #include "level.h"
 #include "entity.h"
 #include "imgui/imgui.h"
+#include "logmanager.h"
 
 //Libraries
 #include <vector>
@@ -54,6 +55,32 @@ LevelManager::Draw(Renderer& renderer)
 }
 
 void
+LevelManager::NextLevel()
+{
+	auto levelIt = m_pLevelData->find(LevelParser::GetInstance().m_pLevelString);
+	
+	if (levelIt != m_pLevelData->end())
+	{
+		++levelIt;
+		if (levelIt != m_pLevelData->end())
+		{
+			LogManager::GetInstance().Log(levelIt->first.c_str());
+			LoadLevel(levelIt->first);
+		}
+		else
+		{
+			//End Game
+			LogManager::GetInstance().Log("End of Game");
+		}
+	}
+	else
+	{
+		//End Game
+		LogManager::GetInstance().Log("End of Game");
+	}
+}
+
+void
 LevelManager::LoadLevel(const string& level)
 {
 	//Delete Level
@@ -62,7 +89,7 @@ LevelManager::LoadLevel(const string& level)
 	//Load new Level
 	m_pActiveLevel = new Level();
 	vector<Entity*> entityList = LevelParser::GetInstance().LoadLevel(level, *m_pRenderer);
-	m_pActiveLevel->Initialise(*m_pRenderer, entityList);
+	m_pActiveLevel->Initialise(*m_pRenderer, entityList, *this);
 	LevelParser::GetInstance().m_pLevelString = level;
 }
 
@@ -74,7 +101,8 @@ LevelManager::ResetLevel()
 
 void LevelManager::UnloadLevel()
 {
-
+	delete m_pActiveLevel;
+	m_pActiveLevel = 0;
 }
 
 void

@@ -25,7 +25,6 @@ public:
 	void Draw(Renderer& renderer);
 
 	void Toggle(ElementType type);
-	ElementType GetType();
 
 protected:
 
@@ -44,12 +43,6 @@ protected:
 
 	b2Vec2 m_vVel;
 	b2Vec2 m_vStartPos;
-
-	ElementType m_eType;
-
-	// Inherited via Entity
-
-
 };
 
 
