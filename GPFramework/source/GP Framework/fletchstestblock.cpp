@@ -116,13 +116,20 @@ FletchsTestBlock::Toggle(ElementType type)
 		m_pFixture->SetFilterData(filter);
 		m_pSprite->SetAlpha(1.0f);
 	}
-	else if(m_elementType != TRAMP || m_elementType != FLAG)
+	else if (m_elementType != TRAMP)
 	{
 		filter.maskBits = 0x0000;
 		m_pFixture->SetFilterData(filter);
 		m_pSprite->SetAlpha(0.1f);
 	}
-	if(m_elementType != PLAYER && (m_elementType == TRAMP || m_elementType == FLAG))
+
+	if (m_elementType != PLAYER && m_elementType == TRAMP)
+	{
+		filter.maskBits = 0x0000;
+		m_pFixture->SetFilterData(filter);
+	}
+
+	if (m_elementType != PLAYER && m_elementType == FLAG)
 	{
 		filter.maskBits = 0x0000;
 		m_pFixture->SetFilterData(filter);

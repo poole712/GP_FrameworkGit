@@ -125,7 +125,7 @@ Game::SwitchScene(int scene)
 	//Re-initialise game scene
 	if (scene == 1)
 	{
-		m_scenes[1]->Initialise(*m_pRenderer);
+		//m_scenes[1]->Initialise(*m_pRenderer);
 		m_iCurrentScene = scene;
 	}
 	m_iCurrentScene = scene;

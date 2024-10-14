@@ -95,7 +95,7 @@ Level::CheckCollisions()
 
 	for (Entity* entity : m_entityList)
 	{
-		if (CollidingWith(*m_pPlayer, *entity) && entity->IsAlive())
+		if (m_pPlayer->IsAnimationCollidingWith(*entity) && entity->IsAlive())
 		{
 			if (entity->GetElementType() == TRAMP)
 			{
@@ -104,9 +104,13 @@ Level::CheckCollisions()
 			}
 			else if (entity->GetElementType() == FLAG)
 			{
-				LogManager::GetInstance().Log("Colliding");
 				m_pLevelManager->NextLevel();
 				entity->SetAliveState(false);
+				return;
+			}
+			else
+			{
+				LogManager::GetInstance().Log("No Flag");
 			}
 		}
 	}
@@ -134,6 +138,7 @@ Level::CollidingWith(Entity& entityA, Entity& entityB)
 			float radiiSumSquared = radiiSum * radiiSum;
 
 			// Return if the squared distance is less than or equal to the squared sum of radii
+			LogManager::GetInstance().Log(to_string(distanceSquared <= radiiSumSquared).c_str());
 			return distanceSquared <= radiiSumSquared;
 		}
 	}
