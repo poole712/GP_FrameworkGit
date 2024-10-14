@@ -21,8 +21,8 @@ public:
 	Level();
 	virtual ~Level();
 
-	bool Initialise(Renderer& renderer) { return false; };
-	bool Initialise(Renderer& renderer, vector<Entity*>& entityList, LevelManager& levelManager, SoundSystem& m_pSoundSystem);
+	bool Initialise(Renderer& renderer);
+	//bool Initialise(Renderer& renderer, vector<Entity*>& entityList, LevelManager& levelManager, SoundSystem& m_pSoundSystem);
 	void Process(float deltaTime, InputSystem& inputSystem, Game& game) { Process(deltaTime, inputSystem); };
 	void Process(float deltaTime, InputSystem& inputSystem);
 	void Draw(Renderer& renderer);

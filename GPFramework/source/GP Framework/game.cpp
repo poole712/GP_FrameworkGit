@@ -18,6 +18,7 @@
 #include "fletchersscene.h"
 #include "scenedeathmenu.h"
 #include "levelmanager.h"
+#include "level.h"
 
 
 //Static members:
@@ -103,10 +104,20 @@ Game::Initialise()
 	pScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pScene);
 
-	Scene* pLevelTest = 0;
-	pLevelTest = new LevelManager();
-	pLevelTest->Initialise(*m_pRenderer);
-	m_scenes.push_back(pLevelTest);
+	Scene* pTest = 0;
+	pTest = new Level();
+	pTest->Initialise(*m_pRenderer);
+	m_scenes.push_back(pTest);
+
+	Scene* pTest2 = 0;
+	pTest2 = new Level();
+	pTest2->Initialise(*m_pRenderer);
+	m_scenes.push_back(pTest2);
+
+	//Scene* pLevelTest = 0;
+	//pLevelTest = new LevelManager();
+	//pLevelTest->Initialise(*m_pRenderer);
+	//m_scenes.push_back(pLevelTest);
 
 	Scene* pDeathScene = new SceneDeathMenu();
 	pDeathScene->Initialise(*m_pRenderer);
@@ -125,7 +136,6 @@ Game::SwitchScene(int scene)
 	//Re-initialise game scene
 	if (scene == 1)
 	{
-		//m_scenes[1]->Initialise(*m_pRenderer);
 		m_iCurrentScene = scene;
 	}
 	m_iCurrentScene = scene;

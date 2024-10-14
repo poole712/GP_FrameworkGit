@@ -55,7 +55,6 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 	m_pBody->SetLinearVelocity(m_vVel);
 	m_pBody->SetLinearDamping(0.5f);
 
-
 	m_pFixture = m_pBody->CreateFixture(&fixDef);
 	m_pBody->SetFixedRotation(true);
 

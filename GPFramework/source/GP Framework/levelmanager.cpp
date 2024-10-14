@@ -61,7 +61,6 @@ LevelManager::Draw(Renderer& renderer)
 void
 LevelManager::NextLevel()
 {
-	UnloadLevel();
 	LogManager::GetInstance().Log("LOADING NEXT LEVEL");
 
 	auto levelIt = m_pLevelData->find(LevelParser::GetInstance().m_pLevelString);
@@ -93,10 +92,10 @@ LevelManager::LoadLevel(const string& level)
 	UnloadLevel();
 
 	//Load new Level
-	m_pActiveLevel = new Level();
-	m_EntityList = LevelParser::GetInstance().LoadLevel(level, *m_pRenderer);
-	m_pActiveLevel->Initialise(*m_pRenderer, m_EntityList, *this, *m_pSoundSystem);
-	LevelParser::GetInstance().m_pLevelString = level;
+	//m_pActiveLevel = new Level();
+	//m_EntityList = LevelParser::GetInstance().LoadLevel(level, *m_pRenderer);
+	//m_pActiveLevel->Initialise(*m_pRenderer, m_EntityList, *this, *m_pSoundSystem);
+	//LevelParser::GetInstance().m_pLevelString = level;
 }
 
 void
@@ -123,10 +122,9 @@ void LevelManager::UnloadLevel()
 
 	for (auto& entity : m_EntityList) {
 		delete entity;
+		entity = 0;
 	}
 	m_EntityList.clear();
-
-
 
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();

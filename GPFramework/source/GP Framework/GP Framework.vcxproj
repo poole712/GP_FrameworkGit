@@ -154,6 +154,7 @@
     <ClCompile Include="hud.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="levelmanager.cpp" />
+    <ClCompile Include="leveltest.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="scenedeathmenu.cpp" />
     <ClCompile Include="entity.cpp" />
