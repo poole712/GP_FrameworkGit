@@ -6,6 +6,7 @@
 #include "level.h"
 #include "entity.h"
 #include "imgui/imgui.h"
+#include "background.h"
 
 //Libraries
 #include <vector>
@@ -32,6 +33,9 @@ LevelManager::Initialise(Renderer& renderer)
 {
 	m_pRenderer = &renderer;
 
+	m_bBackground = new Background();
+	m_bBackground->Initialise(renderer);
+
 	LevelParser::GetInstance().LoadLevelFile("data\\testmapdata.ini");
 	m_pLevelData = LevelParser::GetInstance().GetLevelData();
 	LevelParser::GetInstance().SetTileSize(128.0f);
@@ -45,12 +49,14 @@ LevelManager::Initialise(Renderer& renderer)
 void
 LevelManager::Process(float deltaTime, InputSystem& inputSystem)
 {
+	m_bBackground->Process(deltaTime);
 	m_pActiveLevel->Process(deltaTime, inputSystem);
 }
 
 void
 LevelManager::Draw(Renderer& renderer)
 {
+	m_bBackground->Draw(renderer);
 	m_pActiveLevel->Draw(renderer);
 }
 

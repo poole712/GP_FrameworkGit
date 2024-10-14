@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="animatedentity.cpp" />
     <ClCompile Include="animatedsprite.cpp" />
+    <ClCompile Include="background.cpp" />
     <ClCompile Include="contactlistener.cpp" />
     <ClCompile Include="hud.cpp" />
     <ClCompile Include="level.cpp" />
@@ -198,6 +199,7 @@
   <ItemGroup>
     <ClInclude Include="animatedentity.h" />
     <ClInclude Include="animatedsprite.h" />
+    <ClInclude Include="background.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="levelmanager.h" />
     <ClInclude Include="elementtype.h" />

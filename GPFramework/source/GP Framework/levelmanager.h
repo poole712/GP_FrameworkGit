@@ -10,6 +10,7 @@
 class Renderer;
 class InputSystem;
 class Level;
+class Background;
 
 using namespace std;
 
@@ -41,6 +42,8 @@ protected:
 	std::map<string, std::map<int, string>>* m_pLevelData;
 	Level* m_pActiveLevel;
 	Renderer* m_pRenderer;
+
+	Background* m_bBackground;
 
 private:
 
