@@ -11,6 +11,8 @@ class Renderer;
 class InputSystem;
 class Level;
 class Background;
+class SoundSystem;
+class Entity;
 
 using namespace std;
 
@@ -25,9 +27,12 @@ public:
 	void Process(float deltaTime, InputSystem& inputSystem);
 	void Process(float deltaTime, InputSystem& inputSystem, Game& game) { Process(deltaTime, inputSystem); };
 	void LoadLevel(const string& level);
+	void ResetLevel();
 	void UnloadLevel();
 	void Draw(Renderer& renderer);
 	void DebugDraw();
+	void NextLevel();
+	void InitialiseSounds();
 
 protected:
 
@@ -42,6 +47,9 @@ protected:
 	std::map<string, std::map<int, string>>* m_pLevelData;
 	Level* m_pActiveLevel;
 	Renderer* m_pRenderer;
+	SoundSystem* m_pSoundSystem;
+
+	vector<Entity*> m_EntityList;
 
 	Background* m_bBackground;
 

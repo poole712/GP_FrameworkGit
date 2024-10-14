@@ -55,6 +55,19 @@ Game::~Game()
 {
 	delete m_pRenderer;
 	m_pRenderer = 0;
+
+	delete m_pInputSystem;
+	m_pInputSystem = 0;
+
+	for (auto it = m_scenes.begin(); it != m_scenes.end();)
+	{
+		if ((*it) != nullptr)
+		{
+			delete (*it);
+			(*it) = 0;
+			++it;
+		}
+	}
 }
 
 void
@@ -84,7 +97,6 @@ Game::Initialise()
 	m_pInputSystem->Initialise();
 
 	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
-
 	
 	Scene* pScene = 0;
 	pScene = new SceneBBMainMenu();
@@ -95,15 +107,6 @@ Game::Initialise()
 	pLevelTest = new LevelManager();
 	pLevelTest->Initialise(*m_pRenderer);
 	m_scenes.push_back(pLevelTest);
-
-	//Scene* pGameScene = 0;
-	//pGameScene = new FletchersScene();
-	//pGameScene->Initialise(*m_pRenderer);
-	//m_scenes.push_back(pGameScene);
-
-	//Scene* pAnimScene = new ScenePlayerAnimation();
-	//pAnimScene->Initialise(*m_pRenderer);
-	//m_scenes.push_back(pAnimScene);
 
 	Scene* pDeathScene = new SceneDeathMenu();
 	pDeathScene->Initialise(*m_pRenderer);
@@ -122,12 +125,11 @@ Game::SwitchScene(int scene)
 	//Re-initialise game scene
 	if (scene == 1)
 	{
-		m_scenes[1]->Initialise(*m_pRenderer);
+		//m_scenes[1]->Initialise(*m_pRenderer);
+		m_iCurrentScene = scene;
 	}
 	m_iCurrentScene = scene;
 }
-
-
 
 bool 
 Game::DoGameLoop()

@@ -105,19 +105,10 @@
     <ClCompile Include="soundsystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="animatedentity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="uihandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="explosion.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="explosion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="scenebbmainmenu.h">
@@ -148,9 +139,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="levelparser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="levelparsetest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="levelmanager.cpp">
@@ -290,9 +278,6 @@
     <ClInclude Include="levelparser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="levelparsetest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="levelmanager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -303,9 +288,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="levelparser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="levelparsetest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="levelmanager.h">

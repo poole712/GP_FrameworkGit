@@ -55,7 +55,7 @@ Hud::Initialise(Renderer& renderer)
 }
 
 void
-Hud::Process(float deltaTime, InputSystem& inputSystem, Game& game)
+Hud::Process(float deltaTime, InputSystem& inputSystem)
 {
 	m_pFireControls->Process(deltaTime);
 	m_pEarthControls->Process(deltaTime);

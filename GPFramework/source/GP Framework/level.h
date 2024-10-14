@@ -3,11 +3,15 @@
 
 #include "scene.h"
 #include "elementtype.h"
+#include "entity.h"
 #include <vector>
 
 class Entity;
 class b2World;
 class SoundSystem;
+class Hud;
+class FletchersPlayer;
+class LevelManager;
 
 using namespace std;
 
@@ -18,14 +22,15 @@ public:
 	virtual ~Level();
 
 	bool Initialise(Renderer& renderer) { return false; };
-	bool Initialise(Renderer& renderer, vector<Entity*> entityList);
+	bool Initialise(Renderer& renderer, vector<Entity*>& entityList, LevelManager& levelManager, SoundSystem& m_pSoundSystem);
 	void Process(float deltaTime, InputSystem& inputSystem, Game& game) { Process(deltaTime, inputSystem); };
 	void Process(float deltaTime, InputSystem& inputSystem);
 	void Draw(Renderer& renderer);
 	void DebugDraw();
-
+	void CheckCollisions();
 	void ToggleBlocks(ElementType type);
-
+	bool CollidingWith(Entity& entityA, Entity& entityB);
+	void BeginPlay();
 protected:
 
 private:
@@ -39,6 +44,11 @@ protected:
 	vector<Entity*> m_entityList;
 	b2World* m_pWorld;
 	SoundSystem* m_pSoundSystem;
+	Hud* m_pHud;
+	FletchersPlayer* m_pPlayer;
+	Entity* m_pTestTramp;
+	LevelManager* m_pLevelManager;
+	bool m_bSwitching;
 
 private:
 

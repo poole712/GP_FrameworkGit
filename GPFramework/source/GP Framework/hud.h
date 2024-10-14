@@ -14,7 +14,7 @@ public:
 	~Hud();
 
 	bool Initialise(Renderer& renderer);
-	void Process(float deltaTime, InputSystem& inputSystem, Game& game);
+	void Process(float deltaTime, InputSystem& inputSystem);
 	void Draw(Renderer& renderer);
 
 protected:

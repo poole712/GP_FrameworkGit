@@ -9,6 +9,7 @@ class Sprite;
 class InputSystem;
 class UiHandler;
 class Game;
+class SoundSystem;
 
 class SceneBBMainMenu : public Scene
 {
@@ -35,6 +36,6 @@ protected:
 	Sprite* m_pPlayButton;
 	Sprite* m_pQuitButton;
 
-
+	SoundSystem* m_pSoundSystem;
 };
 #endif

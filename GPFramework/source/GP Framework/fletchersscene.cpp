@@ -40,10 +40,11 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	m_pHud = new Hud();
 	m_pHud->Initialise(renderer);
 
-	m_pSoundSystem = new SoundSystem();
-	m_pSoundSystem->Initialise();
-
-	//Physics
+	//m_pSoundSystem = new SoundSystem();
+	//m_pSoundSystem->Initialise();
+	//m_pSoundSystem->CreateSound("GameMusic.mp3", "Game Music");
+	//m_pSoundSystem->PlaySound("Game Music");
+	////Physics
 	b2Vec2 gravity;
 	gravity.Set(0.0f, 100.0f);
 	m_pWorld = new b2World(gravity);
@@ -82,7 +83,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 		block->Toggle(FIRE);
 	}
 
-	m_pSingleBlock = new FletchsTestBlock(850, 900, EARTH);
+	m_pSingleBlock = new FletchsTestBlock(850, 900, TRAMP);
 	m_pSingleBlock->Initialise(renderer, *m_pWorld);
 	m_pSingleBlock->Toggle(FIRE);
 
@@ -92,7 +93,7 @@ bool FletchersScene::Initialise(Renderer& renderer)
 
 void FletchersScene::Process(float deltaTime, InputSystem& inputSystem, Game& game)
 {
-	m_pHud->Process(deltaTime, inputSystem, game);
+	m_pHud->Process(deltaTime, inputSystem);
 	m_pWorld->Step(deltaTime, 5, 8);
 	m_pSoundSystem->Process(deltaTime);
 	//m_pPlayer->Process(deltaTime, inputSystem, *m_pSoundSystem, *this);
@@ -106,11 +107,10 @@ void FletchersScene::Process(float deltaTime, InputSystem& inputSystem, Game& ga
 	{
 		game.SwitchScene(3);
 	}
-	if (m_pPlayer->IsCollidingWith(*m_pSingleBlock) && m_pPlayer->GetPosition().y > m_pSingleBlock->GetPosition().y - 50 && m_pSingleBlock->GetType() == m_pPlayer->GetType())
+	if (m_pPlayer->IsCollidingWith(*m_pSingleBlock) && m_pPlayer->GetPosition().y > m_pSingleBlock->GetPosition().y - 50 && m_pSingleBlock->GetElementType() == m_pPlayer->GetElementType())
 	{
 		game.SwitchScene(3);
 	}
-
 }
 
 

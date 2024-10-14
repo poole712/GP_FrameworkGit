@@ -20,7 +20,8 @@ public:
 	bool Initialise(Renderer& renderer, b2World& world) { return true; };
 	void Process(float deltaTime, InputSystem& inputSystem) {};
 	void Draw(Renderer& renderer) {};
-
+	bool IsAnimationCollidingWith(Entity& toCheck);
+	Vector2 GetAnimatedPos();
 protected:
 
 private:
@@ -34,7 +35,6 @@ protected:
 	Vector2 m_position;
 	Vector2 m_velocity;
 	Vector2 m_rotation;
-	bool m_bAlive;
 	float m_fCurrentRotation;
 
 	InputSystem* m_iInputSystem;
