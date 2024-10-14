@@ -88,6 +88,9 @@ protected:
 	static float sm_fBoundaryWidth;
 	static float sm_fBoundaryHeight;
 
+	float m_tFootstepCooldown;
+	float m_tFootstepTime;
+
 };
 
 #endif // !_BLOCKBLOKE

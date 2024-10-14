@@ -16,6 +16,7 @@
 #include <SDL_scancode.h>
 #include <thread>
 #include <chrono>
+#include <string>
 
 
 float FletchersPlayer::sm_fBoundaryWidth = 0.0f;
@@ -48,7 +49,7 @@ bool
 FletchersPlayer::Initialise(Renderer& renderer, b2World& world, Level& scene)
 {
 	m_bUpdateWithVel = false;
-
+	m_tFootstepCooldown = 0.75f;
 	m_bAlive = true;
 
 	m_vJump = b2Vec2(0, -100000.0f);
@@ -93,6 +94,7 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World& world, Level& scene)
 void
 FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene)
 {
+	m_tFootstepTime += deltaTime;
 	//m_pBody->ApplyForce(m_vVelocity, m_pBody->GetPosition(), true);
 	m_pBody->SetTransform(b2Vec2(m_vStartPos.x, m_pBody->GetPosition().y), m_pBody->GetAngle());
 
@@ -113,18 +115,21 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 	{
 		m_eCurrentType = FIRE;
 		AnimateAnimationFire();
+		soundSystem.PlaySound("Fire");
 		scene.ToggleBlocks(m_eCurrentType);
 	}
 	if (key2State == BS_PRESSED)
 	{
 		m_eCurrentType = EARTH;
 		AnimateAnimationEarth();
+		soundSystem.PlaySound("Earth");
 		scene.ToggleBlocks(m_eCurrentType);
 	}
 	if (key3State == BS_PRESSED)
 	{
 		m_eCurrentType = ICE;
 		AnimateAnimationIce();
+		soundSystem.PlaySound("Ice");
 		scene.ToggleBlocks(m_eCurrentType);
 	}
 
@@ -137,6 +142,30 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 	{
 		AnimationRunning();
 		m_bSwitchingAnimation = false;
+	}
+
+	if (m_pBody->GetLinearVelocity().y == 0 && m_tFootstepTime >= m_tFootstepCooldown)
+	{
+		m_tFootstepTime = 0;
+		int fsToPlay = GetRandom(0, 4);
+		switch (fsToPlay)
+		{
+		case 0:
+			soundSystem.PlaySound("Footstep0");
+			break;
+		case 1:
+			soundSystem.PlaySound("Footstep1");
+			break;
+		case 2:
+			soundSystem.PlaySound("Footstep2");
+			break;
+		case 3:
+			soundSystem.PlaySound("Footstep3");
+			break;
+		case 4:
+			soundSystem.PlaySound("Footstep4");
+			break;
+		}
 	}
 }
 
@@ -169,9 +198,8 @@ FletchersPlayer::GetType() const
 void
 FletchersPlayer::Jump(SoundSystem& soundSystem)
 {
-
 	m_pBody->ApplyLinearImpulse(m_vJump, m_pBody->GetPosition(), true);
-
+	soundSystem.PlaySound("Bounce");
 }
 
 void 

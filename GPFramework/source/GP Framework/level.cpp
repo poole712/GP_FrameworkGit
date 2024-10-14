@@ -21,32 +21,21 @@ Level::Level()
 
 Level::~Level()
 {
-	delete m_pSoundSystem;
-	m_pSoundSystem = 0;
-
 	delete m_pWorld;
 	m_pWorld = 0;
 
 	delete m_pHud;
 	m_pHud = 0;
-
-	for (auto it = m_entityList.begin(); it != m_entityList.end();)
-	{
-		delete (*it);
-		(*it) = 0;
-		++it;
-	}
 }
 
+
 bool
-Level::Initialise(Renderer& renderer, vector<Entity*> entityList, LevelManager& levelManager)
+Level::Initialise(Renderer& renderer, vector<Entity*>& entityList, LevelManager& levelManager, SoundSystem& soundSystem)
 {
 	//Manager
 	m_pLevelManager = &levelManager;
 
-	//Sound System
-	m_pSoundSystem = new SoundSystem();
-	m_pSoundSystem->Initialise();
+	m_pSoundSystem = &soundSystem;
 
 	//Hud
 	m_pHud = new Hud();
@@ -69,7 +58,16 @@ Level::Initialise(Renderer& renderer, vector<Entity*> entityList, LevelManager& 
 		++it;
 	}
 
+	BeginPlay();
+
 	return true;
+}
+
+
+void
+Level::BeginPlay()
+{
+	m_pSoundSystem->PlaySound("Game Music");
 }
 
 
@@ -90,18 +88,26 @@ Level::Process(float deltaTime, InputSystem& inputSystem)
 void 
 Level::CheckCollisions()
 {
+	if (m_pPlayer == nullptr) { return; }
+
 	for (Entity* entity : m_entityList)
 	{
-		if (m_pPlayer->IsAnimationCollidingWith(*entity) && entity->GetElementType() == TRAMP && entity->IsAlive())
-		{
-			m_pPlayer->Jump();
-			entity->SetAliveState(false);
-		}
+		if (entity == nullptr) { continue; }
 
-		if (m_pPlayer->IsAnimationCollidingWith(*entity) && entity->GetElementType() == FLAG && entity->IsAlive())
+		if (m_pPlayer->IsAnimationCollidingWith(*entity) && entity->IsAlive())
 		{
-			m_pLevelManager->NextLevel();
-			entity->SetAliveState(false);
+			if (entity->GetElementType() == TRAMP)
+			{
+				if (entity == nullptr) { continue; }
+				m_pPlayer->Jump(*m_pSoundSystem);
+				entity->SetAliveState(false);
+			}
+			else if (entity->GetElementType() == FLAG)
+			{
+				if (entity == nullptr) { continue; }
+				m_pLevelManager->NextLevel();
+				entity->SetAliveState(false);
+			}
 		}
 	}
 }

@@ -21,14 +21,14 @@ public:
 	virtual ~Level();
 
 	bool Initialise(Renderer& renderer) { return false; };
-	bool Initialise(Renderer& renderer, vector<Entity*> entityList, LevelManager& levelManager);
+	bool Initialise(Renderer& renderer, vector<Entity*>& entityList, LevelManager& levelManager, SoundSystem& m_pSoundSystem);
 	void Process(float deltaTime, InputSystem& inputSystem, Game& game) { Process(deltaTime, inputSystem); };
 	void Process(float deltaTime, InputSystem& inputSystem);
 	void Draw(Renderer& renderer);
 	void DebugDraw();
 	void CheckCollisions();
 	void ToggleBlocks(ElementType type);
-
+	void BeginPlay();
 protected:
 
 private:

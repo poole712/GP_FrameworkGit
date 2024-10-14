@@ -10,6 +10,8 @@
 class Renderer;
 class InputSystem;
 class Level;
+class SoundSystem;
+class Entity;
 
 using namespace std;
 
@@ -29,6 +31,7 @@ public:
 	void Draw(Renderer& renderer);
 	void DebugDraw();
 	void NextLevel();
+	void InitialiseSounds();
 
 protected:
 
@@ -43,6 +46,9 @@ protected:
 	std::map<string, std::map<int, string>>* m_pLevelData;
 	Level* m_pActiveLevel;
 	Renderer* m_pRenderer;
+	SoundSystem* m_pSoundSystem;
+
+	vector<Entity*> m_EntityList;
 
 private:
 

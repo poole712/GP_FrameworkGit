@@ -7,6 +7,7 @@
 #include "entity.h"
 #include "imgui/imgui.h"
 #include "logmanager.h"
+#include "soundsystem.h"
 
 //Libraries
 #include <vector>
@@ -27,12 +28,19 @@ LevelManager::~LevelManager()
 {
 	delete m_pActiveLevel;
 	m_pActiveLevel = 0;
+
+	delete m_pSoundSystem;
+	m_pSoundSystem = 0;
 }
 
 bool
 LevelManager::Initialise(Renderer& renderer)
 {
 	m_pRenderer = &renderer;
+
+	m_pSoundSystem = new SoundSystem();
+	m_pSoundSystem->Initialise();
+	InitialiseSounds();
 
 	m_pLevelData = LevelParser::GetInstance().GetLevelData();
 	LevelParser::GetInstance().SetTileSize(128.0f);
@@ -88,8 +96,8 @@ LevelManager::LoadLevel(const string& level)
 
 	//Load new Level
 	m_pActiveLevel = new Level();
-	vector<Entity*> entityList = LevelParser::GetInstance().LoadLevel(level, *m_pRenderer);
-	m_pActiveLevel->Initialise(*m_pRenderer, entityList, *this);
+	m_EntityList = LevelParser::GetInstance().LoadLevel(level, *m_pRenderer);
+	m_pActiveLevel->Initialise(*m_pRenderer, m_EntityList, *this, *m_pSoundSystem);
 	LevelParser::GetInstance().m_pLevelString = level;
 }
 
@@ -101,9 +109,39 @@ LevelManager::ResetLevel()
 
 void LevelManager::UnloadLevel()
 {
+	for (auto it = m_EntityList.begin(); it != m_EntityList.end();)
+	{
+		delete (*it);
+		(*it) = nullptr;
+		++it;
+	}
+
+	delete m_pSoundSystem;
+	m_pSoundSystem = 0;
+	m_pSoundSystem = new SoundSystem();
+	m_pSoundSystem->Initialise();
+	InitialiseSounds();
+
 	delete m_pActiveLevel;
 	m_pActiveLevel = 0;
 }
+
+void 
+LevelManager::InitialiseSounds()
+{
+	m_pSoundSystem->CreateSound("sounds\\GameMusic.mp3", "Game Music");
+	m_pSoundSystem->CreateSound("sounds\\Earth.mp3", "Earth");
+	m_pSoundSystem->CreateSound("sounds\\Ice.mp3", "Ice");
+	m_pSoundSystem->CreateSound("sounds\\Fire.mp3", "Fire");
+	m_pSoundSystem->CreateSound("sounds\\Bounce.wav", "Bounce");
+
+	m_pSoundSystem->CreateSound("sounds\\Footstep0.mp3", "Footstep0");
+	m_pSoundSystem->CreateSound("sounds\\Footstep1.mp3", "Footstep1");
+	m_pSoundSystem->CreateSound("sounds\\Footstep2.mp3", "Footstep2");
+	m_pSoundSystem->CreateSound("sounds\\Footstep3.mp3", "Footstep3");
+	m_pSoundSystem->CreateSound("sounds\\Footstep4.mp3", "Footstep4");
+}
+
 
 void
 LevelManager::DebugDraw()

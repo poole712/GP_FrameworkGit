@@ -105,7 +105,6 @@ Game::Initialise()
 
 	Scene* pLevelTest = 0;
 	pLevelTest = new LevelManager();
-	pLevelTest->Initialise(*m_pRenderer);
 	m_scenes.push_back(pLevelTest);
 
 	Scene* pDeathScene = new SceneDeathMenu();

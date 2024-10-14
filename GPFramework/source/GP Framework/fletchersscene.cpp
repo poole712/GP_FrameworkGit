@@ -40,10 +40,11 @@ bool FletchersScene::Initialise(Renderer& renderer)
 	m_pHud = new Hud();
 	m_pHud->Initialise(renderer);
 
-	m_pSoundSystem = new SoundSystem();
-	m_pSoundSystem->Initialise();
-
-	//Physics
+	//m_pSoundSystem = new SoundSystem();
+	//m_pSoundSystem->Initialise();
+	//m_pSoundSystem->CreateSound("GameMusic.mp3", "Game Music");
+	//m_pSoundSystem->PlaySound("Game Music");
+	////Physics
 	b2Vec2 gravity;
 	gravity.Set(0.0f, 100.0f);
 	m_pWorld = new b2World(gravity);

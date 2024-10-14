@@ -12,9 +12,17 @@ SoundSystem::SoundSystem()
 
 SoundSystem::~SoundSystem()
 {
+	for (auto it = m_Channels.begin(); it != m_Channels.end();)
+	{
+		(*it).second->stop();
+		(*it).second = nullptr;
+		it++;
+	}
+
 	if (m_pSoundSystem)
 	{
 		m_pSoundSystem->release();
+		m_pSoundSystem = nullptr;
 	}
 }
 
@@ -23,12 +31,17 @@ SoundSystem::Initialise()
 {
 	FMOD_RESULT result;
 	result = FMOD::System_Create(&m_pSoundSystem);
-	m_pSoundSystem->init(512, FMOD_INIT_NORMAL, nullptr);
-
 	if (result != FMOD_OK)
 	{
 		LogManager::GetInstance().Log("Error setting up sound system (initialise)");
 	}
+
+	result = m_pSoundSystem->init(512, FMOD_INIT_NORMAL, nullptr);
+	if (result != FMOD_OK)
+	{
+		LogManager::GetInstance().Log("Error setting up sound system (initialise)");
+	}
+
 	return true;
 }
 
@@ -40,12 +53,9 @@ SoundSystem::PlaySound(const char* soundname)
 	if (it != m_Sounds.end())
 	{
 		FMOD::Sound* sound = it->second;
-		FMOD::Channel* channel = nullptr;
+		auto chnl = m_Channels.find(sound);
 
-		m_pSoundSystem->playSound(sound, nullptr, false, &channel);
-
-		// Store the channel for volume control
-		m_Channels[soundname] = channel;
+		m_pSoundSystem->playSound(sound, nullptr, false, &chnl->second);
 	}
 	else
 	{
@@ -58,6 +68,11 @@ SoundSystem::CreateSound(const char* filename, const char* soundName)
 {
 	FMOD::Sound* newSound = nullptr;
 	m_pSoundSystem->createSound(filename, FMOD_DEFAULT, nullptr, &newSound);
+
+	FMOD::Channel* channel = nullptr;
+	// Store the channel for volume control
+	m_Channels[newSound] = channel;
+
 	m_Sounds.insert({ soundName, newSound });
 }
 
@@ -71,7 +86,8 @@ SoundSystem::Process(float deltaTime)
 void
 SoundSystem::SetVolume(const char* soundName, float volume)
 {
-	auto it = m_Channels.find(soundName);
+	auto snd = m_Sounds.find(soundName);
+	auto it = m_Channels.find(snd->second);
 
 	if (it != m_Channels.end())
 	{
@@ -81,5 +97,31 @@ SoundSystem::SetVolume(const char* soundName, float volume)
 	else
 	{
 		LogManager::GetInstance().Log("Failed to find channel for the given sound.");
+	}
+}
+
+void
+SoundSystem::PauseSound(const char* soundName, bool pause)
+{
+	auto snd = m_Sounds.find(soundName);
+	auto it = m_Channels.find(snd->second);
+
+	if (it != m_Channels.end())
+	{
+		FMOD::Channel* channel = it->second;
+		channel->setPaused(pause);  // Pause or resume the sound
+	}
+	else
+	{
+		LogManager::GetInstance().Log("Failed to find channel for the given sound.");
+	}
+}
+
+void
+SoundSystem::StopAllSound()
+{
+	for (auto it = m_Channels.begin(); it != m_Channels.end(); it++)
+	{
+		(*it).second->stop();
 	}
 }
