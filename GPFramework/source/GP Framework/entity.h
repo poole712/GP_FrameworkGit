@@ -59,7 +59,7 @@ protected:
 	Vector2 m_velocity;
 	Vector2 m_rotation;
 	b2Vec2 m_vStartPos;
-	bool m_bAlive;
+	bool m_bAlive = true;
 	float m_fCurrentRotation;
 	ElementType m_elementType;
 	bool m_bUpdateWithVel;

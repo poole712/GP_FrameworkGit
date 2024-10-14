@@ -111,9 +111,6 @@
     <ClCompile Include="uihandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="explosion.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="scenebbmainmenu.h">
       <Filter>Header Files</Filter>
     </ClCompile>

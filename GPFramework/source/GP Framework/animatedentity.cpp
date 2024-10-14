@@ -15,7 +15,7 @@
 #include <string>    
 
 AnimatedEntity::AnimatedEntity()
-	: m_pASprite(nullptr), m_bAlive(true)
+	: m_pASprite(nullptr)
 {
 	m_bUpdateWithVel = false;
 }
@@ -32,25 +32,28 @@ AnimatedEntity::~AnimatedEntity()
 bool
 AnimatedEntity::IsAnimationCollidingWith(Entity& toCheck)
 {
-	if (!this) { return false; }
-	if (&toCheck && m_pASprite)
+	if (this == nullptr) { return false; }
+	if (this->IsAlive())
 	{
-		// Corrected distance calculation
-		float dx = toCheck.GetPosition().x - m_position.x;
-		float dy = toCheck.GetPosition().y - m_position.y;
+		if (toCheck.IsAlive())
+		{
+			// Corrected distance calculation
+			float dx = toCheck.GetPosition().x - m_position.x;
+			float dy = toCheck.GetPosition().y - m_position.y;
 
-		// Calculate the squared distance
-		float distanceSquared = dx * dx + dy * dy;
-		
-		// Calculate the actual distance
-		float distance = std::sqrt(distanceSquared);
+			// Calculate the squared distance
+			float distanceSquared = dx * dx + dy * dy;
 
-		// Calculate the squared sum of radii
-		float radiiSum = 100;
-		float radiiSumSquared = radiiSum * radiiSum;
-		
-		// Return if the squared distance is less than or equal to the squared sum of radii
-		return distanceSquared <= radiiSumSquared;
+			// Calculate the actual distance
+			float distance = std::sqrt(distanceSquared);
+
+			// Calculate the squared sum of radii
+			float radiiSum = 100;
+			float radiiSumSquared = radiiSum * radiiSum;
+
+			// Return if the squared distance is less than or equal to the squared sum of radii
+			return distanceSquared <= radiiSumSquared;
+		}
 	}
 }
 

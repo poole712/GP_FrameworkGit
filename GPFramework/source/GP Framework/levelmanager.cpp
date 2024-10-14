@@ -38,10 +38,6 @@ LevelManager::Initialise(Renderer& renderer)
 {
 	m_pRenderer = &renderer;
 
-	m_pSoundSystem = new SoundSystem();
-	m_pSoundSystem->Initialise();
-	InitialiseSounds();
-
 	m_pLevelData = LevelParser::GetInstance().GetLevelData();
 	LevelParser::GetInstance().SetTileSize(128.0f);
 	
@@ -65,6 +61,9 @@ LevelManager::Draw(Renderer& renderer)
 void
 LevelManager::NextLevel()
 {
+	UnloadLevel();
+	LogManager::GetInstance().Log("LOADING NEXT LEVEL");
+
 	auto levelIt = m_pLevelData->find(LevelParser::GetInstance().m_pLevelString);
 	
 	if (levelIt != m_pLevelData->end())
@@ -72,7 +71,6 @@ LevelManager::NextLevel()
 		++levelIt;
 		if (levelIt != m_pLevelData->end())
 		{
-			LogManager::GetInstance().Log(levelIt->first.c_str());
 			LoadLevel(levelIt->first);
 		}
 		else
@@ -109,21 +107,30 @@ LevelManager::ResetLevel()
 
 void LevelManager::UnloadLevel()
 {
-	for (auto it = m_EntityList.begin(); it != m_EntityList.end();)
+
+	if (m_pSoundSystem)
 	{
-		delete (*it);
-		(*it) = nullptr;
-		++it;
+		delete m_pSoundSystem;
+		m_pSoundSystem = 0;
 	}
 
-	delete m_pSoundSystem;
-	m_pSoundSystem = 0;
+	if (m_pActiveLevel)
+	{
+		delete m_pActiveLevel;
+		m_pActiveLevel = 0;
+		LogManager::GetInstance().Log("Level Deleted");
+	}
+
+	for (auto& entity : m_EntityList) {
+		delete entity;
+	}
+	m_EntityList.clear();
+
+
+
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();
 	InitialiseSounds();
-
-	delete m_pActiveLevel;
-	m_pActiveLevel = 0;
 }
 
 void 

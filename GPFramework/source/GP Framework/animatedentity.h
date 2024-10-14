@@ -35,7 +35,6 @@ protected:
 	Vector2 m_position;
 	Vector2 m_velocity;
 	Vector2 m_rotation;
-	bool m_bAlive;
 	float m_fCurrentRotation;
 
 	InputSystem* m_iInputSystem;

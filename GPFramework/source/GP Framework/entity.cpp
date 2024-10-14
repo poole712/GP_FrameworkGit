@@ -13,7 +13,7 @@
 #include <cstdlib>
 
 Entity::Entity()
-	: m_pSprite(0), m_bAlive(false), m_bUpdateWithVel(true)
+	: m_pSprite(0), m_bAlive(true), m_bUpdateWithVel(true)
 {
 
 }

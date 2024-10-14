@@ -3,6 +3,7 @@
 
 #include "scene.h"
 #include "elementtype.h"
+#include "entity.h"
 #include <vector>
 
 class Entity;
@@ -28,6 +29,7 @@ public:
 	void DebugDraw();
 	void CheckCollisions();
 	void ToggleBlocks(ElementType type);
+	bool CollidingWith(Entity& entityA, Entity& entityB);
 	void BeginPlay();
 protected:
 
@@ -46,6 +48,7 @@ protected:
 	FletchersPlayer* m_pPlayer;
 	Entity* m_pTestTramp;
 	LevelManager* m_pLevelManager;
+	bool m_bSwitching;
 
 private:
 
