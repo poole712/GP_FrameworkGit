@@ -40,24 +40,24 @@ Sprite::Draw(Renderer& renderer)
 }
 
 void
-Sprite::SetX(int x)
+Sprite::SetX(float x)
 {
 	m_x = x;
 }
 
 void 
-Sprite::SetY(int y)
+Sprite::SetY(float y)
 {
 	m_y = y;
 }
 
-int 
+float
 Sprite::GetX() const
 {
 	return m_x;
 }
 
-int
+float
 Sprite::GetY() const
 {
 	return m_y;
