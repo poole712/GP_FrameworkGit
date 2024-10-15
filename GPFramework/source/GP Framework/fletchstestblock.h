@@ -9,6 +9,7 @@ class Renderer;
 class Sprite;
 class b2Vec2;
 class Scene;
+class b2World;
 
 class FletchsTestBlock : public Entity
 {
@@ -38,7 +39,7 @@ protected:
 	b2Body* m_pBody;
 	b2Fixture* m_pFixture;
 	b2PolygonShape* m_pShape;
-
+	b2World* m_pWorld;
 	Sprite* m_pSprite;
 
 	b2Vec2 m_vVel;

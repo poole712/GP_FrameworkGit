@@ -33,6 +33,11 @@ LevelManager::~LevelManager()
 
 	delete m_pSoundSystem;
 	m_pSoundSystem = 0;
+
+	for (auto& entity : m_EntityList) {
+		delete entity;
+		entity = 0;
+	}
 }
 
 bool
@@ -131,8 +136,8 @@ void LevelManager::UnloadLevel()
 
 	for (auto& entity : m_EntityList) {
 		delete entity;
+		entity = 0;
 	}
-	m_EntityList.clear();
 
 	m_pSoundSystem->StopAllSound();
 }

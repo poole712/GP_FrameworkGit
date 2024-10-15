@@ -19,8 +19,8 @@ FletchsTestBlock::FletchsTestBlock(float x, float y)
 
 FletchsTestBlock::~FletchsTestBlock()
 {
-	delete m_pSprite;
-	m_pSprite = 0;
+		delete m_pSprite;
+		m_pSprite = 0;
 }
 
 bool
@@ -41,12 +41,11 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 	m_pBody = world.CreateBody(&bodyDef);
 	m_pBody->SetGravityScale(0.0f);
 
-	b2PolygonShape polyShape;
-	polyShape.SetAsBox(60.0f, 60.0f);
-	m_pShape = &polyShape;
+	m_pShape = new b2PolygonShape();
+	m_pShape->SetAsBox(60.0f, 60.0f);
 
 	b2FixtureDef fixDef;
-	fixDef.shape = &polyShape;
+	fixDef.shape = m_pShape;
 	fixDef.density = 0.1f;
 	fixDef.friction = 0.0f;
 	fixDef.restitution = 0.0f;

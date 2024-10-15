@@ -141,11 +141,16 @@ void
 SoundSystem::PlayBGM(const char* bgmname)
 {
 	auto it = m_bgm.find(bgmname);
+	bool isPlaying = false;
+
+	FMOD_RESULT result;
+	result = m_pBGMChannel->isPlaying(&isPlaying);
+	if (isPlaying) { return; }
 
 	if (it != m_bgm.end())
 	{
 		FMOD::Sound* sound = it->second;
-
+	
 		m_pSoundSystem->playSound(sound, nullptr, false, &m_pBGMChannel);
 	}
 	else
