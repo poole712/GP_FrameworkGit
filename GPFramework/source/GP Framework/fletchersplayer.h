@@ -4,6 +4,8 @@
 #include "entity.h"
 #include "box2d/box2d.h"
 #include "elementtype.h"
+#include "animatedentity.h"
+#include "animatedsprite.h"
 
 #include "vector"
 
@@ -22,7 +24,7 @@ class FletchsTestBlock;
 class FletchersScene;
 
 
-class FletchersPlayer : public Entity
+class FletchersPlayer : public AnimatedEntity
 {
 public:
 	FletchersPlayer();
@@ -36,18 +38,33 @@ public:
 	virtual void Draw(Renderer& renderer) override;
 
 	void CreateBoxWithEdges(b2Body* body, float width, float height);
-	ElementType GetType();
+	ElementType GetType() const;
 	void Toggle(ElementType type) {};
 
 	float m_fJumpStrength;
 
-protected:
-	void Jump(SoundSystem& soundSystem);
 	void Jump();
+	void Jump(SoundSystem& soundSystem);
+
+protected:
 
 private:
 	FletchersPlayer(const FletchersPlayer& blockBloke);
 	FletchersPlayer& operator=(const FletchersPlayer& blockBloke);
+
+	bool IsKey1();
+	bool IsKey2();
+	bool IsKey3();
+
+	void AnimationRunning();
+
+	void AnimationFire();
+	void AnimationEarth();
+	void AnimationIce();
+
+	void AnimateAnimationFire();
+	void AnimateAnimationEarth();
+	void AnimateAnimationIce();
 
 public:
 
@@ -61,12 +78,18 @@ protected:
 
 	bool m_bHurt;
 
-	bool m_bJumping;
-
 	float m_fTimeSinceJumpStarted;
+
+	bool m_bSwitchingAnimation;
+
+	bool m_bJumping;
+	bool m_bFalling;
 
 	static float sm_fBoundaryWidth;
 	static float sm_fBoundaryHeight;
+
+	float m_tFootstepCooldown;
+	float m_tFootstepTime;
 
 };
 

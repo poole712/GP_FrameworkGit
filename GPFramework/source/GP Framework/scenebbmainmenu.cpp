@@ -3,6 +3,7 @@
 #include "sprite.h"
 #include "renderer.h"
 #include "inputsystem.h"
+#include "soundsystem.h"
 #include "logmanager.h"
 #include "uihandler.h"
 #include "game.h"
@@ -24,6 +25,9 @@ SceneBBMainMenu::~SceneBBMainMenu()
 
 	delete m_pQuitButton;
 	m_pQuitButton = 0;
+	
+	delete m_pSoundSystem;
+	m_pSoundSystem = 0;
 }
 
 bool 
@@ -32,6 +36,11 @@ SceneBBMainMenu::Initialise(Renderer& renderer)
 	renderer.CreateStaticText("Mage Runner", 150);
 	renderer.CreateStaticText("Play", 72);
 	renderer.CreateStaticText("Quit", 72);
+
+	m_pSoundSystem = new SoundSystem();
+	m_pSoundSystem->Initialise();
+	m_pSoundSystem->CreateSound("sounds\\MainMenuMusic.mp3", "Menu Music");
+	m_pSoundSystem->PlaySound("Menu Music");
 
 	m_pTitleSprite = renderer.CreateSprite("Mage Runner");
 	m_pPlayButton = renderer.CreateSprite("Play");
@@ -56,6 +65,7 @@ SceneBBMainMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
     m_pTitleSprite->Process(deltaTime);
 	m_pQuitButton->Process(deltaTime);
 
+	m_pSoundSystem->Process(deltaTime);
 
     // Retrieve mouse button state for the left mouse button (usually index 0)
     ButtonState mouseState = inputSystem.GetMouseButtonState(1);
@@ -71,6 +81,8 @@ SceneBBMainMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
         // Check if the mouse is over the play button
         if (IsMouseOverObject(mouseX, mouseY, *m_pPlayButton))
         {
+			m_pSoundSystem->PauseSound("Menu Music", true);
+			m_pSoundSystem->StopAllSound();
 			game.SwitchScene(1);
         }
 		if (IsMouseOverObject(mouseX, mouseY, *m_pQuitButton))

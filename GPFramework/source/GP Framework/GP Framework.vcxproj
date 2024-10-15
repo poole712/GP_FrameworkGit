@@ -150,16 +150,14 @@
   <ItemGroup>
     <ClCompile Include="animatedentity.cpp" />
     <ClCompile Include="animatedsprite.cpp" />
+    <ClCompile Include="background.cpp" />
     <ClCompile Include="contactlistener.cpp" />
     <ClCompile Include="hud.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="levelmanager.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="scenedeathmenu.cpp" />
-    <ClCompile Include="enemy.cpp" />
     <ClCompile Include="entity.cpp" />
-    <ClCompile Include="explosion.cpp" />
-    <ClCompile Include="explosion.h" />
     <ClCompile Include="fletchersplayer.cpp" />
     <ClCompile Include="fletchersscene.cpp" />
     <ClCompile Include="fletchstestblock.cpp" />
@@ -174,7 +172,6 @@
     <ClCompile Include="iniparser.cpp" />
     <ClCompile Include="inputsystem.cpp" />
     <ClCompile Include="levelparser.cpp" />
-    <ClCompile Include="levelparsetest.cpp" />
     <ClCompile Include="logmanager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix4.cpp" />
@@ -198,6 +195,7 @@
   <ItemGroup>
     <ClInclude Include="animatedentity.h" />
     <ClInclude Include="animatedsprite.h" />
+    <ClInclude Include="background.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="levelmanager.h" />
     <ClInclude Include="elementtype.h" />
@@ -223,7 +221,6 @@
     <ClInclude Include="inlinehelper.h" />
     <ClInclude Include="inputsystem.h" />
     <ClInclude Include="levelparser.h" />
-    <ClInclude Include="levelparsetest.h" />
     <ClInclude Include="logmanager.h" />
     <ClInclude Include="matrix4.h" />
     <ClInclude Include="particle.h" />

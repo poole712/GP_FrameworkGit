@@ -19,10 +19,10 @@ public:
 	int GetWidth() const;
 	int GetHeight() const;
 
-	void SetX(int x);
-	int GetX() const;
-	void SetY(int y);
-	int GetY() const;
+	void SetX(float x);
+	float GetX() const;
+	void SetY(float y);
+	float GetY() const;
 
 	void SetAngle(float angle);
 	float GetAngle() const;
@@ -52,8 +52,8 @@ public:
 
 protected:
 	Texture* m_pTexture;
-	int m_x;
-	int m_y;
+	float m_x;
+	float m_y;
 
 	float m_angle;
 	int m_centerX;
