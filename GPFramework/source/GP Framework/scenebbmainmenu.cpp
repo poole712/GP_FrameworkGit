@@ -40,7 +40,7 @@ SceneBBMainMenu::Initialise(Renderer& renderer)
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();
 	m_pSoundSystem->CreateSound("sounds\\MainMenuMusic.mp3", "Menu Music");
-	//m_pSoundSystem->PlaySound("Menu Music");
+	m_pSoundSystem->PlaySound("Menu Music");
 
 	m_pTitleSprite = renderer.CreateSprite("Mage Runner");
 	m_pPlayButton = renderer.CreateSprite("Play");

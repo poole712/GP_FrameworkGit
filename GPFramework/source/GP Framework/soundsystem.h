@@ -19,6 +19,9 @@ public:
 	void SetVolume(const char* soundName, float volume);
 	void PauseSound(const char* soundName, bool pause);
 	void StopAllSound();
+	void CreateBGM(const char* filename, const char* soundName);
+	void PlayBGM(const char* bgmname);
+	void StopBGM();
 
 protected:
 
@@ -33,6 +36,9 @@ protected:
 	FMOD::System* m_pSoundSystem;
 	std::map<const char*, FMOD::Sound*> m_Sounds;
 	std::map<FMOD::Sound*, FMOD::Channel*> m_Channels;
+
+	std::map<const char*, FMOD::Sound*> m_bgm;
+	FMOD::Channel* m_pBGMChannel;
 	
 private:
 

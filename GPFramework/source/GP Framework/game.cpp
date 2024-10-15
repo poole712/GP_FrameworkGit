@@ -126,6 +126,7 @@ Game::SwitchScene(int scene)
 	if (scene == 1)
 	{
 		static_cast<LevelManager*>(m_scenes[1])->LoadLevel(LevelParser::GetInstance().m_pLevelString);
+		static_cast<LevelManager*>(m_scenes[1])->PlayBGM();
 		m_iCurrentScene = scene;
 	}
 	m_iCurrentScene = scene;

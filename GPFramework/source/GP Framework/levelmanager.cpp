@@ -33,6 +33,11 @@ LevelManager::~LevelManager()
 
 	delete m_pSoundSystem;
 	m_pSoundSystem = 0;
+
+	for (auto& entity : m_EntityList) {
+		delete entity;
+		entity = 0;
+	}
 }
 
 bool
@@ -131,8 +136,8 @@ void LevelManager::UnloadLevel()
 
 	for (auto& entity : m_EntityList) {
 		delete entity;
+		entity = 0;
 	}
-	m_EntityList.clear();
 
 	m_pSoundSystem->StopAllSound();
 }
@@ -140,7 +145,6 @@ void LevelManager::UnloadLevel()
 void 
 LevelManager::InitialiseSounds()
 {
-	m_pSoundSystem->CreateSound("sounds\\GameMusic.mp3", "Game Music");
 	m_pSoundSystem->CreateSound("sounds\\Earth.mp3", "Earth");
 	m_pSoundSystem->CreateSound("sounds\\Ice.mp3", "Ice");
 	m_pSoundSystem->CreateSound("sounds\\Fire.mp3", "Fire");
@@ -151,8 +155,14 @@ LevelManager::InitialiseSounds()
 	m_pSoundSystem->CreateSound("sounds\\Footstep2.mp3", "Footstep2");
 	m_pSoundSystem->CreateSound("sounds\\Footstep3.mp3", "Footstep3");
 	m_pSoundSystem->CreateSound("sounds\\Footstep4.mp3", "Footstep4");
+	m_pSoundSystem->CreateBGM("sounds\\GameMusic.mp3", "Game Music");
 }
 
+void
+LevelManager::PlayBGM()
+{
+	m_pSoundSystem->PlayBGM("Game Music");
+}
 
 void
 LevelManager::DebugDraw()
