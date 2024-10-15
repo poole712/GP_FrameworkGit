@@ -45,6 +45,10 @@ LevelManager::Initialise(Renderer& renderer)
 	LevelParser::GetInstance().LoadLevelFile("data\\testmapdata.ini");
 	m_pLevelData = LevelParser::GetInstance().GetLevelData();
 	LevelParser::GetInstance().SetTileSize(128.0f);
+
+	m_pSoundSystem = new SoundSystem();
+	m_pSoundSystem->Initialise();
+	InitialiseSounds();
 	
 	LoadLevel(LevelParser::GetInstance().m_pLevelString);
 
@@ -55,6 +59,7 @@ void
 LevelManager::Process(float deltaTime, InputSystem& inputSystem)
 {
 	m_bBackground->Process(deltaTime);
+	m_pSoundSystem->Process(deltaTime);
 	m_pActiveLevel->Process(deltaTime, inputSystem);
 }
 
@@ -114,13 +119,6 @@ LevelManager::ResetLevel()
 
 void LevelManager::UnloadLevel()
 {
-
-	if (m_pSoundSystem)
-	{
-		delete m_pSoundSystem;
-		m_pSoundSystem = 0;
-	}
-
 	if (m_pActiveLevel)
 	{
 		delete m_pActiveLevel;
@@ -133,11 +131,7 @@ void LevelManager::UnloadLevel()
 	}
 	m_EntityList.clear();
 
-
-
-	m_pSoundSystem = new SoundSystem();
-	m_pSoundSystem->Initialise();
-	InitialiseSounds();
+	m_pSoundSystem->StopAllSound();
 }
 
 void 
