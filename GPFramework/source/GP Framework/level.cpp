@@ -70,7 +70,7 @@ Level::Initialise(Renderer& renderer, vector<Entity*>& entityList, LevelManager&
 void
 Level::BeginPlay()
 {
-	m_pSoundSystem->PlaySound("Game Music");
+	//m_pSoundSystem->PlaySound("Game Music");
 }
 
 

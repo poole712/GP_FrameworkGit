@@ -42,6 +42,8 @@ SoundSystem::Initialise()
 		LogManager::GetInstance().Log("Error setting up sound system (initialise)");
 	}
 
+	m_pBGMChannel = nullptr;
+
 	return true;
 }
 
@@ -124,4 +126,36 @@ SoundSystem::StopAllSound()
 	{
 		(*it).second->stop();
 	}
+}
+
+void
+SoundSystem::CreateBGM(const char* filename, const char* soundName)
+{
+	FMOD::Sound* newSound = nullptr;
+	m_pSoundSystem->createSound(filename, FMOD_DEFAULT, nullptr, &newSound);
+
+	m_bgm.insert({ soundName, newSound });
+}
+
+void
+SoundSystem::PlayBGM(const char* bgmname)
+{
+	auto it = m_bgm.find(bgmname);
+
+	if (it != m_bgm.end())
+	{
+		FMOD::Sound* sound = it->second;
+
+		m_pSoundSystem->playSound(sound, nullptr, false, &m_pBGMChannel);
+	}
+	else
+	{
+		LogManager::GetInstance().Log("Failed to find sound in map, might need creation first.");
+	}
+}
+
+void 
+SoundSystem::StopBGM()
+{
+	m_pBGMChannel->stop();
 }

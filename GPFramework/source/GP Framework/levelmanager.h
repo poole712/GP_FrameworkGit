@@ -33,6 +33,7 @@ public:
 	void DebugDraw();
 	void NextLevel();
 	void InitialiseSounds();
+	void PlayBGM();
 
 protected:
 
