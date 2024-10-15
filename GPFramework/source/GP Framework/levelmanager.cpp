@@ -9,6 +9,7 @@
 #include "background.h"
 #include "logmanager.h"
 #include "soundsystem.h"
+#include "game.h"
 
 //Libraries
 #include <vector>
@@ -89,12 +90,14 @@ LevelManager::NextLevel()
 		{
 			//End Game
 			LogManager::GetInstance().Log("End of Game");
+			Game::GetInstance().SwitchScene(2);
 		}
 	}
 	else
 	{
 		//End Game
 		LogManager::GetInstance().Log("End of Game");
+		Game::GetInstance().SwitchScene(2);
 	}
 }
 
