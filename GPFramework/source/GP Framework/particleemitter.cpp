@@ -3,9 +3,10 @@
 #include "sprite.h"
 #include "renderer.h"
 #include "particle.h"
+#include "inlinehelper.h"
 
 ParticleEmitter::ParticleEmitter()
-    : m_fMaxLifespan(3.0f), m_fAccelerationScalar(-10), m_iSpawnBatchSize(10), m_bIsSpawning(false), m_iParticlesSpawned(0), m_fEmitRate(10.0f)
+    : m_fMaxLifespan(3.0f), m_fAccelerationScalar(-100), m_iSpawnBatchSize(50), m_bIsSpawning(false), m_iParticlesSpawned(0), m_fEmitRate(250.0f)
 {
 
 }
@@ -20,6 +21,14 @@ ParticleEmitter::SetPosition(float x, float y)
 {
     m_fX = x;
     m_fY = y;
+}
+
+void
+ParticleEmitter::SetColor(float redTint, float blueTint, float greenTint)
+{
+    m_fColour[0] = redTint;
+    m_fColour[1] = blueTint;
+    m_fColour[2] = greenTint;
 }
 
 bool
@@ -97,8 +106,8 @@ ParticleEmitter::SpawnParticle()
     newParticle->m_fMaxLifespan = m_fMaxLifespan;
     newParticle->m_position.x = m_fX;
     newParticle->m_position.y = m_fY;
-    newParticle->m_acceleration.x = 1 * m_fAccelerationScalar;
-    newParticle->m_acceleration.y = 1 * m_fAccelerationScalar;
+    newParticle->m_acceleration.x = 1 * m_fAccelerationScalar * -4;
+    newParticle->m_acceleration.y = 1 * m_fAccelerationScalar * GetRandom(-2, 2);
     newParticle->m_fColour[0] = m_fColour[0];
     newParticle->m_fColour[1] = m_fColour[1];
     newParticle->m_fColour[2] = m_fColour[2];

@@ -22,7 +22,7 @@ public:
 	void Spawn();
 	void SpawnParticle();
 
-
+	void SetColor(float redTint, float blueTint, float greenTint);
 	void DebugDraw();
 
 protected:

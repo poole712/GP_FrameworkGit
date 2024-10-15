@@ -2,7 +2,7 @@
 
 
 #include "fletchersplayer.h"
-
+#include "particleemitter.h"
 #include "logmanager.h"
 #include "renderer.h"
 #include "soundsystem.h"
@@ -36,7 +36,8 @@ FletchersPlayer::FletchersPlayer(float x, float y)
 
 FletchersPlayer::~FletchersPlayer()
 {
-
+	delete m_pParticleEmitter;
+	m_pParticleEmitter = 0;
 }
 
 bool
@@ -48,6 +49,9 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World& world)
 bool
 FletchersPlayer::Initialise(Renderer& renderer, b2World& world, Level& scene)
 {
+	m_pParticleEmitter = new ParticleEmitter();
+	m_pParticleEmitter->Initialise(renderer);
+
 	m_bUpdateWithVel = false;
 	m_tFootstepCooldown = 0.75f;
 	m_bAlive = true;
@@ -94,6 +98,8 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World& world, Level& scene)
 void
 FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene)
 {
+	m_pParticleEmitter->Process(deltaTime);
+	m_pParticleEmitter->SetPosition(m_position.x + 50, m_position.y - 50);
 	m_tFootstepTime += deltaTime;
 	//m_pBody->ApplyForce(m_vVelocity, m_pBody->GetPosition(), true);
 	m_pBody->SetTransform(b2Vec2(m_vStartPos.x, m_pBody->GetPosition().y), m_pBody->GetAngle());
@@ -113,6 +119,8 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 
 	if (key1State == BS_PRESSED)
 	{
+		m_pParticleEmitter->SetColor(1, 0, 0);
+		m_pParticleEmitter->Spawn();
 		m_eCurrentType = FIRE;
 		AnimateAnimationFire();
 		soundSystem.PlaySound("Fire");
@@ -120,6 +128,9 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 	}
 	if (key2State == BS_PRESSED)
 	{
+		m_pParticleEmitter->SetColor(0, 1, 0);
+		m_pParticleEmitter->Spawn();
+
 		m_eCurrentType = EARTH;
 		AnimateAnimationEarth();
 		soundSystem.PlaySound("Earth");
@@ -127,6 +138,9 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 	}
 	if (key3State == BS_PRESSED)
 	{
+		m_pParticleEmitter->SetColor(0, 0, 1);
+		m_pParticleEmitter->Spawn();
+
 		m_eCurrentType = ICE;
 		AnimateAnimationIce();
 		soundSystem.PlaySound("Ice");
@@ -207,6 +221,7 @@ FletchersPlayer::Draw(Renderer& renderer)
 {
 	if (m_bAlive)
 	{
+		m_pParticleEmitter->Draw(renderer);
 		m_pASprite->Draw(renderer);
 	}
 }
