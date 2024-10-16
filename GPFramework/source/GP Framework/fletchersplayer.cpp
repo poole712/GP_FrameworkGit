@@ -119,7 +119,7 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 
 	if (key1State == BS_PRESSED)
 	{
-		m_pParticleEmitter->SetColor(1, 0, 0);
+		m_pParticleEmitter->SetColor(0.98, 0.7, 0);
 		m_pParticleEmitter->Spawn();
 		m_eCurrentType = FIRE;
 		AnimateAnimationFire();
@@ -128,7 +128,7 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 	}
 	if (key2State == BS_PRESSED)
 	{
-		m_pParticleEmitter->SetColor(0, 1, 0);
+		m_pParticleEmitter->SetColor(0.62, 0.82, 0.36);
 		m_pParticleEmitter->Spawn();
 
 		m_eCurrentType = EARTH;
@@ -138,7 +138,7 @@ FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem&
 	}
 	if (key3State == BS_PRESSED)
 	{
-		m_pParticleEmitter->SetColor(0, 0, 1);
+		m_pParticleEmitter->SetColor(0.72, 0.95, 0.97);
 		m_pParticleEmitter->Spawn();
 
 		m_eCurrentType = ICE;
