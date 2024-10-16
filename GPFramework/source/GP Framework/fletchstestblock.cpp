@@ -61,23 +61,16 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 	switch (m_elementType)
 	{
 	case FIRE:
-		m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
-		m_pSprite->SetGreenTint(0);
-		m_pSprite->SetBlueTint(0);
+		m_pSprite = renderer.CreateSprite("sprites\\fireblock.png");
 		break;
 	case EARTH:
-		m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
-		m_pSprite->SetRedTint(0);
-		m_pSprite->SetBlueTint(0);
+		m_pSprite = renderer.CreateSprite("sprites\\earthblock.png");
 		break;
 	case ICE:
-		m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
-		m_pSprite->SetGreenTint(0);
-		m_pSprite->SetRedTint(0);
+		m_pSprite = renderer.CreateSprite("sprites\\iceblock.png");
 		break;
 	case TRAMP:
-		m_pSprite = renderer.CreateSprite("sprites\\temptramp.png");
-		m_pSprite->SetGreenTint(0);
+		m_pSprite = renderer.CreateSprite("sprites\\trampblock.png");
 		break;
 	case FLAG:
 		m_pSprite = renderer.CreateSprite("sprites\\temptramp.png");
@@ -85,7 +78,7 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 		m_pSprite->SetBlueTint(0);
 		break;
 	default:
-		m_pSprite = renderer.CreateSprite("sprites\\FletchsTestPlayer.png");
+		m_pSprite = renderer.CreateSprite("sprites\\defaultblock.png");
 		break;
 	}
 
@@ -119,7 +112,7 @@ FletchsTestBlock::Toggle(ElementType type)
 	{
 		filter.maskBits = 0x0000;
 		m_pFixture->SetFilterData(filter);
-		m_pSprite->SetAlpha(0.1f);
+		m_pSprite->SetAlpha(0.5f);
 	}
 
 	if (m_elementType != PLAYER && m_elementType == TRAMP)
