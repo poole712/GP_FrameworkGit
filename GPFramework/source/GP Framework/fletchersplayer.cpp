@@ -99,7 +99,7 @@ void
 FletchersPlayer::Process(float deltaTime, InputSystem& inputSystem, SoundSystem& soundSystem, Level& scene)
 {
 	m_pParticleEmitter->Process(deltaTime);
-	m_pParticleEmitter->SetPosition(m_position.x + 50, m_position.y - 50);
+	m_pParticleEmitter->SetPosition(m_position.x, m_position.y);
 	m_tFootstepTime += deltaTime;
 	//m_pBody->ApplyForce(m_vVelocity, m_pBody->GetPosition(), true);
 	m_pBody->SetTransform(b2Vec2(m_vStartPos.x, m_pBody->GetPosition().y), m_pBody->GetAngle());

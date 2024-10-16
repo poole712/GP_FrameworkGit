@@ -10,6 +10,14 @@ inline int GetRandom(int lowerBoundary, int upperBoundary)
 	return (rand() % range) + lowerBoundary;
 }
 
+inline float GetRandomFloat(float lowerBoundary, float upperBoundary)
+{
+	float range = upperBoundary - lowerBoundary;
+
+	return (static_cast<float>(rand()) / static_cast<float>(RAND_MAX)) * range + lowerBoundary;
+}
+
+
 inline float GetRandomPercentage()
 {
 	int percent = GetRandom(0, 100);
