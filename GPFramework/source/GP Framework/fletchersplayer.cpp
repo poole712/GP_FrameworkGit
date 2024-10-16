@@ -58,7 +58,7 @@ FletchersPlayer::Initialise(Renderer& renderer, b2World& world, Level& scene)
 
 	m_vJump = b2Vec2(0, -100000.0f);
 	//Setting up sprites
-	m_pASprite = renderer.CreateAnimatedSprite("sprites\\playersheet.png");
+	m_pASprite = renderer.CreateAnimatedSprite("sprites\\playersheetbright.png");
 	m_pASprite->SetupFrames(48, 48);
 	m_pASprite->SetFrameDuration(0.2f);
 	m_pASprite->SetScale(3.0f);
