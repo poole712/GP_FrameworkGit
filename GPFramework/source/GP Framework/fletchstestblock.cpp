@@ -102,9 +102,12 @@ void
 FletchsTestBlock::Toggle(ElementType type)
 {
 	b2Filter filter;
+	m_bToggledOn = false;
+
 	if (m_elementType == type || m_elementType == NONE)
 	{
 		filter.maskBits = 0xFFFF;
+		m_bToggledOn = true;
 		m_pFixture->SetFilterData(filter);
 		m_pSprite->SetAlpha(1.0f);
 	}

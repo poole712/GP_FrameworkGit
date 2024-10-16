@@ -13,7 +13,7 @@
 #include <cstdlib>
 
 Entity::Entity()
-	: m_pSprite(0), m_bAlive(true), m_bUpdateWithVel(true)
+	: m_pSprite(0), m_bAlive(true), m_bUpdateWithVel(true), m_bToggledOn(false)
 {
 
 }
@@ -156,4 +156,10 @@ ElementType
 Entity::GetElementType() 
 {
 	return m_elementType;
+}
+
+bool
+Entity::IsToggledOn()
+{
+	return m_bToggledOn;
 }

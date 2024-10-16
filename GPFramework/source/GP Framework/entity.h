@@ -41,6 +41,7 @@ public:
 	Vector2& GetPosition();
 	Vector2& GetVelocity();
 
+	bool IsToggledOn();
 	bool IsCollidingWith(Entity& toCheck);
 	ElementType GetElementType();
 	virtual void Toggle(ElementType type) = 0;
@@ -63,6 +64,7 @@ protected:
 	float m_fCurrentRotation;
 	ElementType m_elementType;
 	bool m_bUpdateWithVel;
+	bool m_bToggledOn;
 
 private:
 
