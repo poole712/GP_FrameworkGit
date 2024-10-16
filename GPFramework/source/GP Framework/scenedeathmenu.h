@@ -8,6 +8,7 @@ class Sprite;
 class InputSystem;
 class UiHandler;
 class Game;
+class Background;
 
 class SceneDeathMenu : public Scene
 {
@@ -19,7 +20,7 @@ public:
 	virtual void Process(float deltaTime, InputSystem& inputSystem, Game& game);
 	virtual void Draw(Renderer& renderer);
 	virtual void DebugDraw();
-	bool IsMouseOverObject(int mouseX, int mouseY, const Sprite& object);
+	bool IsMouseOverObject(float mouseX, float mouseY, const Sprite& object);
 protected:
 
 private:
@@ -33,6 +34,8 @@ protected:
 
 	Sprite* m_pRetryButton;
 	Sprite* m_pQuitToMenuButton;
+
+	Background* m_bBackground;
 
 };
 #endif // ! _SCENECHECKERBOARDS_H

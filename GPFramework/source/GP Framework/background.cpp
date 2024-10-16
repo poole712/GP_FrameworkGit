@@ -3,6 +3,11 @@
 #include "renderer.h"
 #include "sprite.h"
 
+Background::Background(int speed)
+    : m_sForeground1(nullptr), m_sForeground2(nullptr), m_sMiddleground1(nullptr), m_sMiddleground2(nullptr), m_sBackground1(nullptr), m_sBackground2(nullptr), m_fSpeed(speed)
+{
+}
+
 Background::Background()
     : m_sForeground1(nullptr), m_sForeground2(nullptr), m_sMiddleground1(nullptr), m_sMiddleground2(nullptr), m_sBackground1(nullptr), m_sBackground2(nullptr), m_fSpeed(30)
 {

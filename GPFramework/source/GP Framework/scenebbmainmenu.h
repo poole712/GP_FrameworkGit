@@ -10,6 +10,7 @@ class InputSystem;
 class UiHandler;
 class Game;
 class SoundSystem;
+class Background;
 
 class SceneBBMainMenu : public Scene
 {
@@ -21,7 +22,7 @@ public:
 	virtual void Process(float deltaTime, InputSystem& inputSystem, Game& game);
 	virtual void Draw(Renderer& renderer);
 	virtual void DebugDraw();
-	bool IsMouseOverObject(int mouseX, int mouseY, const Sprite& object);
+	bool IsMouseOverObject(float mouseX, float mouseY, const Sprite& object);
 
 protected:
 
@@ -35,6 +36,10 @@ protected:
 	Sprite* m_pTitleSprite;
 	Sprite* m_pPlayButton;
 	Sprite* m_pQuitButton;
+
+	Background* m_bBackground;
+
+	InputSystem* m_iInputSystem;
 
 	SoundSystem* m_pSoundSystem;
 };

@@ -104,14 +104,14 @@ Sprite::GetAlpha() const
 	return m_alpha;
 }
 
-int 
+float
 Sprite::GetWidth() const
 {
 	return static_cast<int>(ceilf(m_width * m_scale));
 }
 
 
-int 
+float
 Sprite::GetHeight() const
 {
 	return static_cast<int>(ceilf(m_height * m_scale));

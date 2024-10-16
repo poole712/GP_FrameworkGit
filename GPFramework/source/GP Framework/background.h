@@ -7,6 +7,7 @@ class Renderer;
 class Background
 {
 public:
+	Background(int speed);
 	Background();
 	~Background();
 

@@ -114,7 +114,7 @@ Game::Initialise()
 
 	m_iCurrentScene = 0;
 
-	m_pRenderer->SetClearColour(100, 100, 100);
+	m_pRenderer->SetClearColour(22, 47, 75);
 
 	return true;
 }
