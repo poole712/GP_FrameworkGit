@@ -34,8 +34,8 @@ ParticleEmitter::SetColor(float redTint, float blueTint, float greenTint)
 bool
 ParticleEmitter::Initialise(Renderer& renderer)
 {
-	m_pSharedSprite = renderer.CreateSprite("sprites\\ball.png");
-    m_pSharedSprite->SetScale(0.05f);
+	m_pSharedSprite = renderer.CreateSprite("sprites\\particle.png");
+    m_pSharedSprite->SetScale(2.0f);
 
 
 	return true;
@@ -48,7 +48,7 @@ ParticleEmitter::Process(float deltaTime)
     if (m_bIsSpawning) {
         m_fTimeAccumulator += deltaTime;
 
-        float timeBetweenSpawns = 1.0f / m_fEmitRate;
+        float timeBetweenSpawns = 2.0f / m_fEmitRate;
 
         // Spawn particles at intervals based on m_fEmitRate
         if (m_iParticlesSpawned < m_iSpawnBatchSize && m_fTimeAccumulator >= timeBetweenSpawns) {
