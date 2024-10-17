@@ -31,6 +31,9 @@ SceneBBMainMenu::~SceneBBMainMenu()
 	
 	delete m_pSoundSystem;
 	m_pSoundSystem = 0;
+
+	delete m_iInputSystem;
+	m_iInputSystem = 0;
 }
 
 bool 
@@ -42,6 +45,9 @@ SceneBBMainMenu::Initialise(Renderer& renderer)
 
 	m_bBackground = new Background();
 	m_bBackground->Initialise(renderer);
+
+	m_iInputSystem = new InputSystem();
+	m_iInputSystem->Initialise();
 
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();
@@ -70,9 +76,6 @@ SceneBBMainMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
     m_pPlayButton->Process(deltaTime);
     m_pTitleSprite->Process(deltaTime);
 	m_pQuitButton->Process(deltaTime);
-
-	// For Testing
-	m_iInputSystem = &inputSystem;
 
 	m_bBackground->Process(deltaTime);
 

@@ -182,6 +182,7 @@
     <ClCompile Include="scenebbmainmenu.cpp" />
     <ClCompile Include="scenebbmainmenu.h" />
     <ClCompile Include="sceneplayeranimation.cpp" />
+    <ClCompile Include="scenesplashscreen.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="soundsystem.cpp" />
     <ClCompile Include="sprite.cpp" />
@@ -229,6 +230,7 @@
     <ClInclude Include="renderer.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="sceneplayeranimation.h" />
+    <ClInclude Include="scenesplashscreen.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="soundsystem.h" />
     <ClInclude Include="sprite.h" />
