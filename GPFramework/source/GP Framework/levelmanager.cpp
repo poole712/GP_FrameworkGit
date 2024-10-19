@@ -95,14 +95,14 @@ LevelManager::NextLevel()
 		{
 			//End Game
 			LogManager::GetInstance().Log("End of Game");
-			Game::GetInstance().SwitchScene(2);
+			Game::GetInstance().SwitchScene(3);
 		}
 	}
 	else
 	{
 		//End Game
 		LogManager::GetInstance().Log("End of Game");
-		Game::GetInstance().SwitchScene(2);
+		Game::GetInstance().SwitchScene(3);
 	}
 }
 

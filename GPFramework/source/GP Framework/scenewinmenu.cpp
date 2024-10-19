@@ -1,4 +1,4 @@
-#include "scenedeathmenu.h"
+#include "scenewinmenu.h"
 
 #include "sprite.h"
 #include "renderer.h"
@@ -13,42 +13,34 @@
 #include <SDL_scancode.h>
 
 
-SceneDeathMenu::SceneDeathMenu()
+SceneWinMenu::SceneWinMenu()
 {
 }
 
-SceneDeathMenu::~SceneDeathMenu()
+SceneWinMenu::~SceneWinMenu()
 {
 	delete m_pTitleSprite;
 	m_pTitleSprite = 0;
-
-	delete m_pRetryButton;
-	m_pRetryButton = 0;
 
 	delete m_pQuitToMenuButton;
 	m_pQuitToMenuButton = 0;
 }
 
 bool
-SceneDeathMenu::Initialise(Renderer& renderer)
+SceneWinMenu::Initialise(Renderer& renderer)
 {
-	renderer.CreateStaticText("You died!", 72);
-	renderer.CreateStaticText("Retry", 48);
+	renderer.CreateStaticText("You won!", 72);
 	renderer.CreateStaticText("Quit to Menu", 48);
 
 	m_bBackground = new Background();
 	m_bBackground->Initialise(renderer);
 
-	m_pTitleSprite = renderer.CreateSprite("You died!");
-	m_pRetryButton = renderer.CreateSprite("Retry");
+	m_pTitleSprite = renderer.CreateSprite("You won!");
 	m_pQuitToMenuButton = renderer.CreateSprite("Quit to Menu");
 
 
 	m_pTitleSprite->SetY(400);
 	m_pTitleSprite->SetX(960);
-
-	m_pRetryButton->SetY(600);
-	m_pRetryButton->SetX(960);
 
 	m_pQuitToMenuButton->SetY(700);
 	m_pQuitToMenuButton->SetX(960);
@@ -57,9 +49,8 @@ SceneDeathMenu::Initialise(Renderer& renderer)
 }
 
 void
-SceneDeathMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
+SceneWinMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
 {
-	m_pRetryButton->Process(deltaTime);
 	m_pQuitToMenuButton->Process(deltaTime);
 
 	m_pTitleSprite->Process(deltaTime);
@@ -75,16 +66,10 @@ SceneDeathMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
 	int mouseX = inputSystem.GetMousePosition().x;
 	int mouseY = inputSystem.GetMousePosition().y;
 
-	m_pRetryButton->SetRedTint(100);
-
 	m_pQuitToMenuButton->SetGreenTint(100);
 	m_pQuitToMenuButton->SetBlueTint(100);
 
-	if (IsMouseOverObject(mouseX, mouseY, *m_pRetryButton))
-	{
-		m_pRetryButton->SetRedTint(0);
-	}
-	else if (IsMouseOverObject(mouseX, mouseY, *m_pQuitToMenuButton))
+	if (IsMouseOverObject(mouseX, mouseY, *m_pQuitToMenuButton))
 	{
 		m_pQuitToMenuButton->SetGreenTint(0);
 		m_pQuitToMenuButton->SetBlueTint(0);
@@ -98,16 +83,12 @@ SceneDeathMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
 		{
 			game.SwitchScene(0);
 		}
-		if (IsMouseOverObject(mouseX, mouseY, *m_pRetryButton))
-		{
-			game.SwitchScene(1);
-		}
 	}
 }
 
 
 bool
-SceneDeathMenu::IsMouseOverObject(float mouseX, float mouseY, const Sprite& object)
+SceneWinMenu::IsMouseOverObject(float mouseX, float mouseY, const Sprite& object)
 {
 	float objX = object.GetX();
 	float objY = object.GetY();
@@ -119,16 +100,15 @@ SceneDeathMenu::IsMouseOverObject(float mouseX, float mouseY, const Sprite& obje
 }
 
 void
-SceneDeathMenu::Draw(Renderer& renderer)
+SceneWinMenu::Draw(Renderer& renderer)
 {
 	m_bBackground->Draw(renderer);
 	m_pTitleSprite->Draw(renderer);
-	m_pRetryButton->Draw(renderer);
 	m_pQuitToMenuButton->Draw(renderer);
 }
 
 void
-SceneDeathMenu::DebugDraw()
+SceneWinMenu::DebugDraw()
 {
 
 }

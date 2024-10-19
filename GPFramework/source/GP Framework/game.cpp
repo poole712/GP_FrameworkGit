@@ -19,6 +19,7 @@
 #include "scenedeathmenu.h"
 #include "levelmanager.h"
 #include "scenesplashscreen.h"
+#include "scenewinmenu.h"
 
 
 //Static members:
@@ -47,7 +48,6 @@ Game::Game()
 	: m_pRenderer(0)
 	, m_bLooping(true)
 	, m_bShowDebugWindow(true)
-	
 {
 
 }
@@ -117,11 +117,16 @@ Game::Initialise()
 	m_scenes.push_back(pDeathScene);
 
 	//Scene 3
+	Scene* pWinScreen = new SceneWinMenu();
+	pWinScreen->Initialise(*m_pRenderer);
+	m_scenes.push_back(pWinScreen);
+
+	//Scene 4
 	Scene* pSplashScreen = new SceneSplashscreen();
 	pSplashScreen->Initialise(*m_pRenderer);
 	m_scenes.push_back(pSplashScreen);
 
-	m_iCurrentScene = 3;
+	m_iCurrentScene = 4;
 
 	return true;
 }
