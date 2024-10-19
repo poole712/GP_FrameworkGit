@@ -22,7 +22,7 @@ class Explosion;
 class SoundSystem;
 class FletchsTestBlock;
 class FletchersScene;
-
+class ParticleEmitter;
 
 class FletchersPlayer : public AnimatedEntity
 {
@@ -75,6 +75,7 @@ protected:
 	b2Vec2 m_vVelocity;
 	b2Vec2 m_vJump;
 	ElementType m_eCurrentType;
+	ParticleEmitter* m_pParticleEmitter;
 
 	bool m_bHurt;
 

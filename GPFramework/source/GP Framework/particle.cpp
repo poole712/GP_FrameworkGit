@@ -27,6 +27,9 @@ Particle::Process(float deltaTime)
 	if (m_bAlive)
 	{
 		m_fCurrentAge += deltaTime;
+		m_acceleration.x -= m_fCurrentAge * 5;
+		m_acceleration.y -= m_fCurrentAge * 5;
+
 		m_velocity += m_acceleration * deltaTime;
 		m_position += m_velocity * deltaTime;
 

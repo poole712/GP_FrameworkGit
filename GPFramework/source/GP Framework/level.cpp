@@ -12,6 +12,7 @@
 #include "hud.h"
 #include "levelmanager.h"
 #include "logmanager.h"
+#include "game.h"
 #include <cmath>
 
 using namespace std;
@@ -108,9 +109,10 @@ Level::CheckCollisions()
 				entity->SetAliveState(false);
 				return;
 			}
-			else
+			else if(entity->IsToggledOn())
 			{
-				LogManager::GetInstance().Log("No Flag");
+				entity->SetAliveState(false);
+				Game::GetInstance().SwitchScene(2);
 			}
 		}
 	}
@@ -169,5 +171,6 @@ Level::ToggleBlocks(ElementType type)
 	for (Entity* block : m_entityList)
 	{
 		block->Toggle(type);
+		
 	}
 }

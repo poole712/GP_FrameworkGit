@@ -7,6 +7,9 @@
 #include "logmanager.h"
 #include "uihandler.h"
 #include "game.h"
+#include "background.h"
+
+#include "imgui/imgui_impl_sdl2.h"
 
 #include <SDL_scancode.h>
 
@@ -28,6 +31,9 @@ SceneBBMainMenu::~SceneBBMainMenu()
 	
 	delete m_pSoundSystem;
 	m_pSoundSystem = 0;
+
+	delete m_iInputSystem;
+	m_iInputSystem = 0;
 }
 
 bool 
@@ -36,6 +42,12 @@ SceneBBMainMenu::Initialise(Renderer& renderer)
 	renderer.CreateStaticText("Mage Runner", 150);
 	renderer.CreateStaticText("Play", 72);
 	renderer.CreateStaticText("Quit", 72);
+
+	m_bBackground = new Background();
+	m_bBackground->Initialise(renderer);
+
+	m_iInputSystem = new InputSystem();
+	m_iInputSystem->Initialise();
 
 	m_pSoundSystem = new SoundSystem();
 	m_pSoundSystem->Initialise();
@@ -65,6 +77,8 @@ SceneBBMainMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
     m_pTitleSprite->Process(deltaTime);
 	m_pQuitButton->Process(deltaTime);
 
+	m_bBackground->Process(deltaTime);
+
 	m_pSoundSystem->Process(deltaTime);
 
     // Retrieve mouse button state for the left mouse button (usually index 0)
@@ -74,6 +88,21 @@ SceneBBMainMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
     // Get mouse position
     int mouseX = inputSystem.GetMousePosition().x;
     int mouseY = inputSystem.GetMousePosition().y;
+
+	m_pPlayButton->SetRedTint(100);
+
+	m_pQuitButton->SetGreenTint(100);
+	m_pQuitButton->SetBlueTint(100);
+
+	if (IsMouseOverObject(mouseX, mouseY, *m_pPlayButton))
+	{
+		m_pPlayButton->SetRedTint(0);
+	}
+	else if (IsMouseOverObject(mouseX, mouseY, *m_pQuitButton))
+	{
+		m_pQuitButton->SetGreenTint(0);
+		m_pQuitButton->SetBlueTint(0);
+	}
 
     // Check if the left mouse button was pressed
     if (mouseState == BS_PRESSED)  // Ensure this matches your ButtonState enum
@@ -94,16 +123,21 @@ SceneBBMainMenu::Process(float deltaTime, InputSystem& inputSystem, Game& game)
 
 
 bool 
-SceneBBMainMenu::IsMouseOverObject(int mouseX, int mouseY, const Sprite& object)
+SceneBBMainMenu::IsMouseOverObject(float mouseX, float mouseY, const Sprite& object)
 {
-	// Assuming the object has x, y, width, height properties
-	return (mouseX >= object.GetX() && mouseX <= object.GetX() + object.GetWidth() &&
-		mouseY >= object.GetY() && mouseY <= object.GetY() + object.GetHeight());
+	float objX = object.GetX();
+	float objY = object.GetY();
+	float objWidth = object.GetWidth();
+	float objHeight = object.GetHeight();
+
+	return (mouseX >= objX - objWidth/2 && mouseX <= objX + objWidth/2 &&
+		mouseY >= objY - objHeight/2 && mouseY <= objY + objHeight/2);
 }
 
 void 
 SceneBBMainMenu::Draw(Renderer& renderer)
 {
+	m_bBackground->Draw(renderer);
 	m_pPlayButton->Draw(renderer);
 	m_pTitleSprite->Draw(renderer);
 	m_pQuitButton->Draw(renderer);
@@ -112,5 +146,8 @@ SceneBBMainMenu::Draw(Renderer& renderer)
 void 
 SceneBBMainMenu::DebugDraw()
 {
+	ImGui::Text("Play X: %f, Play Y: %f", m_pPlayButton->GetX(), m_pPlayButton->GetY());
+	ImGui::Text("Width: %f, Height: %f", m_pPlayButton->GetWidth(), m_pPlayButton->GetHeight());
 
+	ImGui::Text("Mouse X: %f, Mouse Y: %f", m_iInputSystem->GetMousePosition().x, m_iInputSystem->GetMousePosition().y);
 }

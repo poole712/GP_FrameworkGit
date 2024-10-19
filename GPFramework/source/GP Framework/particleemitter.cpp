@@ -3,9 +3,10 @@
 #include "sprite.h"
 #include "renderer.h"
 #include "particle.h"
+#include "inlinehelper.h"
 
 ParticleEmitter::ParticleEmitter()
-    : m_fMaxLifespan(3.0f), m_fAccelerationScalar(-10), m_iSpawnBatchSize(10), m_bIsSpawning(false), m_iParticlesSpawned(0), m_fEmitRate(10.0f)
+    : m_fMaxLifespan(3.0f), m_fAccelerationScalar(250), m_iSpawnBatchSize(100), m_bIsSpawning(false), m_iParticlesSpawned(0), m_fEmitRate(250.0f)
 {
 
 }
@@ -22,11 +23,19 @@ ParticleEmitter::SetPosition(float x, float y)
     m_fY = y;
 }
 
+void
+ParticleEmitter::SetColor(float redTint, float blueTint, float greenTint)
+{
+    m_fColour[0] = redTint;
+    m_fColour[1] = blueTint;
+    m_fColour[2] = greenTint;
+}
+
 bool
 ParticleEmitter::Initialise(Renderer& renderer)
 {
-	m_pSharedSprite = renderer.CreateSprite("sprites\\ball.png");
-    m_pSharedSprite->SetScale(0.05f);
+	m_pSharedSprite = renderer.CreateSprite("sprites\\particle.png");
+    m_pSharedSprite->SetScale(2.0f);
 
 
 	return true;
@@ -39,7 +48,7 @@ ParticleEmitter::Process(float deltaTime)
     if (m_bIsSpawning) {
         m_fTimeAccumulator += deltaTime;
 
-        float timeBetweenSpawns = 1.0f / m_fEmitRate;
+        float timeBetweenSpawns = 2.0f / m_fEmitRate;
 
         // Spawn particles at intervals based on m_fEmitRate
         if (m_iParticlesSpawned < m_iSpawnBatchSize && m_fTimeAccumulator >= timeBetweenSpawns) {
@@ -94,11 +103,11 @@ ParticleEmitter::SpawnParticle()
     Particle* newParticle = new Particle();
     newParticle->Initialise(*m_pSharedSprite);
     newParticle->m_bAlive = true;
-    newParticle->m_fMaxLifespan = m_fMaxLifespan;
+    newParticle->m_fMaxLifespan = GetRandomFloat(1, 2);
     newParticle->m_position.x = m_fX;
     newParticle->m_position.y = m_fY;
-    newParticle->m_acceleration.x = 1 * m_fAccelerationScalar;
-    newParticle->m_acceleration.y = 1 * m_fAccelerationScalar;
+    newParticle->m_acceleration.x = 1 * m_fAccelerationScalar * -GetRandomFloat(-2, 2);
+    newParticle->m_acceleration.y = 1 * m_fAccelerationScalar * GetRandomFloat(-2, 2);
     newParticle->m_fColour[0] = m_fColour[0];
     newParticle->m_fColour[1] = m_fColour[1];
     newParticle->m_fColour[2] = m_fColour[2];

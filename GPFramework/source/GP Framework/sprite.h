@@ -16,8 +16,8 @@ public:
 	void Process(float deltaTime);
 	void Draw(Renderer& renderer);
 
-	int GetWidth() const;
-	int GetHeight() const;
+	float GetWidth() const;
+	float GetHeight() const;
 
 	void SetX(float x);
 	float GetX() const;

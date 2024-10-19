@@ -3,6 +3,11 @@
 #include "renderer.h"
 #include "sprite.h"
 
+Background::Background(int speed)
+    : m_sForeground1(nullptr), m_sForeground2(nullptr), m_sMiddleground1(nullptr), m_sMiddleground2(nullptr), m_sBackground1(nullptr), m_sBackground2(nullptr), m_fSpeed(speed)
+{
+}
+
 Background::Background()
     : m_sForeground1(nullptr), m_sForeground2(nullptr), m_sMiddleground1(nullptr), m_sMiddleground2(nullptr), m_sBackground1(nullptr), m_sBackground2(nullptr), m_fSpeed(30)
 {
@@ -57,8 +62,8 @@ void Background::Draw(Renderer& renderer)
 
 void Background::CreateForeground()
 {
-    m_sForeground1 = m_rRenderer->CreateSprite("sprites\\Foreground.png");
-    m_sForeground2 = m_rRenderer->CreateSprite("sprites\\Foreground.png");
+    m_sForeground1 = m_rRenderer->CreateSprite("sprites\\ForegroundBlur.png");
+    m_sForeground2 = m_rRenderer->CreateSprite("sprites\\ForegroundBlur.png");
 
     m_sForeground1->SetY(m_iHeight / 2);
     m_sForeground2->SetY(m_iHeight / 2);
@@ -69,8 +74,8 @@ void Background::CreateForeground()
 
 void Background::CreateMiddleground()
 {
-    m_sMiddleground1 = m_rRenderer->CreateSprite("sprites\\Middleground.png");
-    m_sMiddleground2 = m_rRenderer->CreateSprite("sprites\\Middleground.png");
+    m_sMiddleground1 = m_rRenderer->CreateSprite("sprites\\MiddlegroundBlur.png");
+    m_sMiddleground2 = m_rRenderer->CreateSprite("sprites\\MiddlegroundBlur.png");
 
     m_sMiddleground1->SetY(m_iHeight / 2);
     m_sMiddleground2->SetY(m_iHeight / 2);
@@ -81,8 +86,8 @@ void Background::CreateMiddleground()
 
 void Background::CreateBackground()
 {
-    m_sBackground1 = m_rRenderer->CreateSprite("sprites\\Background.png");
-    m_sBackground2 = m_rRenderer->CreateSprite("sprites\\Background.png");
+    m_sBackground1 = m_rRenderer->CreateSprite("sprites\\BackgroundBlur.png");
+    m_sBackground2 = m_rRenderer->CreateSprite("sprites\\BackgroundBlur.png");
 
     m_sBackground1->SetY(m_iHeight / 2);
     m_sBackground2->SetY(m_iHeight / 2);

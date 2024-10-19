@@ -1,5 +1,5 @@
-#ifndef  _SCENEDEATHMENU_H
-#define _SCENEDEATHMENU_H
+#ifndef  _SCENEWINMENU_H
+#define _SCENEWINMENU_H
 
 #include "scene.h"
 
@@ -10,11 +10,11 @@ class UiHandler;
 class Game;
 class Background;
 
-class SceneDeathMenu : public Scene
+class SceneWinMenu : public Scene
 {
 public:
-	SceneDeathMenu();
-	virtual ~SceneDeathMenu();
+	SceneWinMenu();
+	virtual ~SceneWinMenu();
 
 	virtual bool Initialise(Renderer& renderer);
 	virtual void Process(float deltaTime, InputSystem& inputSystem, Game& game);
@@ -24,15 +24,14 @@ public:
 protected:
 
 private:
-	SceneDeathMenu(const SceneDeathMenu& sceneCheckerboards);
-	SceneDeathMenu& operator=(const SceneDeathMenu& sceneCheckerboards);
+	SceneWinMenu(const SceneWinMenu& sceneWinMenu);
+	SceneWinMenu& operator=(const SceneWinMenu& sceneWinMenu);
 
 public:
 
 protected:
 	Sprite* m_pTitleSprite;
 
-	Sprite* m_pRetryButton;
 	Sprite* m_pQuitToMenuButton;
 
 	Background* m_bBackground;

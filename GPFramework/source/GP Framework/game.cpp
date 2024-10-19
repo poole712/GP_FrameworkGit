@@ -18,6 +18,8 @@
 #include "fletchersscene.h"
 #include "scenedeathmenu.h"
 #include "levelmanager.h"
+#include "scenesplashscreen.h"
+#include "scenewinmenu.h"
 
 
 //Static members:
@@ -46,7 +48,6 @@ Game::Game()
 	: m_pRenderer(0)
 	, m_bLooping(true)
 	, m_bShowDebugWindow(true)
-	
 {
 
 }
@@ -98,23 +99,34 @@ Game::Initialise()
 
 	m_pInputSystem->ShowMouseCursor(m_bShowDebugWindow);
 	
+	//Scene 0
 	Scene* pScene = 0;
 	pScene = new SceneBBMainMenu();
 	pScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pScene);
 
+	//Scene 1
 	Scene* pLevelTest = 0;
 	pLevelTest = new LevelManager();
 	pLevelTest->Initialise(*m_pRenderer);
 	m_scenes.push_back(pLevelTest);
 
+	//Scene 2
 	Scene* pDeathScene = new SceneDeathMenu();
 	pDeathScene->Initialise(*m_pRenderer);
 	m_scenes.push_back(pDeathScene);
 
-	m_iCurrentScene = 0;
+	//Scene 3
+	Scene* pWinScreen = new SceneWinMenu();
+	pWinScreen->Initialise(*m_pRenderer);
+	m_scenes.push_back(pWinScreen);
 
-	m_pRenderer->SetClearColour(100, 100, 100);
+	//Scene 4
+	Scene* pSplashScreen = new SceneSplashscreen();
+	pSplashScreen->Initialise(*m_pRenderer);
+	m_scenes.push_back(pSplashScreen);
+
+	m_iCurrentScene = 4;
 
 	return true;
 }
@@ -129,6 +141,12 @@ Game::SwitchScene(int scene)
 		static_cast<LevelManager*>(m_scenes[1])->PlayBGM();
 		m_iCurrentScene = scene;
 	}
+
+	if (scene == 0)
+	{
+		m_pRenderer->SetClearColour(22, 47, 75);
+	}
+
 	m_iCurrentScene = scene;
 }
 
@@ -239,8 +257,5 @@ Game::DebugDraw()
 		m_scenes[m_iCurrentScene]->DebugDraw();
 
 		ImGui::End();
-		
 	}
-
-
 }
