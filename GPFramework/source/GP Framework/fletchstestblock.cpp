@@ -73,9 +73,7 @@ FletchsTestBlock::Initialise(Renderer& renderer, b2World& world)
 		m_pSprite = renderer.CreateSprite("sprites\\trampblock.png");
 		break;
 	case FLAG:
-		m_pSprite = renderer.CreateSprite("sprites\\temptramp.png");
-		m_pSprite->SetRedTint(0);
-		m_pSprite->SetBlueTint(0);
+		m_pSprite = renderer.CreateSprite("sprites\\flagblock.png");
 		break;
 	default:
 		m_pSprite = renderer.CreateSprite("sprites\\defaultblock.png");
@@ -115,7 +113,7 @@ FletchsTestBlock::Toggle(ElementType type)
 	{
 		filter.maskBits = 0x0000;
 		m_pFixture->SetFilterData(filter);
-		m_pSprite->SetAlpha(0.5f);
+		m_pSprite->SetAlpha(0.2f);
 	}
 
 	if (m_elementType != PLAYER && m_elementType == TRAMP)
